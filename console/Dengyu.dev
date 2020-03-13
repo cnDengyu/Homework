@@ -111,11 +111,12 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=.gitignore
+FileName=Mar13th.cpp
 Folder=
 Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
+CompileCpp=1
 

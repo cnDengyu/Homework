@@ -16,6 +16,7 @@ extern int programOne(int argc, char** argv);
 extern int programTwo(int argc, char** argv);
 extern int programThree(int argc, char** argv);
 extern int homeworkMar6th(int argc, char** argv);
+extern int homeworkMar13th(int argc, char** argv);
 
 int main(int argc, char** argv) {
 	int homework = 0;
@@ -52,6 +53,10 @@ int main(int argc, char** argv) {
 			
 			case 4:
 				returnValue = homeworkMar6th(argc, argv);
+			break;
+			
+			case 5:
+				returnValue = homeworkMar13th(argc, argv);
 			break;
 			
 			default:

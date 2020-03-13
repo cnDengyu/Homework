@@ -3,11 +3,11 @@
 
 #define IDT_TIMER 1
 
-extern onPaint(HWND hwnd, HDC hdc,PAINTSTRUCT ps);
+extern onPaint(HWND hwnd, HDC hdc);
 extern onTimer(HWND hwnd);
 
 //所有全局变量用 my 开头 
-long myTime = 0;
+
 
 const int WindowWidth = 640;
 const int WindowHeight = 480;
@@ -22,7 +22,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) 
 	
 	switch(Message) {
 		case WM_CREATE: {
-			SetTimer(hwnd, IDT_TIMER, 30, (TIMERPROC) NULL); //主窗口的句柄//计时器标识符// 1s 间隔//无定时器回调
+			SetTimer(hwnd, IDT_TIMER, 10, (TIMERPROC) NULL); //主窗口的句柄//计时器标识符// 30ms 间隔//无定时器回调
 			break;
 		}
 		
@@ -48,7 +48,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) 
 			hPreBmp = (HBITMAP)SelectObject(hDCMem, hBmpMem);
 			
 			/* 在双缓冲中绘图 */
-			onPaint(hwnd, hDCMem, ps);
+			onPaint(hwnd, hDCMem);
 			
 			/* 将双缓冲区图像复制到显示缓冲区 */
 			BitBlt(hdc, 0, 0, rect.right, rect.bottom, hDCMem, 0, 0, SRCCOPY);
