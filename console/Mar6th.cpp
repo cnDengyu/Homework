@@ -8,12 +8,13 @@
 章登宇 
 
 -------------------------------------------*/ 
-void taskOne();//第一题 
-void taskTwo();//第二题 
-void taskThree();//第三题 
-void taskFour();//第四题 
-void taskFive();//第五题 
-void taskSix();//第六题 
+
+static void taskOne();//第一题 
+static void taskTwo();//第二题 
+static void taskThree();//第三题 
+static void taskFour();//第四题 
+static void taskFive();//第五题 
+static void taskSix();//第六题 
 
 //程序入口，移植时请将函数名改为 main 
 int homeworkMar6th(int argc, char** argv)
@@ -38,7 +39,7 @@ int homeworkMar6th(int argc, char** argv)
 //p = (1+r)^n
 //r为年增长率，n为年数，p为与现在相比的倍数
 
-void taskOne()
+static void taskOne()
 {
 	const double r = 0.09;
 	const int n = 10;
@@ -54,7 +55,7 @@ void taskOne()
 //设圆半径 r = 1.5，圆柱高 h = 3，求圆周长、圆面积、圆球表面积、圆球体积、圆柱体积。
 //用scanf输入数据，输出计算结果，输出时要求有文字说明，取小数点后两位数字。 
 
-void taskTwo()
+static void taskTwo()
 {
 	const float pi = 3.1415926;
 	float r = 1.5;
@@ -81,7 +82,7 @@ void taskTwo()
 //第三题
 //编写一个程序，要求提示输入一个 ASCII 码值（如，66），然后打印输入的字符
 
-void taskThree()
+static void taskThree()
 {
 	char c;
 	printf("请输入一个ASCII码值：");
@@ -94,7 +95,7 @@ void taskThree()
 //例如：用户输入 5，则打印 5~15 的所有整数，包括 5 和 15
 //要求打印的各值之间用一个空格、制表符或换行符分开
 
-void taskFour()
+static void taskFour()
 {
 	int d = 0;
 	int n = 0;
@@ -113,7 +114,7 @@ void taskFour()
 //18 days are 2 weeks, 4 days.
 //通过 while 循环让用户重复输入天数，当用户输入一个非正值时，循环结束。
  
-void taskFive()
+static void taskFive()
 {
 	int days = 1;
 	while(1){
@@ -134,7 +135,7 @@ void taskFive()
 //Melissa Honeybee
 //7       8
 
-void taskSix()
+static void taskSix()
 {
 	int i = 0;
 	char lastname[10],firstname[10];

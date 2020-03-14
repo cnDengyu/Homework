@@ -13,15 +13,19 @@ void onTimer(HWND hwnd){
 	HDC hdc;
 	HBITMAP hBmpMem,hPreBmp;
 	RECT rect,smallRect;
+	long deltaTime;
 	
 	myTime = GetTickCount();
+	deltaTime = myTime - myLastTime;
 	
 	if(myLastTime){
 		hdc = GetDC(hwnd);
 		GetClientRect(hwnd,&rect); 
 		
-		dangoPositionX = dangoPositionX + (myTime - myLastTime) * dangoVelocityX / 1000;
-		dangoPositionY = dangoPositionY + (myTime - myLastTime) * dangoVelocityY / 1000;
+		dangoVelocityY = dangoVelocityY + 0.5 * deltaTime;
+		
+		dangoPositionX = dangoPositionX + deltaTime * dangoVelocityX / 1000;
+		dangoPositionY = dangoPositionY + deltaTime * dangoVelocityY / 1000;
 	
 		/* ÔÚË«»º³åÖÐ»æÍ¼ */
 		onPaint(hwnd, hdc);

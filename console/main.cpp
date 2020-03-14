@@ -6,7 +6,7 @@
 #include "strings.h"
 
 //设置默认执行的作业。取消定义以在执行中选择 。 
-#define TARGET 3 
+#define TARGET 5 
 //设置是否需要循环
 //#define LOOP 
 
