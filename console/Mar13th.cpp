@@ -91,11 +91,11 @@ static void taskThree()
 	pNumber = numberBuff;
 	printf("请输入数字：");
 
-	while((buff=getc(stdin))!='\n'){	//不断判断 stdin 中的字符，直到字符串结束 
-//		buff=getc(stdin);
-//		if(buff == '\0' || buff == '\n'){	//退出循环条件 
-//			ifLoop = false;
-//		}
+	while(ifLoop){	//不断判断 stdin 中的字符，直到字符串结束 
+		buff=getc(stdin);
+		if(buff == '\0' || buff == '\n'){	//退出循环条件 
+			ifLoop = false;
+		}
 
 		if(buff == ' ' || buff == '\n'){	//用空格分割各个数字 
 			*pNumber++ = '\0';			//如果读到了空格，则给 numberBuffer 收尾 
