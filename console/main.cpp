@@ -6,17 +6,17 @@
 #include "strings.h"
 
 //设置默认执行的作业。取消定义以在执行中选择 。 
-#define TARGET 5 
+#define TARGET 6
 //设置是否需要循环
 //#define LOOP 
 
 //声明各项作业。 
-//第一号程序 
 extern int programOne(int argc, char** argv);
 extern int programTwo(int argc, char** argv);
 extern int programThree(int argc, char** argv);
 extern int homeworkMar6th(int argc, char** argv);
 extern int homeworkMar13th(int argc, char** argv);
+extern int homeworkMar20th(int argc, char** argv);
 
 int main(int argc, char** argv) {
 	int homework = 0;
@@ -57,6 +57,10 @@ int main(int argc, char** argv) {
 			
 			case 5:
 				returnValue = homeworkMar13th(argc, argv);
+			break;
+			
+			case 6:
+				returnValue = homeworkMar20th(argc, argv);
 			break;
 			
 			default:
