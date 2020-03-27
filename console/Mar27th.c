@@ -11,7 +11,7 @@ static void taskThree();
 static void taskFour();
 static void taskFive();
 
-//程序入口，移植时请将函数名改为 main 
+//程序入口
 int homeworkMar27th(int argc, char** argv)
 {
 	puts("\n-------------------------第一题-------------------------\n");
@@ -43,18 +43,18 @@ static void taskTwo()
 {
 	int m1line,m1row,m2row,i,j,k;
 	printf("请以空格分开，输入第一个矩阵的行数、列数和第二个矩阵的列数："); 
-	scanf("%d %d %d");
+	scanf("%d %d %d", &m1line, &m1row, &m2row);
 	float martix1[m1line][m1row], martix2[m1row][m2row],martixResult[m1line][m2row];
 	printf("请输入x矩阵：\n");
 	for(i=0; i<m1line; i++){
 		for(j=0; j<m1row; j++){
-			scanf("%d",martix1[i][j]);
+			scanf("%f", &martix1[i][j]);
 		}
 	}
 	printf("请输入y矩阵：\n");
 	for(i=0; i<m1row; i++){
 		for(j=0; j<m2row; j++){
-			scanf("%d",martix1[i][j]);
+			scanf("%f", &martix2[i][j]);
 		}
 	}
 	for(i=0; i<m1line; i++){
@@ -65,10 +65,10 @@ static void taskTwo()
 			}
 		}
 	}
-	printf("计算得到的矩阵是："); 
+	printf("计算得到的矩阵是：\n"); 
 	for(i=0; i<m1line; i++){
 		for(j=0; j<m2row; j++){
-			printf("%5f",martixResult[i][j]);
+			printf("%f ",martixResult[i][j]);
 		}
 		putchar('\n');
 	}
@@ -117,7 +117,7 @@ static void stuAverage(float grades[NUM_STU][NUM_CLS])
 		for(j=0; j<NUM_CLS; j++){
 			sum += grades[i][j];
 		}
-		printf("第 %d 位同学的平均分为 %f\n", i, sum/NUM_CLS);
+		printf("第 %d 位同学的平均分为 %.1f\n", i+1, sum/NUM_CLS);
 	}
 }
 static void clsAverage(float grades[NUM_STU][NUM_CLS])
@@ -129,22 +129,27 @@ static void clsAverage(float grades[NUM_STU][NUM_CLS])
 		for(i=0; i<NUM_STU; i++){
 			sum += grades[i][j];
 		}
-		printf("第 %d 门课程的平均分为 %f\n", j, sum/NUM_STU);
+		printf("第 %d 门课程的平均分为 %.1f\n", j+1, sum/NUM_STU);
 	}
 }
 static void grdMax(float grades[NUM_STU][NUM_CLS])
 {
-	int i,j,x,y;
+	int i,j;
 	float max = 0;;
 	for(i=0; i<NUM_STU; i++){
 		for(j=0; j<NUM_CLS; j++){
 			if(grades[i][j]>max){
-				x = i;
-				y = j;
+				max = grades[i][j];
 			}
 		}
 	}
-	printf("最高分为 %f ，是第 %d 位同学在第 %d 门课程中取得的。\n", max, i+1, j+1);
+	for(i=0; i<NUM_STU; i++){
+		for(j=0; j<NUM_CLS; j++){
+			if(grades[i][j] == max){
+				printf("最高分为 %f ，是第 %d 位同学在第 %d 门课程中取得的。\n", max, i+1, j+1);
+			}
+		}
+	}
 }
 static void stuVariance(float grades[NUM_STU][NUM_CLS])
 {
@@ -152,7 +157,7 @@ static void stuVariance(float grades[NUM_STU][NUM_CLS])
 	float sum = 0;
 	float stuAverage[NUM_STU];
 	float variance = 0;
-	float temp;
+	float temp = 0;
 	for(i=0; i<NUM_STU; i++){
 		sum = 0;
 		for(j=0; j<NUM_CLS; j++){
@@ -164,19 +169,27 @@ static void stuVariance(float grades[NUM_STU][NUM_CLS])
 		variance += stuAverage[i]*stuAverage[i]/NUM_STU;
 		temp += stuAverage[i];
 	}
-	variance += (temp/NUM_STU)*(temp/NUM_STU);
+	variance -= (temp/NUM_STU)*(temp/NUM_STU);
 	printf("平均分方差为 %f \n",variance);
 }
+//#define DEBUG
 static void taskFour()
 {
+	#ifdef DEBUG
+	float grades[NUM_STU][NUM_CLS] = {{99,98,97,96,95},{94,93,92,91,90},\
+	{89,88,87,86,85},{84,83,82,81,80},{79,78,77,76,75},\
+	{99,98,97,96,95},{94,93,92,91,90},{89,88,87,86,85},\
+	{84,83,82,81,80},{79,78,77,76,99}};
+	#else
 	float grades[NUM_STU][NUM_CLS];
 	int i,j;
 	for(i=0; i<NUM_STU; i++){
 		for(j=0; j<NUM_CLS; j++){
-			printf("请输入第 %d 位同学的第 %d 门成绩：", i+1, j+1);
+			printf("\n请输入第 %d 位同学的第 %d 门成绩：", i+1, j+1);
 			scanf("%f",&grades[i][j]);
 		}
 	}
+	#endif
 	stuAverage(grades);
 	clsAverage(grades);
 	grdMax(grades);
