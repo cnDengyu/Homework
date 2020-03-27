@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o
-LINKOBJ  = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o
+OBJ      = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o
+LINKOBJ  = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -24,23 +24,26 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+main.o: main.c
+	$(CPP) -c main.c -o main.o $(CXXFLAGS)
 
-1.o: 1.cpp
-	$(CPP) -c 1.cpp -o 1.o $(CXXFLAGS)
+1.o: 1.c
+	$(CPP) -c 1.c -o 1.o $(CXXFLAGS)
 
-rational_number.o: rational_number.cpp
-	$(CPP) -c rational_number.cpp -o rational_number.o $(CXXFLAGS)
+rational_number.o: rational_number.c
+	$(CPP) -c rational_number.c -o rational_number.o $(CXXFLAGS)
 
-pdfRenamer.o: pdfRenamer.cpp
-	$(CPP) -c pdfRenamer.cpp -o pdfRenamer.o $(CXXFLAGS)
+pdfRenamer.o: pdfRenamer.c
+	$(CPP) -c pdfRenamer.c -o pdfRenamer.o $(CXXFLAGS)
 
-Mar6th.o: Mar6th.cpp
-	$(CPP) -c Mar6th.cpp -o Mar6th.o $(CXXFLAGS)
+Mar6th.o: Mar6th.c
+	$(CPP) -c Mar6th.c -o Mar6th.o $(CXXFLAGS)
 
-Mar13th.o: Mar13th.cpp
-	$(CPP) -c Mar13th.cpp -o Mar13th.o $(CXXFLAGS)
+Mar13th.o: Mar13th.c
+	$(CPP) -c Mar13th.c -o Mar13th.o $(CXXFLAGS)
 
-Mar20th.o: Mar20th.cpp
-	$(CPP) -c Mar20th.cpp -o Mar20th.o $(CXXFLAGS)
+Mar20th.o: Mar20th.c
+	$(CPP) -c Mar20th.c -o Mar20th.o $(CXXFLAGS)
+
+Mar27th.o: Mar27th.c
+	$(CPP) -c Mar27th.c -o Mar27th.o $(CXXFLAGS)
