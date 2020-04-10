@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o Apr3rd.o Apr4th.o Apr10th.o
-LINKOBJ  = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o Apr3rd.o Apr4th.o Apr10th.o
+OBJ      = main.o others/1.o others/pdfRenamer.o others/rational_number.o homework/Apr4th.o homework/Apr10th2.o homework/Mar6th.o homework/Mar13th.o homework/Mar20th.o homework/Mar27th.o classTest/Apr3rd.o classTest/Apr10th.o
+LINKOBJ  = main.o others/1.o others/pdfRenamer.o others/rational_number.o homework/Apr4th.o homework/Apr10th2.o homework/Mar6th.o homework/Mar13th.o homework/Mar20th.o homework/Mar27th.o classTest/Apr3rd.o classTest/Apr10th.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -27,32 +27,35 @@ $(BIN): $(OBJ)
 main.o: main.c
 	$(CPP) -c main.c -o main.o $(CXXFLAGS)
 
-1.o: 1.c
-	$(CPP) -c 1.c -o 1.o $(CXXFLAGS)
+others/1.o: others/1.c
+	$(CPP) -c others/1.c -o others/1.o $(CXXFLAGS)
 
-rational_number.o: rational_number.c
-	$(CPP) -c rational_number.c -o rational_number.o $(CXXFLAGS)
+others/pdfRenamer.o: others/pdfRenamer.c
+	$(CPP) -c others/pdfRenamer.c -o others/pdfRenamer.o $(CXXFLAGS)
 
-pdfRenamer.o: pdfRenamer.c
-	$(CPP) -c pdfRenamer.c -o pdfRenamer.o $(CXXFLAGS)
+others/rational_number.o: others/rational_number.c
+	$(CPP) -c others/rational_number.c -o others/rational_number.o $(CXXFLAGS)
 
-Mar6th.o: Mar6th.c
-	$(CPP) -c Mar6th.c -o Mar6th.o $(CXXFLAGS)
+homework/Apr4th.o: homework/Apr4th.c
+	$(CPP) -c homework/Apr4th.c -o homework/Apr4th.o $(CXXFLAGS)
 
-Mar13th.o: Mar13th.c
-	$(CPP) -c Mar13th.c -o Mar13th.o $(CXXFLAGS)
+homework/Apr10th2.o: homework/Apr10th2.c
+	$(CPP) -c homework/Apr10th2.c -o homework/Apr10th2.o $(CXXFLAGS)
 
-Mar20th.o: Mar20th.c
-	$(CPP) -c Mar20th.c -o Mar20th.o $(CXXFLAGS)
+homework/Mar6th.o: homework/Mar6th.c
+	$(CPP) -c homework/Mar6th.c -o homework/Mar6th.o $(CXXFLAGS)
 
-Mar27th.o: Mar27th.c
-	$(CPP) -c Mar27th.c -o Mar27th.o $(CXXFLAGS)
+homework/Mar13th.o: homework/Mar13th.c
+	$(CPP) -c homework/Mar13th.c -o homework/Mar13th.o $(CXXFLAGS)
 
-Apr3rd.o: Apr3rd.c
-	$(CPP) -c Apr3rd.c -o Apr3rd.o $(CXXFLAGS)
+homework/Mar20th.o: homework/Mar20th.c
+	$(CPP) -c homework/Mar20th.c -o homework/Mar20th.o $(CXXFLAGS)
 
-Apr4th.o: Apr4th.c
-	$(CPP) -c Apr4th.c -o Apr4th.o $(CXXFLAGS)
+homework/Mar27th.o: homework/Mar27th.c
+	$(CPP) -c homework/Mar27th.c -o homework/Mar27th.o $(CXXFLAGS)
 
-Apr10th.o: Apr10th.c
-	$(CPP) -c Apr10th.c -o Apr10th.o $(CXXFLAGS)
+classTest/Apr3rd.o: classTest/Apr3rd.c
+	$(CPP) -c classTest/Apr3rd.c -o classTest/Apr3rd.o $(CXXFLAGS)
+
+classTest/Apr10th.o: classTest/Apr10th.c
+	$(CPP) -c classTest/Apr10th.c -o classTest/Apr10th.o $(CXXFLAGS)

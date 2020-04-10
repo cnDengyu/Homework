@@ -24,12 +24,12 @@ HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
-Folders=
+Folders=classTest,homework,others
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000001000000
-UnitCount=12
+UnitCount=16
 
 [VersionInfo]
 Major=1
@@ -61,16 +61,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=1.c
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit3]
 FileName=strings.h
 CompileCpp=1
 Folder=
@@ -80,10 +70,20 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit4]
-FileName=rational_number.c
+[Unit3]
+FileName=others\1.c
 CompileCpp=1
-Folder=
+Folder=others
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=others\pdfRenamer.c
+CompileCpp=1
+Folder=others
 Compile=1
 Link=1
 Priority=1000
@@ -91,9 +91,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=pdfRenamer.c
+FileName=others\rational_number.c
 CompileCpp=1
-Folder=
+Folder=others
 Compile=1
 Link=1
 Priority=1000
@@ -101,9 +101,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=Mar6th.c
+FileName=homework\Apr4th.c
 CompileCpp=1
-Folder=
+Folder=homework
 Compile=1
 Link=1
 Priority=1000
@@ -111,8 +111,8 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=Mar13th.c
-Folder=
+FileName=homework\Apr10th.c
+Folder=homework
 Compile=1
 Link=1
 Priority=1000
@@ -121,9 +121,9 @@ BuildCmd=
 CompileCpp=1
 
 [Unit8]
-FileName=Mar20th.c
+FileName=homework\Mar6th.c
 CompileCpp=1
-Folder=
+Folder=homework
 Compile=1
 Link=1
 Priority=1000
@@ -131,9 +131,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit9]
-FileName=Mar27th.c
+FileName=homework\Mar13th.c
 CompileCpp=1
-Folder=
+Folder=homework
 Compile=1
 Link=1
 Priority=1000
@@ -141,9 +141,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit10]
-FileName=Apr3rd.c
+FileName=homework\Mar20th.c
 CompileCpp=1
-Folder=
+Folder=homework
 Compile=1
 Link=1
 Priority=1000
@@ -151,9 +151,9 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit11]
-FileName=Apr4th.c
+FileName=homework\Mar27th.c
 CompileCpp=1
-Folder=
+Folder=homework
 Compile=1
 Link=1
 Priority=1000
@@ -161,9 +161,49 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit12]
-FileName=Apr10th.c
+FileName=homework\date.h
 CompileCpp=1
-Folder=
+Folder=homework
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit13]
+FileName=classTest\Apr3rd.c
+CompileCpp=1
+Folder=classTest
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit14]
+FileName=classTest\Apr10th.c
+CompileCpp=1
+Folder=classTest
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit15]
+FileName=classTest\date.h
+Folder=classTest
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+CompileCpp=1
+
+[Unit16]
+FileName=others\program.h
+CompileCpp=1
+Folder=others
 Compile=1
 Link=1
 Priority=1000
