@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o Apr3rd.o Apr4th.o
-LINKOBJ  = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o Apr3rd.o Apr4th.o
+OBJ      = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o Apr3rd.o Apr4th.o Apr10th.o
+LINKOBJ  = main.o 1.o rational_number.o pdfRenamer.o Mar6th.o Mar13th.o Mar20th.o Mar27th.o Apr3rd.o Apr4th.o Apr10th.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -53,3 +53,6 @@ Apr3rd.o: Apr3rd.c
 
 Apr4th.o: Apr4th.c
 	$(CPP) -c Apr4th.c -o Apr4th.o $(CXXFLAGS)
+
+Apr10th.o: Apr10th.c
+	$(CPP) -c Apr10th.c -o Apr10th.o $(CXXFLAGS)
