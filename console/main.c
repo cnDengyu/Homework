@@ -6,7 +6,7 @@
 #include "strings.h"
 
 //设置默认执行的作业。取消定义以在执行中选择 。 
-#define TARGET 11 
+#define TARGET 12 
 //设置是否需要循环
 //#define LOOP 
 
@@ -79,6 +79,10 @@ int main(int argc, char** argv) {
 			
 			case 11:
 				returnValue = homeworkApr10th(argc, argv);
+			break;
+			
+			case 12:
+				returnValue = classTestApr17th(argc, argv);
 			break; 
 			
 			default:
