@@ -13,7 +13,7 @@
 #define ROW 15
  
  //全局变量，用于存储点阵信息 
-int show[LINE][ROW];
+static int show[LINE][ROW];
 
 //函数声明 
 void setShow();
@@ -22,7 +22,7 @@ void showInfo();
 void refreshShow();
 
 //字符串声明
-extern char* str_one1; 
+#include "..\\strings.h"
 
 //程序入口 
 int programOne(int argc, char** argv){

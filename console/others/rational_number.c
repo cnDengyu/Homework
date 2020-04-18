@@ -8,8 +8,7 @@
 --------------------------------------*/
 
 //字符串声明
-extern char* str_two1; 
-extern char* str_two2;
+#include "..\\strings.h"
 
 #define ADDTO 10 //设置要加到多少 
 
