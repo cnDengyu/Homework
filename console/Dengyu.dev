@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000001000000
-UnitCount=19
+UnitCount=20
 
 [VersionInfo]
 Major=1
@@ -231,7 +231,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit19]
-FileName=classTest\Apr24th.cpp
+FileName=classTest\Apr24th.c
+CompileCpp=1
+Folder=classTest
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit20]
+FileName=classTest\May8th.c
 CompileCpp=1
 Folder=classTest
 Compile=1
