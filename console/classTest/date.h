@@ -16,4 +16,7 @@ int classTestApr17th(int argc, char** argv);
 
 // 5 月 8 日实验课
 // May8th.c
-int classTestMay8th(int argc, char** argv); 
+int classTestMay8th(int argc, char** argv);
+
+// 5 月 15 日实验课
+int classTestMay15th(int argc, char** argv); 
