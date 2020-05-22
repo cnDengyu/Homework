@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=4
 CompilerSettings=0000000100000000001000000
-UnitCount=24
+UnitCount=25
 
 [VersionInfo]
 Major=1
@@ -284,6 +284,16 @@ BuildCmd=
 FileName=homework\May15th.c
 CompileCpp=1
 Folder=homework
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit25]
+FileName=classTest\May22nd.c
+CompileCpp=1
+Folder=classTest
 Compile=1
 Link=1
 Priority=1000
