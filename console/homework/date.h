@@ -24,3 +24,6 @@ extern int homeworkMay8th(int argc, char** argv);
 
 //5 月 15 日作业 
 extern int homeworkMay15th(int argc, char** argv);
+
+//5 月 22 日作业 
+extern int homeworkMay22nd(int argc, char** argv);

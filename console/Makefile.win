@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o others/1.o others/pdfRenamer.o others/rational_number.o homework/Apr4th.o homework/Apr10th.o homework/Mar6th.o homework/Mar13th.o homework/Mar20th.o homework/Mar27th.o classTest/Apr3rd.o classTest/Apr10th.o classTest/Apr17th.o homework/Apr17th.o classTest/Apr24th.o classTest/May8th.o homework/May8th.o others/findSaddlePoint.o classTest/May15th.o homework/May15th.o classTest/May22nd.o
-LINKOBJ  = main.o others/1.o others/pdfRenamer.o others/rational_number.o homework/Apr4th.o homework/Apr10th.o homework/Mar6th.o homework/Mar13th.o homework/Mar20th.o homework/Mar27th.o classTest/Apr3rd.o classTest/Apr10th.o classTest/Apr17th.o homework/Apr17th.o classTest/Apr24th.o classTest/May8th.o homework/May8th.o others/findSaddlePoint.o classTest/May15th.o homework/May15th.o classTest/May22nd.o
+OBJ      = main.o others/1.o others/pdfRenamer.o others/rational_number.o homework/Apr4th.o homework/Apr10th.o homework/Mar6th.o homework/Mar13th.o homework/Mar20th.o homework/Mar27th.o classTest/Apr3rd.o classTest/Apr10th.o classTest/Apr17th.o homework/Apr17th.o classTest/Apr24th.o classTest/May8th.o homework/May8th.o others/findSaddlePoint.o classTest/May15th.o homework/May15th.o classTest/May22nd.o homework/May22nd.o others/sortTest.o
+LINKOBJ  = main.o others/1.o others/pdfRenamer.o others/rational_number.o homework/Apr4th.o homework/Apr10th.o homework/Mar6th.o homework/Mar13th.o homework/Mar20th.o homework/Mar27th.o classTest/Apr3rd.o classTest/Apr10th.o classTest/Apr17th.o homework/Apr17th.o classTest/Apr24th.o classTest/May8th.o homework/May8th.o others/findSaddlePoint.o classTest/May15th.o homework/May15th.o classTest/May22nd.o homework/May22nd.o others/sortTest.o
 LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
 INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
 CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
@@ -86,3 +86,9 @@ homework/May15th.o: homework/May15th.c
 
 classTest/May22nd.o: classTest/May22nd.c
 	$(CPP) -c classTest/May22nd.c -o classTest/May22nd.o $(CXXFLAGS)
+
+homework/May22nd.o: homework/May22nd.c
+	$(CPP) -c homework/May22nd.c -o homework/May22nd.o $(CXXFLAGS)
+
+others/sortTest.o: others/sortTest.c
+	$(CPP) -c others/sortTest.c -o others/sortTest.o $(CXXFLAGS)
