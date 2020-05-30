@@ -6,7 +6,7 @@
 #include "strings.h"
 
 //设置默认执行的作业。取消定义以在执行中选择 。 
-#define TARGET 21
+#define TARGET 22
 //设置是否需要循环
 //#define LOOP 
 
@@ -119,6 +119,10 @@ int main(int argc, char** argv) {
 			
 			case 21:
 				returnValue = sortTest(argc, argv);
+			break;
+			
+			case 22:
+				returnValue = findASpecialCollection();
 			break;
 			
 			default:
