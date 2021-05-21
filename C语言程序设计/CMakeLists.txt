@@ -60,6 +60,7 @@ set(OTHERS
 )
 
 add_library(others ${OTHERS})
+add_library(strings strings.c)
 
 # set main source
 # 设置主程序
@@ -69,9 +70,10 @@ add_executable(Clanguage_homework main.c)
 # 把其他程序连接到主程序
 target_link_libraries(Clanguage_homework
     PUBLIC
-        CLASSTESTS
-        HOMEWORKS
-        OTHERS
+        classTest
+        homeWork
+        others
+        strings
 )
 
 #[[

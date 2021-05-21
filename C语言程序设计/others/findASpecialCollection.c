@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
+#include <stdbool.h>
 /*
 
 给定一个正整数n，请求出所有满足如下两个条件的正整数集合x[1],x[2]...x[n]:

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h> 
-
+#include <stdbool.h>
 /*------------------------------------------
 
 4 月 10 日课堂实验 

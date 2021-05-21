@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdbool.h>
 /*------------------------------------------
 
 5 月 15 日作业 
@@ -95,10 +95,10 @@ static void taskOne()
 //定义链表存储的数据类型
 typedef int listContent;
 //定义链表节点 
-typedef struct listNode
+typedef struct NodeExample
 {
 	listContent content;
-	listNode* next;
+	struct NodeExample* next;
 } listNode;
 
 static int find(listNode* head, listContent toFind)
@@ -126,11 +126,11 @@ static void taskTwo()
 */
 //定义链表节点
 #define MAX_LEN 10
-typedef struct studentListNode 
+typedef struct studentNodeExample 
 {
 	int id;
 	char name[MAX_LEN];
-	studentListNode* next;
+	struct studentNodeExample* next;
 } studentListNode;
 //函数：在某节点之后插入元素 
 static studentListNode* insertNext(studentListNode* toInsert, int id, char* name)
