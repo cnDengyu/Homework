@@ -85,3 +85,6 @@ obj/
 *.M51
 *.uvopt
 51MCU
+
+#vscode
+.vscode/
