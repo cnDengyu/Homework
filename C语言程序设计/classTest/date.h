@@ -1,25 +1,25 @@
-//4 ÔÂ 3 ÈÕÊµÑé¿Î
+//4 æœˆ 3 æ—¥å®éªŒè¯¾
 //Apr3rd.c 
 extern int classTestApr3rd(int argc, char** argv); 
 
-//4 ÔÂ 10 ÈÕÊµÑé¿Î
+//4 æœˆ 10 æ—¥å®éªŒè¯¾
 //Apr10th.c 
 extern int classTestApr10th(int argc, char** argv);
 
-//4 ÔÂ 17 ÈÕÊµÑé¿Î
+//4 æœˆ 17 æ—¥å®éªŒè¯¾
 //Apr17th.c 
 extern int classTestApr17th(int argc, char** argv);
 
-//4 ÔÂ 24 ÈÕÊµÑé¿Î
+//4 æœˆ 24 æ—¥å®éªŒè¯¾
 //Apr24th_main.c 
 //int classTestApr24th(int argc, char** argv);
 
-// 5 ÔÂ 8 ÈÕÊµÑé¿Î
+// 5 æœˆ 8 æ—¥å®éªŒè¯¾
 // May8th.c
 extern int classTestMay8th(int argc, char** argv);
 
-// 5 ÔÂ 15 ÈÕÊµÑé¿Î
+// 5 æœˆ 15 æ—¥å®éªŒè¯¾
 extern int classTestMay15th(int argc, char** argv); 
 
-// 5 ÔÂ 22 ÈÕÊµÑé¿Î
+// 5 æœˆ 22 æ—¥å®éªŒè¯¾
 extern int classTestMay22nd(int argc, char** argv); 

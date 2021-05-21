@@ -6,20 +6,20 @@
 
 /*--------------------------------------------
 
-pdfReader (programThree) ´úºÅ 3 
+pdfReader (programThree) ä»£å· 3 
 
-fgets Ã»ÓĞ¸ø³öÏëÒªµÄ½á¹û£¬ËùÒÔ¸ÄĞ´ÁË myfgets
+fgets æ²¡æœ‰ç»™å‡ºæƒ³è¦çš„ç»“æœï¼Œæ‰€ä»¥æ”¹å†™äº† myfgets
 
 --------------------------------------------*/ 
 
-char filenames[1000][30] = {}; //ÓÃÓÚ´æ´¢ËùÓĞpdfÎÄ¼şµÄÎÄ¼şÃû 
-int findFiles();	//ÓÃÓÚ²éÕÒÎÄ¼ş¼ĞÄÚËùÓĞpdfÎÄ¼ş 
-char *myfgets(char *s, int n,  FILE *stream); //ÖØĞ´ fgets º¯ÊıÊ¹ÆäÈÏÎª '\r' Ò²ÊôÓÚ»»ĞĞ 
+char filenames[1000][30] = {}; //ç”¨äºå­˜å‚¨æ‰€æœ‰pdfæ–‡ä»¶çš„æ–‡ä»¶å 
+int findFiles();	//ç”¨äºæŸ¥æ‰¾æ–‡ä»¶å¤¹å†…æ‰€æœ‰pdfæ–‡ä»¶ 
+char *myfgets(char *s, int n,  FILE *stream); //é‡å†™ fgets å‡½æ•°ä½¿å…¶è®¤ä¸º '\r' ä¹Ÿå±äºæ¢è¡Œ 
 
-//³ÌĞòÈë¿Ú ÒÆÖ²Ê±Çë¸ÄÎª main() 
+//ç¨‹åºå…¥å£ ç§»æ¤æ—¶è¯·æ”¹ä¸º main() 
 int programThree(int argc, char** argv){
-	int i;	//Ñ­»·²ÎÁ¿£¬¿ØÖÆ¶ÁÈ¡µÄÎÄ¼ş 
-	int fileNum = 0;	//´æ´¢ÕÒµ½µÄ×ÜÎÄ¼şÊıÁ¿ 
+	int i;	//å¾ªç¯å‚é‡ï¼Œæ§åˆ¶è¯»å–çš„æ–‡ä»¶ 
+	int fileNum = 0;	//å­˜å‚¨æ‰¾åˆ°çš„æ€»æ–‡ä»¶æ•°é‡ 
 	int state = 0;
 	FILE *fp = NULL;
 	char buff[256];
@@ -27,12 +27,12 @@ int programThree(int argc, char** argv){
 	long filePosition = 0L;
 	char whetherRename = 'N';
 	
-	fileNum = findFiles();	//²éÕÒÄ¿Â¼ÏÂËùÓĞpdfÎÄ¼ş£¬ÎÄ¼şÃû´æ´¢µ½È«¾Ö±äÁ¿filenamesÖĞ£¬·µ»Ø×ÜÎÄ¼şÊı 
+	fileNum = findFiles();	//æŸ¥æ‰¾ç›®å½•ä¸‹æ‰€æœ‰pdfæ–‡ä»¶ï¼Œæ–‡ä»¶åå­˜å‚¨åˆ°å…¨å±€å˜é‡filenamesä¸­ï¼Œè¿”å›æ€»æ–‡ä»¶æ•° 
 	
-	for(i = 0; i <= fileNum; i++){	//Ñ­»·Ã¿Ò»¸öÎÄ¼ş 
-		printf("\n¿ªÊ¼´¦ÀíÎÄ¼ş%s\n",filenames[i]);
+	for(i = 0; i <= fileNum; i++){	//å¾ªç¯æ¯ä¸€ä¸ªæ–‡ä»¶ 
+		printf("\nå¼€å§‹å¤„ç†æ–‡ä»¶%s\n",filenames[i]);
 		fp = fopen(filenames[i], "r+");
-		filePosition = 0L;		//¼ìË÷Î»ÖÃ¹éÁã 
+		filePosition = 0L;		//æ£€ç´¢ä½ç½®å½’é›¶ 
 		fseek(fp,filePosition,SEEK_SET);
 		
 		do{
@@ -40,86 +40,86 @@ int programThree(int argc, char** argv){
 			myfgets(buff,256,fp);
 			filePosition = filePosition + (long)strlen(buff);
 
-			//printf("%s",buff);		//µ÷ÊÔÊ±Êä³öËùÓĞ¶Áµ½µÄ×Ö·û´® 
+			//printf("%s",buff);		//è°ƒè¯•æ—¶è¾“å‡ºæ‰€æœ‰è¯»åˆ°çš„å­—ç¬¦ä¸² 
 			//putchar('\n');
 			
-			if(!strncmp(buff,"stream",6)){		//Ö®ËùÒÔÒªÔÚ stream ´¦×÷ÅĞ¶Ï£¬ÊÇÒòÎª 
-				//puts("£¨ÂÔÈ¥·ÇÎÄ±¾Á÷£©");		//·ÇÎÄ±¾Á÷ÖĞº¬ÓĞÈÃ³ÌĞòÈÏÎªÎÄ¼şÒÑ¾­½áÊøµÄÌØÊâ·ûºÅ 
-				while(strncmp(buff,"endstream",9)){	//µ½ endstream ´¦£¬·ÇÎÄ±¾Á÷½ØÖ¹ 
+			if(!strncmp(buff,"stream",6)){		//ä¹‹æ‰€ä»¥è¦åœ¨ stream å¤„ä½œåˆ¤æ–­ï¼Œæ˜¯å› ä¸º 
+				//puts("ï¼ˆç•¥å»éæ–‡æœ¬æµï¼‰");		//éæ–‡æœ¬æµä¸­å«æœ‰è®©ç¨‹åºè®¤ä¸ºæ–‡ä»¶å·²ç»ç»“æŸçš„ç‰¹æ®Šç¬¦å· 
+				while(strncmp(buff,"endstream",9)){	//åˆ° endstream å¤„ï¼Œéæ–‡æœ¬æµæˆªæ­¢ 
 					fseek(fp, ++filePosition, SEEK_SET);
 					myfgets(buff,256,fp);
 				}
 				//puts("endstream");
 			}
 
-		}while(strncmp(buff,"/Title (",6));		//ÀíÂÛÉÏ£¬¶ÔÓÚÒ»¸öÓĞÄ¿Â¼µÄ pdf ÎÄ¼ş£¬ÄÜ¶ÁÈ¡µ½µÄµÚÒ»¸ö /Title () ¼´ÎªÖ÷Ìâ 
+		}while(strncmp(buff,"/Title (",6));		//ç†è®ºä¸Šï¼Œå¯¹äºä¸€ä¸ªæœ‰ç›®å½•çš„ pdf æ–‡ä»¶ï¼Œèƒ½è¯»å–åˆ°çš„ç¬¬ä¸€ä¸ª /Title () å³ä¸ºä¸»é¢˜ 
 		
 		sscanf(buff, "/Title (%[^\t\n)]", newName);
 		strcat(newName,".pdf");
 
-		printf("\nÕıÔÚ´¦ÀíÎÄ¼ş%s\n\
-\n¶ÁÈ¡µ½±êÌâ%s£¬ÊÇ·ñÖØÃüÃû£¿ÊäÈëYÖ´ĞĞÖØÃüÃû£¬ÊäÈëNÔò¼ìË÷ÏÂÒ»¸ö¿ÉÄÜµÄ±êÌâ£¬ÊäÈëÆäËûÔò²»ÔÙ´¦Àí´ËÎÄ¼ş¡£\n\
-Çë×¢Òâ£ºÈç¹ûÃ»ÄÜ¼ì²âµ½ÏÂÒ»¸ö¿ÉÄÜµÄ±êÌâ£¬³ÌĞò»á½øÈëËÀÑ­»·¡£\n",filenames[i],newName);
+		printf("\næ­£åœ¨å¤„ç†æ–‡ä»¶%s\n\
+\nè¯»å–åˆ°æ ‡é¢˜%sï¼Œæ˜¯å¦é‡å‘½åï¼Ÿè¾“å…¥Yæ‰§è¡Œé‡å‘½åï¼Œè¾“å…¥Nåˆ™æ£€ç´¢ä¸‹ä¸€ä¸ªå¯èƒ½çš„æ ‡é¢˜ï¼Œè¾“å…¥å…¶ä»–åˆ™ä¸å†å¤„ç†æ­¤æ–‡ä»¶ã€‚\n\
+è¯·æ³¨æ„ï¼šå¦‚æœæ²¡èƒ½æ£€æµ‹åˆ°ä¸‹ä¸€ä¸ªå¯èƒ½çš„æ ‡é¢˜ï¼Œç¨‹åºä¼šè¿›å…¥æ­»å¾ªç¯ã€‚\n",filenames[i],newName);
 		scanf("%c",&whetherRename);
-		getchar();		//ÓÃÓÚÏû»¯µôÉÏÃæÊäÈë²úÉúµÄ»Ø³µ 
+		getchar();		//ç”¨äºæ¶ˆåŒ–æ‰ä¸Šé¢è¾“å…¥äº§ç”Ÿçš„å›è½¦ 
 		
-		}while(whetherRename == 'N');		//ÊäÈë N ÔòÖØĞÂÖ´ĞĞ¼ìË÷Óï¾ä 
+		}while(whetherRename == 'N');		//è¾“å…¥ N åˆ™é‡æ–°æ‰§è¡Œæ£€ç´¢è¯­å¥ 
 		
 		fclose(fp);
 
-		if(whetherRename == 'Y'){		//ÊäÈëYÔòÖ´ĞĞÖØÃüÃû 
+		if(whetherRename == 'Y'){		//è¾“å…¥Yåˆ™æ‰§è¡Œé‡å‘½å 
 			if(rename(filenames[i], newName) < 0 ){ 
-				printf("ÖØÃüÃû³ö´í!\n");
+				printf("é‡å‘½åå‡ºé”™!\n");
 				perror("rename");
 			} 
 			else{ 
-				printf("ÒÑ¾­½«%sÖØÃüÃûÎª%s\n", filenames[i], newName);
+				printf("å·²ç»å°†%sé‡å‘½åä¸º%s\n", filenames[i], newName);
 				system("pause");
 			} 
-		}else{ 		//ÊäÈëÆäËûÔò²»ÔÙ´¦ÀíÕâ¸öÎÄ¼ş 
-			printf("Ã»ÓĞÖØÃüÃû%s\n",filenames[i]);
+		}else{ 		//è¾“å…¥å…¶ä»–åˆ™ä¸å†å¤„ç†è¿™ä¸ªæ–‡ä»¶ 
+			printf("æ²¡æœ‰é‡å‘½å%s\n",filenames[i]);
 		}
 		
-		printf("ÎÄ¼ş%s´¦ÀíÍê±Ï\n",filenames[i]);
+		printf("æ–‡ä»¶%så¤„ç†å®Œæ¯•\n",filenames[i]);
 
 	} 
-	puts("ËùÓĞÎÄ¼ş´¦ÀíÍê±Ï");
+	puts("æ‰€æœ‰æ–‡ä»¶å¤„ç†å®Œæ¯•");
 	system("pause");
 }
 
 int findFiles(){
 	int i = 0;
-	long handle;                                                     //ÓÃÓÚ²éÕÒµÄ¾ä±ú	
-	struct _finddata_t fileinfo;                                     //ÎÄ¼şĞÅÏ¢µÄ½á¹¹Ìå
+	long handle;                                                     //ç”¨äºæŸ¥æ‰¾çš„å¥æŸ„	
+	struct _finddata_t fileinfo;                                     //æ–‡ä»¶ä¿¡æ¯çš„ç»“æ„ä½“
 	
-	handle=_findfirst("*.pdf",&fileinfo);                          //µÚÒ»´Î²éÕÒ£¬ÕÒpdfÎÄ¼ş 
+	handle=_findfirst("*.pdf",&fileinfo);                          //ç¬¬ä¸€æ¬¡æŸ¥æ‰¾ï¼Œæ‰¾pdfæ–‡ä»¶ 
 	if(-1==handle){
-		puts("Ã»ÓĞÕÒµ½pdfÎÄ¼ş\n");
+		puts("æ²¡æœ‰æ‰¾åˆ°pdfæ–‡ä»¶\n");
 		return -1;
 	}
 	
-	strcpy(filenames[0],fileinfo.name);	//½«µÚÒ»¸öÎÄ¼şÃûĞ´ÈëÈ«¾ÖÊı×é 
-	printf("ÕÒµ½ÎÄ¼ş%s\n", fileinfo.name);
-	while(!_findnext(handle,&fileinfo))                              //Ñ­»·²éÕÒÆäËû·ûºÏµÄÎÄ¼ş£¬Ö±µ½ÕÒ²»µ½ÆäËûµÄÎªÖ¹	
+	strcpy(filenames[0],fileinfo.name);	//å°†ç¬¬ä¸€ä¸ªæ–‡ä»¶åå†™å…¥å…¨å±€æ•°ç»„ 
+	printf("æ‰¾åˆ°æ–‡ä»¶%s\n", fileinfo.name);
+	while(!_findnext(handle,&fileinfo))                              //å¾ªç¯æŸ¥æ‰¾å…¶ä»–ç¬¦åˆçš„æ–‡ä»¶ï¼Œç›´åˆ°æ‰¾ä¸åˆ°å…¶ä»–çš„ä¸ºæ­¢	
 	{		
 		i = i + 1;
-		strcpy(filenames[i],fileinfo.name);	//½«Ö®ºóµÄÎÄ¼şÃûĞ´ÈëÈ«¾ÖÊı×é 
-		printf("ÕÒµ½ÎÄ¼ş%s\n", fileinfo.name);
+		strcpy(filenames[i],fileinfo.name);	//å°†ä¹‹åçš„æ–‡ä»¶åå†™å…¥å…¨å±€æ•°ç»„ 
+		printf("æ‰¾åˆ°æ–‡ä»¶%s\n", fileinfo.name);
 	}	
-	_findclose(handle);                                              //¹Ø±Õ¾ä±ú		
+	_findclose(handle);                                              //å…³é—­å¥æŸ„		
 	//printf("output done.\n");	
 	//system("pause");
 	return i;
 }
 
-//ÒÔ fgets() ÎªÔ­ĞÍ£¬½ö½öÌí¼ÓÁË || c == '\r'  Óï¾ä 
+//ä»¥ fgets() ä¸ºåŸå‹ï¼Œä»…ä»…æ·»åŠ äº† || c == '\r'  è¯­å¥ 
 char *myfgets(char *s, int n,  FILE *stream)   
 {  
     register int c;  
     register char *cs;  
     cs=s;  
     while(--n>0 &&(c = getc(stream))!=EOF)
-    	if ((*cs++=  c) =='\n' || c == '\r')  //ÕâÀïÌí¼ÓÁË || c == '\r' 
+    	if ((*cs++=  c) =='\n' || c == '\r')  //è¿™é‡Œæ·»åŠ äº† || c == '\r' 
         	break;
     *cs ='\0';  
     return (c == EOF && cs == s) ?NULL :s ;  

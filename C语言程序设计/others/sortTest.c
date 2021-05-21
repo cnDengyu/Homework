@@ -5,7 +5,7 @@ int sortTest(int argc, char** argv)
 	int num[] = {5,8,5,2,9,1};
 	int n = 6;
 	int i,j,k,temp;
-	printf("ÅÅĞò²âÊÔ\n");
+	printf("æ’åºæµ‹è¯•\n");
 	errno_t err; 
 	
 	for(i=0; i<n-1; i++)

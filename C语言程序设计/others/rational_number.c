@@ -3,25 +3,25 @@
 
 /*-------------------------------------
 
-ÓĞÀíÊıÔËËã ´úºÅ 2 
+æœ‰ç†æ•°è¿ç®— ä»£å· 2 
 
 --------------------------------------*/
 
-//×Ö·û´®ÉùÃ÷
+//å­—ç¬¦ä¸²å£°æ˜
 #include "..\\strings.h"
 
-#define ADDTO 10 //ÉèÖÃÒª¼Óµ½¶àÉÙ 
+#define ADDTO 10 //è®¾ç½®è¦åŠ åˆ°å¤šå°‘ 
 
 typedef struct {
 	long long int up;
 	long long int down;
 }RationalNumber;
 
-//º¯ÊıÉùÃ÷ 
+//å‡½æ•°å£°æ˜ 
 RationalNumber addRationalNumber(RationalNumber a, RationalNumber b);
 RationalNumber simplifyRationalNumber(RationalNumber a);
 
-//³ÌĞòÈë¿Ú 
+//ç¨‹åºå…¥å£ 
 int programTwo(int argc, char** argv){
 	int i = 0;
 	int sign = 1;
@@ -40,7 +40,7 @@ int programTwo(int argc, char** argv){
 	return 0;
 }
 
-//Ô¼·Ö 
+//çº¦åˆ† 
 RationalNumber simplifyRationalNumber(RationalNumber s){
 	int i;
 	RationalNumber simp;
@@ -57,7 +57,7 @@ RationalNumber simplifyRationalNumber(RationalNumber s){
 	return s;
 }
 
-//ÓĞÀíÊı¼Ó·¨ 
+//æœ‰ç†æ•°åŠ æ³• 
 RationalNumber addRationalNumber(RationalNumber a, RationalNumber b){
 	RationalNumber result;
 	result.down = a.down * b.down;

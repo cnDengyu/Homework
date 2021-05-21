@@ -3,14 +3,14 @@
 
 /*------------------------------------------
 
-5 ÔÂ 15 ÈÕ¿ÎÌÃÁ·Ï° 
-ÕÂµÇÓî 	
+5 æœˆ 15 æ—¥è¯¾å ‚ç»ƒä¹  
+ç« ç™»å®‡ 	
 
-µÚÒ»Ìâ³ÌĞòÈë¿Ú£º46ĞĞ taskOne()
-µÚ¶şÌâËùÇóº¯Êı£º106ĞĞ deleteNode 
-µÚÈıÌâËùÇóº¯Êı£º160ĞĞ insertNode 
+ç¬¬ä¸€é¢˜ç¨‹åºå…¥å£ï¼š46è¡Œ taskOne()
+ç¬¬äºŒé¢˜æ‰€æ±‚å‡½æ•°ï¼š106è¡Œ deleteNode 
+ç¬¬ä¸‰é¢˜æ‰€æ±‚å‡½æ•°ï¼š160è¡Œ insertNode 
 
-Àú´Î×÷ÒµÍêÕû´úÂë£º
+å†æ¬¡ä½œä¸šå®Œæ•´ä»£ç ï¼š
 https://gitee.com/littlesunny2001/Cproject.git 
 
 -------------------------------------------*/ 
@@ -18,22 +18,22 @@ static void taskOne();
 static void taskTwo(); 
 static void taskThree();
 
-//³ÌĞòÈë¿Ú 
+//ç¨‹åºå…¥å£ 
 int classTestMay15th(int argc, char** argv)
 {
-	puts("\n----------------------5ÔÂ15ÈÕÊµÑé¿Î---------------------\n");
-	puts("\n-------------------------µÚÒ»Ìâ-------------------------\n");
+	puts("\n----------------------5æœˆ15æ—¥å®éªŒè¯¾---------------------\n");
+	puts("\n-------------------------ç¬¬ä¸€é¢˜-------------------------\n");
 	taskOne();
-	puts("\n-------------------------µÚ¶şÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬äºŒé¢˜-------------------------\n");
 	taskTwo();
-	puts("\n-------------------------µÚÈıÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬ä¸‰é¢˜-------------------------\n");
 	taskThree();
 	return 0;
 }
 
-/*µÚÒ»Ìâ
-ÓĞÈı¸öÑ§Éú£¬ Ã¿¸öÑ§ÉúµÄÊı¾İ°üÀ¨Ñ§ºÅ¡¢ĞÕÃû¼°Á½ÃÅ³É¼¨¡£
-´Ó¼üÅÌÊäÈëÑ§ÉúµÄÊı¾İ£¬ÒªÇóÊä³öÁ½ÃÅ¿Î³ÌµÄ×ÜÆ½¾ù³É¼¨£¬ÒÔ¼°×î¸ß·ÖÑ§ÉúµÄÑ§ºÅ 
+/*ç¬¬ä¸€é¢˜
+æœ‰ä¸‰ä¸ªå­¦ç”Ÿï¼Œ æ¯ä¸ªå­¦ç”Ÿçš„æ•°æ®åŒ…æ‹¬å­¦å·ã€å§“ååŠä¸¤é—¨æˆç»©ã€‚
+ä»é”®ç›˜è¾“å…¥å­¦ç”Ÿçš„æ•°æ®ï¼Œè¦æ±‚è¾“å‡ºä¸¤é—¨è¯¾ç¨‹çš„æ€»å¹³å‡æˆç»©ï¼Œä»¥åŠæœ€é«˜åˆ†å­¦ç”Ÿçš„å­¦å· 
 */
 #define NAME_LEN 10
 typedef struct
@@ -45,27 +45,27 @@ typedef struct
 } student;
 static void taskOne()
 {
-	//¶¨Òå 
+	//å®šä¹‰ 
 	student students[3];
 	int i;
 	
-	//ÊäÈë
+	//è¾“å…¥
 	for(i=0; i<3; i++)
 	{
-		printf("ÇëÊäÈëµÚ %d ¸öÑ§ÉúµÄÑ§ºÅ£º", i+1);
+		printf("è¯·è¾“å…¥ç¬¬ %d ä¸ªå­¦ç”Ÿçš„å­¦å·ï¼š", i+1);
 		scanf("%d", &students[i].id);
-		printf("ÇëÊäÈëµÚ %d ¸öÑ§ÉúµÄĞÕÃû£º", i+1);
+		printf("è¯·è¾“å…¥ç¬¬ %d ä¸ªå­¦ç”Ÿçš„å§“åï¼š", i+1);
 		scanf("%s", students[i].name);
-		printf("ÇëÊäÈëµÚ %d ¸öÑ§ÉúµÄµÚ 1 ÃÅ³É¼¨£º", i+1);
+		printf("è¯·è¾“å…¥ç¬¬ %d ä¸ªå­¦ç”Ÿçš„ç¬¬ 1 é—¨æˆç»©ï¼š", i+1);
 		scanf("%d", &students[i].grade1);
-		printf("ÇëÊäÈëµÚ %d ¸öÑ§ÉúµÄµÚ 2 ÃÅ³É¼¨£º", i+1);
+		printf("è¯·è¾“å…¥ç¬¬ %d ä¸ªå­¦ç”Ÿçš„ç¬¬ 2 é—¨æˆç»©ï¼š", i+1);
 		scanf("%d", &students[i].grade2);
 	} 
 	
-	//´¦Àí
+	//å¤„ç†
 	double average1,average2;
 	int max, id;
-	//¼ÆËãÆ½¾ù³É¼¨
+	//è®¡ç®—å¹³å‡æˆç»©
 	average1 = average2 = 0;
 	for(i=0; i<3; i++)
 	{
@@ -74,7 +74,7 @@ static void taskOne()
 	}
 	average1 = average1/3.0;
 	average2 = average2/3.0;
-	//¼ÆËã×î¸ß·ÖÑ§Éú
+	//è®¡ç®—æœ€é«˜åˆ†å­¦ç”Ÿ
 	max = students[0].grade1 + students[0].grade2;
 	id = students[0].id;
 	for(i=1; i<3; i++)
@@ -86,33 +86,33 @@ static void taskOne()
 		}
 	}
 	
-	//Êä³ö
-	printf("µÚÒ»ÃÅ¿Î³ÌµÄ×ÜÆ½¾ù³É¼¨Îª£º%lf\n", average1);
-	printf("µÚ¶şÃÅ¿Î³ÌµÄ×ÜÆ½¾ù³É¼¨Îª£º%lf\n", average2);
-	printf("×î¸ß·ÖÑ§ÉúµÄÑ§ºÅÎª£º%d", id); 
+	//è¾“å‡º
+	printf("ç¬¬ä¸€é—¨è¯¾ç¨‹çš„æ€»å¹³å‡æˆç»©ä¸ºï¼š%lf\n", average1);
+	printf("ç¬¬äºŒé—¨è¯¾ç¨‹çš„æ€»å¹³å‡æˆç»©ä¸ºï¼š%lf\n", average2);
+	printf("æœ€é«˜åˆ†å­¦ç”Ÿçš„å­¦å·ä¸ºï¼š%d", id); 
 } 
 
-/*µÚ¶şÌâ
-±àĞ´Ò»¸öº¯Êı delete, ÓÃÀ´É¾³ı¶¯Ì¬Á´±íÖĞµÄÖ¸¶¨µÚ N ¸ö½Úµã 
+/*ç¬¬äºŒé¢˜
+ç¼–å†™ä¸€ä¸ªå‡½æ•° delete, ç”¨æ¥åˆ é™¤åŠ¨æ€é“¾è¡¨ä¸­çš„æŒ‡å®šç¬¬ N ä¸ªèŠ‚ç‚¹ 
 */
-//¶¨ÒåÁ´±í½Úµã 
-typedef student listContent;	//¶¨ÒåÁ´±í´æ´¢µÄÄÚÈİ 
+//å®šä¹‰é“¾è¡¨èŠ‚ç‚¹ 
+typedef student listContent;	//å®šä¹‰é“¾è¡¨å­˜å‚¨çš„å†…å®¹ 
 typedef struct Example
 {
 	listContent content;
 	struct Example* next;
-} listNode;					//¶¨ÒåÁ´±í½Úµã 
-//ÌâÄ¿ËùÇóµÄ delete º¯Êı 
+} listNode;					//å®šä¹‰é“¾è¡¨èŠ‚ç‚¹ 
+//é¢˜ç›®æ‰€æ±‚çš„ delete å‡½æ•° 
 static void deleteNode(listNode* head, int n)
 {
 	listNode* p = head;
 	listNode* temp;
 	
-	//ÕÒµ½µÚ n-1 ¸ö½Úµã 
+	//æ‰¾åˆ°ç¬¬ n-1 ä¸ªèŠ‚ç‚¹ 
 	int i;
 	for(i=1; i<n-1; i++)
 	{
-		if(p!=NULL)	//¿Õ°²È« 
+		if(p!=NULL)	//ç©ºå®‰å…¨ 
 		{ 
 			if(p->next != NULL)
 			{
@@ -121,25 +121,25 @@ static void deleteNode(listNode* head, int n)
 		}
 		else
 		{
-			printf("Ã»ÄÜÕÒµ½µÚ%d¸ö½Úµã£¬ÒÔ×îºóÒ»¸ö´úÌæ\n");
+			printf("æ²¡èƒ½æ‰¾åˆ°ç¬¬%dä¸ªèŠ‚ç‚¹ï¼Œä»¥æœ€åä¸€ä¸ªä»£æ›¿\n");
 		}
 	}
 	
-	//É¾³ı½Úµã 
-	if(p == NULL)					//´«ÈëµÄÍ·½ÚµãÎª¿Õ£¬²»½øĞĞ²Ù×÷ 
+	//åˆ é™¤èŠ‚ç‚¹ 
+	if(p == NULL)					//ä¼ å…¥çš„å¤´èŠ‚ç‚¹ä¸ºç©ºï¼Œä¸è¿›è¡Œæ“ä½œ 
 	{
-		printf("´«ÈëµÄÍ·½ÚµãÎª¿Õ\n");
+		printf("ä¼ å…¥çš„å¤´èŠ‚ç‚¹ä¸ºç©º\n");
 	}
-	else if(p->next == NULL)		//µÚ n ¸ö½ÚµãÎª¿Õ£¬²»½øĞĞ²Ù×÷ 
+	else if(p->next == NULL)		//ç¬¬ n ä¸ªèŠ‚ç‚¹ä¸ºç©ºï¼Œä¸è¿›è¡Œæ“ä½œ 
 	{
-		printf("ÒªÉ¾³ıµÄ½ÚµãÎª¿Õ\n");
+		printf("è¦åˆ é™¤çš„èŠ‚ç‚¹ä¸ºç©º\n");
 	}
-	else if(p->next->next == NULL)	//ÒªÉ¾³ıµÄÇ¡ºÃÊÇ×îºóÒ»¸ö½Úµã 
+	else if(p->next->next == NULL)	//è¦åˆ é™¤çš„æ°å¥½æ˜¯æœ€åä¸€ä¸ªèŠ‚ç‚¹ 
 	{
 		free(p->next);
 		p->next = NULL;
 	}
-	else							//Ç°¡¢ºó½Úµã¾ù´æÔÚ 
+	else							//å‰ã€åèŠ‚ç‚¹å‡å­˜åœ¨ 
 	{
 		temp = p->next->next;
 		free(p->next);
@@ -148,29 +148,29 @@ static void deleteNode(listNode* head, int n)
 }
 static void taskTwo()
 {
-	puts("ËùĞ´µÄÉ¾³ıÁ´±í½ÚµãµÄº¯ÊıÎª\n static void deleteNode(listNode* head, int n)");
+	puts("æ‰€å†™çš„åˆ é™¤é“¾è¡¨èŠ‚ç‚¹çš„å‡½æ•°ä¸º\n static void deleteNode(listNode* head, int n)");
 }
 
-/*µÚÈıÌâ
-±àĞ´Ò»¸öº¯Êı insert, ÓÃÀ´ÏòÒ»¸ö¶¯Ì¬Á´±í²åÈë½Úµã 
+/*ç¬¬ä¸‰é¢˜
+ç¼–å†™ä¸€ä¸ªå‡½æ•° insert, ç”¨æ¥å‘ä¸€ä¸ªåŠ¨æ€é“¾è¡¨æ’å…¥èŠ‚ç‚¹ 
 */
-//Á´±í½ÚµãµÄ¶¨ÒåÔÚÉÏÒ»ÌâÖĞ 
-//ÏÂÃæÕâ¸öº¯ÊıÊÇÌâÄ¿ËùÇóµÄ insert º¯Êı 
-//²ÎÊı£º Í·½Úµã¡¢µÚ¼¸¸ö¡¢²åÈë½Úµã´æ´¢µÄÄÚÈİ 
+//é“¾è¡¨èŠ‚ç‚¹çš„å®šä¹‰åœ¨ä¸Šä¸€é¢˜ä¸­ 
+//ä¸‹é¢è¿™ä¸ªå‡½æ•°æ˜¯é¢˜ç›®æ‰€æ±‚çš„ insert å‡½æ•° 
+//å‚æ•°ï¼š å¤´èŠ‚ç‚¹ã€ç¬¬å‡ ä¸ªã€æ’å…¥èŠ‚ç‚¹å­˜å‚¨çš„å†…å®¹ 
 static listNode* insertNode(listNode* head, int n, listContent newContent)
 {
 	listNode* p = head;
 	listNode *temp, *newNode;
  
-	//´´½¨ĞÂ½Úµã£¨Ôİ²»Á¬½Ó£© 
+	//åˆ›å»ºæ–°èŠ‚ç‚¹ï¼ˆæš‚ä¸è¿æ¥ï¼‰ 
 	newNode = (listNode*)malloc(sizeof(listNode));
 	newNode->content = newContent;
 	
-	//ÕÒµ½µÚ n-1 ¸ö½Úµã 
+	//æ‰¾åˆ°ç¬¬ n-1 ä¸ªèŠ‚ç‚¹ 
 	int i;
 	for(i=1; i<n-1; i++)
 	{
-		if(p!=NULL)	//¿Õ°²È« 
+		if(p!=NULL)	//ç©ºå®‰å…¨ 
 		{ 
 			if(p->next != NULL)
 			{
@@ -179,20 +179,20 @@ static listNode* insertNode(listNode* head, int n, listContent newContent)
 		}
 		else
 		{
-			printf("Ã»ÄÜÕÒµ½µÚ%d¸ö½Úµã£¬ÒÔ×îºóÒ»¸ö´úÌæ\n");
+			printf("æ²¡èƒ½æ‰¾åˆ°ç¬¬%dä¸ªèŠ‚ç‚¹ï¼Œä»¥æœ€åä¸€ä¸ªä»£æ›¿\n");
 		}
 	}
-	//Á¬½ÓĞÂ½Úµã 
-	if(p == NULL)				//ÕâÖÖÇé¿öÖ»ÓĞ¿ÉÄÜÍ·½ÚµãÎª¿Õ 
+	//è¿æ¥æ–°èŠ‚ç‚¹ 
+	if(p == NULL)				//è¿™ç§æƒ…å†µåªæœ‰å¯èƒ½å¤´èŠ‚ç‚¹ä¸ºç©º 
 	{
-		head = newNode;			//ĞÂ½ÚµãÖ±½Ó×÷ÎªĞÂµÄÍ·½Úµã 
+		head = newNode;			//æ–°èŠ‚ç‚¹ç›´æ¥ä½œä¸ºæ–°çš„å¤´èŠ‚ç‚¹ 
 	}
-	else if(p->next == NULL)	//ÕâÖÖÇé¿ö¿ÉÄÜÊÇÎ²½Úµã£¬Ö»ÓĞÇ°½ÚµãÃ»ÓĞºó½Úµã 
+	else if(p->next == NULL)	//è¿™ç§æƒ…å†µå¯èƒ½æ˜¯å°¾èŠ‚ç‚¹ï¼Œåªæœ‰å‰èŠ‚ç‚¹æ²¡æœ‰åèŠ‚ç‚¹ 
 	{
 		head->next = newNode;
 		newNode->next = NULL;
 	}
-	else						//Á¬½ÓÇ°ºó½Úµã 
+	else						//è¿æ¥å‰åèŠ‚ç‚¹ 
 	{
 		temp = p->next;
 		newNode->next = temp;
@@ -202,5 +202,5 @@ static listNode* insertNode(listNode* head, int n, listContent newContent)
 }
 static void taskThree()
 {
-	puts("ËùĞ´µÄ²åÈëÁ´±í½ÚµãµÄº¯ÊıÎª\n static void insertNode(listNode* head, int n, listContent newContent)");
+	puts("æ‰€å†™çš„æ’å…¥é“¾è¡¨èŠ‚ç‚¹çš„å‡½æ•°ä¸º\n static void insertNode(listNode* head, int n, listContent newContent)");
 }

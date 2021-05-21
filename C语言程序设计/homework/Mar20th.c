@@ -3,8 +3,8 @@
 
 /*------------------------------------------
 
-3��20����ҵ
-�µ��� 
+3月20日作业
+章登宇 
 
 -------------------------------------------*/ 
 
@@ -17,38 +17,38 @@ static void taskSix();
 static void taskSeven();
 static void taskEight();
 
-//�������
+//程序入口
 int homeworkMar20th(int argc, char** argv)
 {
-	puts("\n-------------------------��һ��-------------------------\n");
+	puts("\n-------------------------第一题-------------------------\n");
 	taskOne();
-	puts("\n-------------------------�ڶ���-------------------------\n");
+	puts("\n-------------------------第二题-------------------------\n");
 	taskTwo();
-	puts("\n-------------------------������-------------------------\n");
+	puts("\n-------------------------第三题-------------------------\n");
 	taskThree();
-	puts("\n-------------------------������-------------------------\n");
+	puts("\n-------------------------第四题-------------------------\n");
 	taskFour();
-	puts("\n-------------------------������-------------------------\n");
+	puts("\n-------------------------第五题-------------------------\n");
 	taskFive();
-	puts("\n-------------------------������-------------------------\n");
+	puts("\n-------------------------第六题-------------------------\n");
 	taskSix();
-	puts("\n-------------------------������-------------------------\n");
+	puts("\n-------------------------第七题-------------------------\n");
 	taskSeven();
-	puts("\n-------------------------�ڰ���-------------------------\n");
+	puts("\n-------------------------第八题-------------------------\n");
 	taskEight();
 	return 0; 
 }
 
-/*��һ�� 
-�õ������� x = ��a ��ƽ�����ĵ�����ʽΪ
+/*第一题 
+用迭代法求 x = √a 求平方根的迭代公式为
 x[n+1] = 1/2 (x[n] + a/x[n])
-Ҫ��ǰ����������� x �Ĳ�ľ���ֵС�� 10^-5 
+要求前后两次求出的 x 的差的绝对值小于 10^-5 
 */
 static void taskOne()
 {
 	double xn,xn1,a;
 	do{
-		printf("������a��ֵ��");
+		printf("请输入a的值：");
 	}while(scanf("%lf",&a) != 1);
 	
 	xn1 = 5.0;
@@ -57,11 +57,11 @@ static void taskOne()
 		xn1 = 1.0/2.0*(xn+a/xn);
 	}while(xn1 - xn >= 0.00001 || xn1 - xn <= -0.00001);
 	
-	printf("ƽ����Ϊ%.5lf��0.00001",xn);
+	printf("平方根为%.5lf±0.00001",xn);
 }
 
-/*�ڶ��� 
-�� ��k (1~100) + ��k^2 (1~50) + ��1/k (1~10) 
+/*第二题 
+求 Σk (1~100) + Σk^2 (1~50) + Σ1/k (1~10) 
 */
 static void taskTwo()
 {
@@ -76,16 +76,16 @@ static void taskTwo()
 	for(i = 1; i<=10; i++){
 		sum += 1.0/i;
 	}
-	printf("����ĺ�Ϊ%lf",sum);
+	printf("所求的和为%lf",sum);
 }
 
-/*������ 
-��дһ��������ʾ�û�����һ�ܹ�����Сʱ����Ȼ���ӡ�����ܶ˰��;����롣�����¼��裺
-	a. �������� = 1000 ��Ԫ/Сʱ
-	b. �Ӱࣨ����40Сʱ�� = 1.5 ����ʱ��
-	c. ˰�ʣ�	ǰ 300 ��ԪΪ 15%
-				�� 150 ��ԪΪ 20%
-				���µ�Ϊ 25% 
+/*第三题 
+编写一个程序，提示用户输入一周工作的小时数，然后打印工资总额、税金和净收入。做如下假设：
+	a. 基本工资 = 1000 美元/小时
+	b. 加班（超过40小时） = 1.5 倍的时间
+	c. 税率：	前 300 美元为 15%
+				续 150 美元为 20%
+				余下的为 25% 
 */
 static void taskThree()
 {
@@ -99,10 +99,10 @@ static void taskThree()
 	const double taxRate2 = 0.2;
 	const double taxRate3 = 0.25;
 	do{
-		printf("������һ�ܹ�����Сʱ����");
+		printf("请输入一周工作的小时数：");
 	}while(scanf("%lf",&hours)!=1 || hours < 0 || hours > 7*24);
 	
-	//���㹤���ܶ� 
+	//计算工资总额 
 	if(hours <= timeStage){
 		salary = hours*basic;
 	}else if((hours -= timeStage) > 0){
@@ -111,7 +111,7 @@ static void taskThree()
 	}
 	printSalary = salary;
 	
-	//����˰��
+	//计算税金
 	if(salary <= taxStage1){
 		tax = salary*taxRate1;
 	} else if((salary -= taxStage1) <= taxStage2){
@@ -121,19 +121,19 @@ static void taskThree()
 		tax = taxStage1*taxRate1 + taxStage2*taxRate2;
 		tax += salary*taxRate3;
 	}
-	//���
-	printf("�����ܶ�%.2lf��˰��%.2lf��������%.2lf", printSalary, tax, printSalary-tax);
+	//输出
+	printf("工资总额%.2lf，税金%.2lf，净收入%.2lf", printSalary, tax, printSalary-tax);
 }
 
-/*������ 
-��дһ�������ȡ���룬���� # �ַ�ʱֹͣ������Ҫ��ӡÿ��������ַ��Լ���Ӧ�� ASCII �루10���ƣ���
-һ�д�ӡ 8 ���ַ������飺ʹ���ַ���������ģ�������%����ÿ 8 ��ѭ������ʱ��ӡһ�����з� 
+/*第四题 
+编写一个程序读取输入，读到 # 字符时停止。程序要打印每个输入的字符以及对应的 ASCII 码（10进制）。
+一行打印 8 个字符。建议：使用字符计数和求模运算符（%）在每 8 个循环周期时打印一个换行符 
 */
 static void taskFour()
 {
 	int i = 0;
 	char c[256];
-	printf("�����룬��#��ֹ��");
+	printf("请输入，以#终止：");
 	scanf("%s",c);
 	while(i<strlen(c) && c[i]!='#'){
 		printf("%3d ",c[i]);
@@ -144,15 +144,15 @@ static void taskFour()
 	fflush(stdin);
 }
 
-/*������ 
-���ĸ�Բ����Բ�ķֱ�Ϊ (2,2) (-2,2) (-2,-2) (2,-2)��Բ�뾶Ϊ 1 
-���ĸ����ĸ߶�Ϊ 10 m ���������޽������������һ������꣬��õ�Ľ����߶ȣ�����ĸ߶�Ϊ�㣩 
+/*第五题 
+有四个圆塔，圆心分别为 (2,2) (-2,2) (-2,-2) (2,-2)，圆半径为 1 
+这四个塔的高度为 10 m ，塔以外无建筑物。今输入任一点的坐标，求该点的建筑高度（塔外的高度为零） 
 */
 static void taskFive()
 {
 	double x,y,h;
 	do{
-		printf("������һ������꣺");
+		printf("请输入一点的坐标：");
 	}while(scanf("(%lf,%lf)", &x, &y) != 2);
 	
 	if((x-2)*(x-2)+(y-2)*(y-2)>1 &&\
@@ -163,11 +163,11 @@ static void taskFive()
 	} else {
 		h = 10;
 	}
-	printf("�õ�Ľ����߶�Ϊ%.0lf",h);
+	printf("该点的建筑高度为%.0lf",h);
 }
 
-/*������ 
-��һ����ѧ��ʽ AB*CD = BA*DC ��ʽ�е�һ����ĸ����һλ���֣����ҳ����з�������Ҫ��ĳ˻�ʽ����ӡ��� 
+/*第六题 
+有一个数学等式 AB*CD = BA*DC ，式中的一个字母代表一位数字，试找出所有符合上述要求的乘积式并打印输出 
 */
 static void taskSix()
 {
@@ -190,9 +190,9 @@ static void taskSix()
 	} 
 }
 
-/*������ 
-һ�ٸ�ͭǮ����һ��ֻ�������й���һֻ 5 Ǯ��ĸ��һֻ 3 Ǯ��С��һǮ 3 ֻ��
-��һ��ֻ���й�����ĸ����С�������١� 
+/*第七题 
+一百个铜钱买了一百只鸡，其中公鸡一只 5 钱、母鸡一只 3 钱，小鸡一钱 3 只，
+问一百只鸡中公鸡、母鸡、小鸡各多少。 
 */
 static void taskSeven()
 {
@@ -203,20 +203,20 @@ static void taskSeven()
 		for(y=0; y<34; y++){
 			for(z=0; z<=100; z++){
 				if(x+y+z == 100 && 5*x+3*y+(float)z/3.0 == 100.0){
-					printf("���� %d ֻ��ĸ�� %d ֻ��С�� %d ֻ\n",x,y,z);
+					printf("公鸡 %d 只，母鸡 %d 只，小鸡 %d 只\n",x,y,z);
 				}
 			}
 		}
 	}
 }
 
-/*�ڰ��� 
-��� 1000 �����ܱ� 3 �����Ҹ�λ��Ϊ 6 ���������� 
+/*第八题 
+输出 1000 以内能被 3 整除且个位数为 6 的所有整数 
 */
 static void taskEight()
 {
 	int i = 0;
-	printf("1000�����ܱ�3�����Ҹ�λ��Ϊ6����������Ϊ\n");
+	printf("1000以内能被3整除且个位数为6的所有整数为\n");
 	for(i = 1; i <= 1000; i++){
 		if(i%3 == 0 && i%10 == 6){
 			printf("%d ",i);

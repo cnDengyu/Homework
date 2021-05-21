@@ -1,8 +1,8 @@
 #include <stdio.h>
 /*------------------------------------------
 
-3ÔÂ 27ÈÕ×÷Òµ
-ÕÂµÇÓî 
+3æœˆ 27æ—¥ä½œä¸š
+ç« ç™»å®‡ 
 
 -------------------------------------------*/ 
 
@@ -11,47 +11,47 @@ static void taskThree();
 static void taskFour();
 static void taskFive();
 
-//³ÌÐòÈë¿Ú
+//ç¨‹åºå…¥å£
 int homeworkMar27th(int argc, char** argv)
 {
-	puts("\n-------------------------µÚÒ»Ìâ-------------------------\n");
-	puts("£¨Éè¼Æº¯Êýmin(x,y)£¬Ã»ÓÐÊä³ö£©");
-	puts("\n-------------------------µÚ¶þÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬ä¸€é¢˜-------------------------\n");
+	puts("ï¼ˆè®¾è®¡å‡½æ•°min(x,y)ï¼Œæ²¡æœ‰è¾“å‡ºï¼‰");
+	puts("\n-------------------------ç¬¬äºŒé¢˜-------------------------\n");
 	taskTwo();
-	puts("\n-------------------------µÚÈýÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬ä¸‰é¢˜-------------------------\n");
 	taskThree();
-	puts("\n-------------------------µÚËÄÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬å››é¢˜-------------------------\n");
 	taskFour();
-	puts("\n-------------------------µÚÎåÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬äº”é¢˜-------------------------\n");
 	taskFive();
 	return 0; 
 }
 
-/*µÚÒ»Ìâ 
-Éè¼ÆÒ»¸öº¯Êý min(x,y)£¬·µ»ØÁ½¸ö double ÀàÐÍÖµµÄ½ÏÐ¡Öµ 
+/*ç¬¬ä¸€é¢˜ 
+è®¾è®¡ä¸€ä¸ªå‡½æ•° min(x,y)ï¼Œè¿”å›žä¸¤ä¸ª double ç±»åž‹å€¼çš„è¾ƒå°å€¼ 
 */ 
 static double min(double x, double y)
 {
 	return x>y?x:y;
 }
 
-/*µÚ¶þÌâ 
-Éè¼Æ³ÌÐò£¬¼ÆËã²¢Êä³öÁ½¸ö¾ØÕóÏà³ËµÄ½á¹û
-£¨ÌáÊ¾ÓÃ»§ÊäÈëÈý¸öÕûÊý£¬·Ö±ð×÷ÎªµÚÒ»¸ö¾ØÕóµÄÐÐÊý¡¢ÁÐÊý¼°µÚ¶þ¸ö¾ØÕóµÄÁÐÊý£© 
+/*ç¬¬äºŒé¢˜ 
+è®¾è®¡ç¨‹åºï¼Œè®¡ç®—å¹¶è¾“å‡ºä¸¤ä¸ªçŸ©é˜µç›¸ä¹˜çš„ç»“æžœ
+ï¼ˆæç¤ºç”¨æˆ·è¾“å…¥ä¸‰ä¸ªæ•´æ•°ï¼Œåˆ†åˆ«ä½œä¸ºç¬¬ä¸€ä¸ªçŸ©é˜µçš„è¡Œæ•°ã€åˆ—æ•°åŠç¬¬äºŒä¸ªçŸ©é˜µçš„åˆ—æ•°ï¼‰ 
 */ 
 static void taskTwo()
 {
 	int m1line,m1row,m2row,i,j,k;
-	printf("ÇëÒÔ¿Õ¸ñ·Ö¿ª£¬ÊäÈëµÚÒ»¸ö¾ØÕóµÄÐÐÊý¡¢ÁÐÊýºÍµÚ¶þ¸ö¾ØÕóµÄÁÐÊý£º"); 
+	printf("è¯·ä»¥ç©ºæ ¼åˆ†å¼€ï¼Œè¾“å…¥ç¬¬ä¸€ä¸ªçŸ©é˜µçš„è¡Œæ•°ã€åˆ—æ•°å’Œç¬¬äºŒä¸ªçŸ©é˜µçš„åˆ—æ•°ï¼š"); 
 	scanf("%d %d %d", &m1line, &m1row, &m2row);
 	float martix1[m1line][m1row], martix2[m1row][m2row],martixResult[m1line][m2row];
-	printf("ÇëÊäÈëx¾ØÕó£º\n");
+	printf("è¯·è¾“å…¥xçŸ©é˜µï¼š\n");
 	for(i=0; i<m1line; i++){
 		for(j=0; j<m1row; j++){
 			scanf("%f", &martix1[i][j]);
 		}
 	}
-	printf("ÇëÊäÈëy¾ØÕó£º\n");
+	printf("è¯·è¾“å…¥yçŸ©é˜µï¼š\n");
 	for(i=0; i<m1row; i++){
 		for(j=0; j<m2row; j++){
 			scanf("%f", &martix2[i][j]);
@@ -65,7 +65,7 @@ static void taskTwo()
 			}
 		}
 	}
-	printf("¼ÆËãµÃµ½µÄ¾ØÕóÊÇ£º\n"); 
+	printf("è®¡ç®—å¾—åˆ°çš„çŸ©é˜µæ˜¯ï¼š\n"); 
 	for(i=0; i<m1line; i++){
 		for(j=0; j<m2row; j++){
 			printf("%f ",martixResult[i][j]);
@@ -74,8 +74,8 @@ static void taskTwo()
 	}
 }
 
-/*µÚÈýÌâ 
-±àÒ»³ÌÐò£¬½«Á½¸ö×Ö·û´®Á¬½ÓÆðÀ´£¬²»ÒªÓÃ strcat º¯Êý 
+/*ç¬¬ä¸‰é¢˜ 
+ç¼–ä¸€ç¨‹åºï¼Œå°†ä¸¤ä¸ªå­—ç¬¦ä¸²è¿žæŽ¥èµ·æ¥ï¼Œä¸è¦ç”¨ strcat å‡½æ•° 
 */ 
 static void myStrCat(char* str1, char* str2)
 {
@@ -91,20 +91,20 @@ static void myStrCat(char* str1, char* str2)
 static void taskThree()
 {
 	char str1[MAX_STR], str2[MAX_STR];
-	printf("ÇëÊäÈëµÚÒ»¸ö×Ö·û´®£º");
+	printf("è¯·è¾“å…¥ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²ï¼š");
 	scanf("%s", str1);
-	printf("ÇëÊäÈëµÚ¶þ¸ö×Ö·û´®£º");
+	printf("è¯·è¾“å…¥ç¬¬äºŒä¸ªå­—ç¬¦ä¸²ï¼š");
 	scanf("%s", str2);
 	myStrCat(str1, str2);
-	printf("Æ´½ÓºóµÄ×Ö·û´®Îª£º%s",str1);
+	printf("æ‹¼æŽ¥åŽçš„å­—ç¬¦ä¸²ä¸ºï¼š%s",str1);
 }
 
-/*µÚËÄÌâ 
-ÊäÈë 10 ¸öÑ§Éú 5 ÃÅ¿Î³ÌµÄ³É¼¨£¬·Ö±ðÓÃº¯ÊýÊµÏÖÏÂÁÐ¹¦ÄÜ£º
-¼ÆËãÃ¿¸öÑ§ÉúµÄÆ½¾ù·Ö
-¼ÆËãÃ¿ÃÅ¿ÎµÄÆ½¾ù·Ö
-ÕÒ³öËùÓÐ 50 ¸ö·ÖÊýÖÐ×î¸ßµÄ·ÖÊýËù¶ÔÓ¦µÄÑ§ÉúºÍ¿Î³Ì
-¼ÆËãÆ½¾ù·Ö·½²î£º£¨¹«Ê½ÂÔ£© 
+/*ç¬¬å››é¢˜ 
+è¾“å…¥ 10 ä¸ªå­¦ç”Ÿ 5 é—¨è¯¾ç¨‹çš„æˆç»©ï¼Œåˆ†åˆ«ç”¨å‡½æ•°å®žçŽ°ä¸‹åˆ—åŠŸèƒ½ï¼š
+è®¡ç®—æ¯ä¸ªå­¦ç”Ÿçš„å¹³å‡åˆ†
+è®¡ç®—æ¯é—¨è¯¾çš„å¹³å‡åˆ†
+æ‰¾å‡ºæ‰€æœ‰ 50 ä¸ªåˆ†æ•°ä¸­æœ€é«˜çš„åˆ†æ•°æ‰€å¯¹åº”çš„å­¦ç”Ÿå’Œè¯¾ç¨‹
+è®¡ç®—å¹³å‡åˆ†æ–¹å·®ï¼šï¼ˆå…¬å¼ç•¥ï¼‰ 
 */ 
 #define NUM_STU 10
 #define NUM_CLS 5
@@ -117,7 +117,7 @@ static void stuAverage(float grades[NUM_STU][NUM_CLS])
 		for(j=0; j<NUM_CLS; j++){
 			sum += grades[i][j];
 		}
-		printf("µÚ %d Î»Í¬Ñ§µÄÆ½¾ù·ÖÎª %.1f\n", i+1, sum/NUM_CLS);
+		printf("ç¬¬ %d ä½åŒå­¦çš„å¹³å‡åˆ†ä¸º %.1f\n", i+1, sum/NUM_CLS);
 	}
 }
 static void clsAverage(float grades[NUM_STU][NUM_CLS])
@@ -129,7 +129,7 @@ static void clsAverage(float grades[NUM_STU][NUM_CLS])
 		for(i=0; i<NUM_STU; i++){
 			sum += grades[i][j];
 		}
-		printf("µÚ %d ÃÅ¿Î³ÌµÄÆ½¾ù·ÖÎª %.1f\n", j+1, sum/NUM_STU);
+		printf("ç¬¬ %d é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†ä¸º %.1f\n", j+1, sum/NUM_STU);
 	}
 }
 static void grdMax(float grades[NUM_STU][NUM_CLS])
@@ -146,7 +146,7 @@ static void grdMax(float grades[NUM_STU][NUM_CLS])
 	for(i=0; i<NUM_STU; i++){
 		for(j=0; j<NUM_CLS; j++){
 			if(grades[i][j] == max){
-				printf("×î¸ß·ÖÎª %f £¬ÊÇµÚ %d Î»Í¬Ñ§ÔÚµÚ %d ÃÅ¿Î³ÌÖÐÈ¡µÃµÄ¡£\n", max, i+1, j+1);
+				printf("æœ€é«˜åˆ†ä¸º %f ï¼Œæ˜¯ç¬¬ %d ä½åŒå­¦åœ¨ç¬¬ %d é—¨è¯¾ç¨‹ä¸­å–å¾—çš„ã€‚\n", max, i+1, j+1);
 			}
 		}
 	}
@@ -170,7 +170,7 @@ static void stuVariance(float grades[NUM_STU][NUM_CLS])
 		temp += stuAverage[i];
 	}
 	variance -= (temp/NUM_STU)*(temp/NUM_STU);
-	printf("Æ½¾ù·Ö·½²îÎª %f \n",variance);
+	printf("å¹³å‡åˆ†æ–¹å·®ä¸º %f \n",variance);
 }
 //#define DEBUG
 static void taskFour()
@@ -185,7 +185,7 @@ static void taskFour()
 	int i,j;
 	for(i=0; i<NUM_STU; i++){
 		for(j=0; j<NUM_CLS; j++){
-			printf("\nÇëÊäÈëµÚ %d Î»Í¬Ñ§µÄµÚ %d ÃÅ³É¼¨£º", i+1, j+1);
+			printf("\nè¯·è¾“å…¥ç¬¬ %d ä½åŒå­¦çš„ç¬¬ %d é—¨æˆç»©ï¼š", i+1, j+1);
 			scanf("%f",&grades[i][j]);
 		}
 	}
@@ -196,13 +196,13 @@ static void taskFour()
 	stuVariance(grades);
 }
 
-/*µÚÎåÌâ 
-¸ø¶¨Ò»¸öÕûÊýÊý×é nums ºÍÒ»¸öÄ¿±êÖµ target, 
-ÔÚ nums Êý×éÖÐÕÒ³öºÍÎªÄ¿±êÖµµÄ ÄÇÁ½¸öÕûÊý£¬
-²¢·µ»ØËûÃÇµÄÊý×éÏÂ±ê¡£
-Àý£º¸ø¶¨ nums = {2, 7, 11, 15}, target = 9
-ÒòÎª nums[0] + nums[1] = 2+7 = 9
-ËùÒÔ·µ»Ø [0,1] 
+/*ç¬¬äº”é¢˜ 
+ç»™å®šä¸€ä¸ªæ•´æ•°æ•°ç»„ nums å’Œä¸€ä¸ªç›®æ ‡å€¼ target, 
+åœ¨ nums æ•°ç»„ä¸­æ‰¾å‡ºå’Œä¸ºç›®æ ‡å€¼çš„ é‚£ä¸¤ä¸ªæ•´æ•°ï¼Œ
+å¹¶è¿”å›žä»–ä»¬çš„æ•°ç»„ä¸‹æ ‡ã€‚
+ä¾‹ï¼šç»™å®š nums = {2, 7, 11, 15}, target = 9
+å› ä¸º nums[0] + nums[1] = 2+7 = 9
+æ‰€ä»¥è¿”å›ž [0,1] 
 */ 
 static void taskFive()
 {

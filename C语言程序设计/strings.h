@@ -1,19 +1,19 @@
 #pragma once
-//ÉèÖÃÓïÑÔ,±ØĞëÇÒÖ»ÄÜÉèÖÃÒ»¸öÓïÑÔ 
+//è®¾ç½®è¯­è¨€,å¿…é¡»ä¸”åªèƒ½è®¾ç½®ä¸€ä¸ªè¯­è¨€ 
 #define LANGUAGE_ZH_CN 
 //#define LANGUAGE_EN 
 //#define LANGUAGE_ZH_HK
 //#define LANGUAGE_ZH_TW 
 
-//×Ö·û´®Í³Ò»´¦Àí£¬Èç¹ûÎÄ±¾¹ı¶à£¬ÕâÒ»²¿·ÖÓ¦µ±µ¥¶À·ÅÖÃÔÚ string.h ÖĞ 
-//¼òÌåÖĞÎÄ 
+//å­—ç¬¦ä¸²ç»Ÿä¸€å¤„ç†ï¼Œå¦‚æœæ–‡æœ¬è¿‡å¤šï¼Œè¿™ä¸€éƒ¨åˆ†åº”å½“å•ç‹¬æ”¾ç½®åœ¨ string.h ä¸­ 
+//ç®€ä½“ä¸­æ–‡ 
 #ifdef LANGUAGE_ZH_CN
-const char str_main1[] = "ÕâÊÇµÇÓîµÄ×÷Òµ³ÌĞò\nÇëÊäÈëĞèÒªÖ´ĞĞµÄ×÷ÒµºÅ,ÊäÈë0ÍË³ö\n";
-const char str_main2[] = "Ã»ÕÒµ½Õâ¸ö×÷Òµ\n";
-const char str_main3[] = "ÒÑÍË³ö\n";
-const char str_one1[] = "ÕâÊÇÒ»ºÅ×÷Òµ\nµãÕó\nÊäÈëwasdÒÔ¿ØÖÆ @ ÉÏÏÂ×óÓÒÒÆ¶¯\nÊäÈë0ÍË³ö\n\n";
-const char str_two1[] = "·Ö×Ó";
-const char str_two2[] = "·ÖÄ¸";
+const char str_main1[] = "è¿™æ˜¯ç™»å®‡çš„ä½œä¸šç¨‹åº\nè¯·è¾“å…¥éœ€è¦æ‰§è¡Œçš„ä½œä¸šå·,è¾“å…¥0é€€å‡º\n";
+const char str_main2[] = "æ²¡æ‰¾åˆ°è¿™ä¸ªä½œä¸š\n";
+const char str_main3[] = "å·²é€€å‡º\n";
+const char str_one1[] = "è¿™æ˜¯ä¸€å·ä½œä¸š\nç‚¹é˜µ\nè¾“å…¥wasdä»¥æ§åˆ¶ @ ä¸Šä¸‹å·¦å³ç§»åŠ¨\nè¾“å…¥0é€€å‡º\n\n";
+const char str_two1[] = "åˆ†å­";
+const char str_two2[] = "åˆ†æ¯";
 #endif
 //ENGLISH
 #ifdef LANGUAGE_EN 
@@ -22,16 +22,16 @@ const char* str_main2[] = "Homework not found\n";
 const char* str_main3[] = "Program terminated\n";
 const char* str_one1[] = "This is the first task\nLATTICE\nenter wasd to let @ up/left/right/down\nenter 0 to exit\n\n";
 #endif
-//·±ówÖĞÎÄ
+//ç¹é«”ä¸­æ–‡
 #ifdef LANGUAGE_ZH_HK
-const char* str_main1[] = "ß@ÊÇµÇÓîµÄ×÷˜I³ÌĞò\nÕˆİ”ÈëĞèÒªˆÌĞĞµÄ×÷˜IÌ–,İ”Èë0ÍË³ö\n";
-const char* str_main2[] = "›]ÕÒµ½ß@‚€×÷˜I\n";
-const char* str_main3[] = "ÒÑÍË³ö\n";
-const char* str_one1[] = "ß@ÊÇÒ»ºÅ×÷Òµ\nµãÕó\nÊäÈëwasdÒÔ¿ØÖÆ @ ÉÏÏÂ×óÓÒÒÆ¶¯\nÊäÈë0ÍË³ö\n\n";
+const char* str_main1[] = "é€™æ˜¯ç™»å®‡çš„ä½œæ¥­ç¨‹åº\nè«‹è¼¸å…¥éœ€è¦åŸ·è¡Œçš„ä½œæ¥­è™Ÿ,è¼¸å…¥0é€€å‡º\n";
+const char* str_main2[] = "æ²’æ‰¾åˆ°é€™å€‹ä½œæ¥­\n";
+const char* str_main3[] = "å·²é€€å‡º\n";
+const char* str_one1[] = "é€™æ˜¯ä¸€å·ä½œä¸š\nç‚¹é˜µ\nè¾“å…¥wasdä»¥æ§åˆ¶ @ ä¸Šä¸‹å·¦å³ç§»åŠ¨\nè¾“å…¥0é€€å‡º\n\n";
 #endif
 #ifdef LANGUAGE_ZH_TW
-const char* str_main1[] = "ß@ÊÇµÇÓîµÄ×÷˜I³ÌĞò\nÕˆİ”ÈëĞèÒªˆÌĞĞµÄ×÷˜IÌ–,İ”Èë0ÍË³ö\n";
-const char* str_main2[] = "›]ÕÒµ½ß@‚€×÷˜I\n";
-const char* str_main3[] = "ÒÑÍË³ö\n";
-const char* str_one1[] = "ß@ÊÇÒ»Ì–×÷˜I\nµãÕó\nÊäÈëwasdÒÔ¿ØÖÆ @ ÉÏÏÂ×óÓÒÒÆ¶¯\nÊäÈë0ÍË³ö\n\n";
+const char* str_main1[] = "é€™æ˜¯ç™»å®‡çš„ä½œæ¥­ç¨‹åº\nè«‹è¼¸å…¥éœ€è¦åŸ·è¡Œçš„ä½œæ¥­è™Ÿ,è¼¸å…¥0é€€å‡º\n";
+const char* str_main2[] = "æ²’æ‰¾åˆ°é€™å€‹ä½œæ¥­\n";
+const char* str_main3[] = "å·²é€€å‡º\n";
+const char* str_one1[] = "é€™æ˜¯ä¸€è™Ÿä½œæ¥­\nç‚¹é˜µ\nè¾“å…¥wasdä»¥æ§åˆ¶ @ ä¸Šä¸‹å·¦å³ç§»åŠ¨\nè¾“å…¥0é€€å‡º\n\n";
 #endif

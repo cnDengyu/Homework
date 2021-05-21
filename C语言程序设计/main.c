@@ -5,17 +5,17 @@
 
 #include "strings.h"
 
-//ÉèÖÃÄ¬ÈÏÖ´ĞĞµÄ×÷Òµ¡£È¡Ïû¶¨ÒåÒÔÔÚÖ´ĞĞÖĞÑ¡Ôñ ¡£ 
+//è®¾ç½®é»˜è®¤æ‰§è¡Œçš„ä½œä¸šã€‚å–æ¶ˆå®šä¹‰ä»¥åœ¨æ‰§è¡Œä¸­é€‰æ‹© ã€‚ 
 #define TARGET 22
-//ÉèÖÃÊÇ·ñĞèÒªÑ­»·
+//è®¾ç½®æ˜¯å¦éœ€è¦å¾ªç¯
 //#define LOOP 
 
-//ÉùÃ÷¸÷Ïî×÷Òµ¡£ 
+//å£°æ˜å„é¡¹ä½œä¸šã€‚ 
 #include "homework/date.h"
 #include "classTest/date.h"
 #include "others/program.h"
 
-//³ÌĞòÈë¿Ú 
+//ç¨‹åºå…¥å£ 
 int main(int argc, char** argv) {
 	int homework = 0;
 	int returnValue = 0;

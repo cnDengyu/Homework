@@ -4,39 +4,39 @@
 
 /*---------------------------------- 
 
-	Êä³öµãÕó£¬´úºÅ 1
+	è¾“å‡ºç‚¹é˜µï¼Œä»£å· 1
 	
 ----------------------------------*/
 
-//¶¨ÒåµãÕóµÄĞĞÊı¡¢ÁĞÊı 
+//å®šä¹‰ç‚¹é˜µçš„è¡Œæ•°ã€åˆ—æ•° 
 #define LINE 15
 #define ROW 15
  
- //È«¾Ö±äÁ¿£¬ÓÃÓÚ´æ´¢µãÕóĞÅÏ¢ 
+ //å…¨å±€å˜é‡ï¼Œç”¨äºå­˜å‚¨ç‚¹é˜µä¿¡æ¯ 
 static int show[LINE][ROW];
 
-//º¯ÊıÉùÃ÷ 
+//å‡½æ•°å£°æ˜ 
 void setShow();
 void showMap();
 void showInfo();
 void refreshShow();
 
-//×Ö·û´®ÉùÃ÷
+//å­—ç¬¦ä¸²å£°æ˜
 #include "..\\strings.h"
 
-//³ÌĞòÈë¿Ú 
+//ç¨‹åºå…¥å£ 
 int programOne(int argc, char** argv){
 	char move = 'w';
-	int temp[2] = {0,0};			//Ôİ´æµ±Ç°ËùÔÚÎ»ÖÃ 
+	int temp[2] = {0,0};			//æš‚å­˜å½“å‰æ‰€åœ¨ä½ç½® 
 
-	setShow();						//µãÕóÊı×éÈ«ÖÃÎª 0
-	show[temp[0]][temp[1]] = 1;		//µ±Ç°Î»ÖÃÖÃ 1 
+	setShow();						//ç‚¹é˜µæ•°ç»„å…¨ç½®ä¸º 0
+	show[temp[0]][temp[1]] = 1;		//å½“å‰ä½ç½®ç½® 1 
 	refreshShow();
 	
 	while(move != '0'){
 		move = getchar();
-		show[temp[0]][temp[1]] = 0;	//µ±Ç°£¨ÉÏÒ»¸öÑ­»·ËùÉèÖÃµÄ£©Î»ÖÃÖÃ 0 
-		switch(move){				//¼ì²âÊäÈë£¬ĞŞ¸Äµ±Ç°Î»ÖÃ 
+		show[temp[0]][temp[1]] = 0;	//å½“å‰ï¼ˆä¸Šä¸€ä¸ªå¾ªç¯æ‰€è®¾ç½®çš„ï¼‰ä½ç½®ç½® 0 
+		switch(move){				//æ£€æµ‹è¾“å…¥ï¼Œä¿®æ”¹å½“å‰ä½ç½® 
 			case 'w':
 				if(temp[0]>0)
 					temp[0] -= 1;
@@ -55,14 +55,14 @@ int programOne(int argc, char** argv){
 			break;
 			default:break; 
 		}
-		show[temp[0]][temp[1]] = 1;	//µ±Ç°Î»ÖÃÖÃ 1 
+		show[temp[0]][temp[1]] = 1;	//å½“å‰ä½ç½®ç½® 1 
 		refreshShow();
 		//Sleep(1000); 
 	}
 	
 }
 
-//³õÊ¼»¯µãÕóÊı×é£¬È«²¿ÖµÎª 0
+//åˆå§‹åŒ–ç‚¹é˜µæ•°ç»„ï¼Œå…¨éƒ¨å€¼ä¸º 0
 void setShow(){
 	int i,j;
 	for(i = 0; i < LINE; i ++){
@@ -72,27 +72,27 @@ void setShow(){
 	}
 }
 
-//ÏÔÊ¾µãÕó £¬²»ÒªÔÚÖ÷º¯ÊıÖĞÊ¹ÓÃ 
+//æ˜¾ç¤ºç‚¹é˜µ ï¼Œä¸è¦åœ¨ä¸»å‡½æ•°ä¸­ä½¿ç”¨ 
 void showMap(){
 	int i,j;
 	for(i = 0; i < LINE; i++){
 		for(j = 0; j < ROW; j++){
 			if(show[i][j])
-				putchar('@');	//·ÇÁãÎª @
+				putchar('@');	//éé›¶ä¸º @
 			else
-				putchar('O');	//ÁãÎª O
+				putchar('O');	//é›¶ä¸º O
 			putchar(' ');
 		}
 		putchar('\n');
 	}
 }
 
-//Êä³öÌáÊ¾ £¬²»ÒªÔÚÖ÷º¯ÊıÖĞÊ¹ÓÃ 
+//è¾“å‡ºæç¤º ï¼Œä¸è¦åœ¨ä¸»å‡½æ•°ä¸­ä½¿ç”¨ 
 void showInfo(){
 	puts(str_one1);
 }
 
-//Ë¢ĞÂÕû¸öÒ³Ãæ 
+//åˆ·æ–°æ•´ä¸ªé¡µé¢ 
 void refreshShow(){
 	system("cls");
 	showInfo();

@@ -4,14 +4,14 @@
 
 /*------------------------------------------
 
-5 ÔÂ 15 ÈÕ×÷Òµ 
-ÕÂµÇÓî 	
+5 æœˆ 15 æ—¥ä½œä¸š 
+ç« ç™»å®‡ 	
 
-µÚÒ»Ìâ³ÌĞòÈë¿Ú£º45ĞĞ taskOne()
-µÚ¶şÌâËùÇóº¯Êı£º104ĞĞ find()
-µÚÈıÌâ³ÌĞòÈë¿Ú£º205ĞĞ taskThree()
+ç¬¬ä¸€é¢˜ç¨‹åºå…¥å£ï¼š45è¡Œ taskOne()
+ç¬¬äºŒé¢˜æ‰€æ±‚å‡½æ•°ï¼š104è¡Œ find()
+ç¬¬ä¸‰é¢˜ç¨‹åºå…¥å£ï¼š205è¡Œ taskThree()
 
-Àú´Î×÷ÒµÍêÕû´úÂë£º
+å†æ¬¡ä½œä¸šå®Œæ•´ä»£ç ï¼š
 https://gitee.com/littlesunny2001/Cproject.git 
 
 -------------------------------------------*/ 
@@ -19,24 +19,24 @@ static void taskOne();
 static void taskTwo(); 
 static void taskThree();
 
-//³ÌĞòÈë¿Ú 
+//ç¨‹åºå…¥å£ 
 int homeworkMay15th(int argc, char** argv)
 {
-	puts("\n----------------------5ÔÂ15ÈÕ×÷Òµ---------------------\n");
-	puts("\n-------------------------µÚÒ»Ìâ-------------------------\n");
+	puts("\n----------------------5æœˆ15æ—¥ä½œä¸š---------------------\n");
+	puts("\n-------------------------ç¬¬ä¸€é¢˜-------------------------\n");
 	taskOne();
-	puts("\n-------------------------µÚ¶şÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬äºŒé¢˜-------------------------\n");
 	taskTwo();
-	puts("\n-------------------------µÚÈıÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬ä¸‰é¢˜-------------------------\n");
 	taskThree();
 	return 0;
 }
 
-/*µÚÒ»Ìâ 
-¶¨ÒåÒ»¸öÃ¶¾ÙÀàĞÍ level£¬ÓÃÃ¶¾ÙÔªËØ´ú±í³É¼¨µÄ¡°µÈ¼¶¡±
-Èç£º90·ÖÒÔÉÏÎªÓÅ£¨excellent£©£¬80-90·ÖÖ®¼äÎªÁ¼£¨good£©£¬
-60-70·ÖÖ®¼äÎªÖĞ£¨general£©£¬60·ÖÒÔÏÂÎª²î£¨fail£©£¬
-Í¨¹ı¼üÅÌÊäÈëÒ»¸öÑ§ÉúµÄ³É¼¨£¬È»ºóÊä³ö¸ÃÉú³É¼¨µÄµÈ¼¶¡£ 
+/*ç¬¬ä¸€é¢˜ 
+å®šä¹‰ä¸€ä¸ªæšä¸¾ç±»å‹ levelï¼Œç”¨æšä¸¾å…ƒç´ ä»£è¡¨æˆç»©çš„â€œç­‰çº§â€
+å¦‚ï¼š90åˆ†ä»¥ä¸Šä¸ºä¼˜ï¼ˆexcellentï¼‰ï¼Œ80-90åˆ†ä¹‹é—´ä¸ºè‰¯ï¼ˆgoodï¼‰ï¼Œ
+60-70åˆ†ä¹‹é—´ä¸ºä¸­ï¼ˆgeneralï¼‰ï¼Œ60åˆ†ä»¥ä¸‹ä¸ºå·®ï¼ˆfailï¼‰ï¼Œ
+é€šè¿‡é”®ç›˜è¾“å…¥ä¸€ä¸ªå­¦ç”Ÿçš„æˆç»©ï¼Œç„¶åè¾“å‡ºè¯¥ç”Ÿæˆç»©çš„ç­‰çº§ã€‚ 
 */
 enum level
 {
@@ -44,12 +44,12 @@ enum level
 };
 static void taskOne()
 {
-	//ÊäÈë
+	//è¾“å…¥
 	int input;
-	printf("ÇëÊäÈëÒ»¸öÑ§ÉúµÄ³É¼¨£º");
+	printf("è¯·è¾“å…¥ä¸€ä¸ªå­¦ç”Ÿçš„æˆç»©ï¼š");
 	scanf("%d",&input);
 	
-	//´¦Àí
+	//å¤„ç†
 	enum level lev;
 	switch(input/10)
 	{
@@ -66,35 +66,35 @@ static void taskOne()
 			lev = fail;
 		break;
 		default:
-			printf("·ÖÊı²»ºÏÀí\n");
+			printf("åˆ†æ•°ä¸åˆç†\n");
 		break;
 	} 
 	
-	//Êä³ö
+	//è¾“å‡º
 	switch(lev)
 	{
 		case excellent:
-			printf("³É¼¨ÎªÓÅ\n");
+			printf("æˆç»©ä¸ºä¼˜\n");
 		break;
 		case good:
-			printf("³É¼¨ÎªÁ¼\n");
+			printf("æˆç»©ä¸ºè‰¯\n");
 		break;
 		case general:
-			printf("³É¼¨ÎªÖĞ\n");
+			printf("æˆç»©ä¸ºä¸­\n");
 		break;
 		case fail:
-			printf("³É¼¨Îª²î\n");
+			printf("æˆç»©ä¸ºå·®\n");
 		break;
 	} 
 }
 
-/*µÚ¶şÌâ 
-±àĞ´Ò»¸öº¯Êı find£¬ÓÃÀ´ÔÚÁ´±íÖĞ²éÕÒÒ»¸öÊı¾İÊÇ·ñ´æÔÚ¡£
-Èç¹û´æÔÚ£¬Êä³öÊÇµÚ¼¸¸ö½Úµã 
+/*ç¬¬äºŒé¢˜ 
+ç¼–å†™ä¸€ä¸ªå‡½æ•° findï¼Œç”¨æ¥åœ¨é“¾è¡¨ä¸­æŸ¥æ‰¾ä¸€ä¸ªæ•°æ®æ˜¯å¦å­˜åœ¨ã€‚
+å¦‚æœå­˜åœ¨ï¼Œè¾“å‡ºæ˜¯ç¬¬å‡ ä¸ªèŠ‚ç‚¹ 
 */
-//¶¨ÒåÁ´±í´æ´¢µÄÊı¾İÀàĞÍ
+//å®šä¹‰é“¾è¡¨å­˜å‚¨çš„æ•°æ®ç±»å‹
 typedef int listContent;
-//¶¨ÒåÁ´±í½Úµã 
+//å®šä¹‰é“¾è¡¨èŠ‚ç‚¹ 
 typedef struct listNode
 {
 	listContent content;
@@ -109,7 +109,7 @@ static int find(listNode* head, listContent toFind)
 		i++;
 		if(head->content == toFind)
 		{
-			printf("µÚ%d¸ö½Úµã¼´ÎªËùÇó\n");
+			printf("ç¬¬%dä¸ªèŠ‚ç‚¹å³ä¸ºæ‰€æ±‚\n");
 			return i;
 		}
 	}
@@ -117,14 +117,14 @@ static int find(listNode* head, listContent toFind)
 }
 static void taskTwo()
 {
-	puts("ËùĞ´µÄº¯ÊıÎªstatic int find(listNode* head, listContent toFind)");
+	puts("æ‰€å†™çš„å‡½æ•°ä¸ºstatic int find(listNode* head, listContent toFind)");
 }
 
-/*µÚÈıÌâ 
-´æÔÚÁ½¸öÁ´±í a, b£¨Á´±í³¤¶È¾ù¿ÉÉèÎª 3£©£¬Éè½ÚµãÖĞ°üº¬Ñ§ºÅ¡¢ĞÕÃû£¬
-ÒªÇó°ÑÁ½¸öÁ´±íºÏ²¢£¬°´Ñ§ºÅÉıĞòÅÅÁĞ 
+/*ç¬¬ä¸‰é¢˜ 
+å­˜åœ¨ä¸¤ä¸ªé“¾è¡¨ a, bï¼ˆé“¾è¡¨é•¿åº¦å‡å¯è®¾ä¸º 3ï¼‰ï¼Œè®¾èŠ‚ç‚¹ä¸­åŒ…å«å­¦å·ã€å§“åï¼Œ
+è¦æ±‚æŠŠä¸¤ä¸ªé“¾è¡¨åˆå¹¶ï¼ŒæŒ‰å­¦å·å‡åºæ’åˆ— 
 */
-//¶¨ÒåÁ´±í½Úµã
+//å®šä¹‰é“¾è¡¨èŠ‚ç‚¹
 #define MAX_LEN 10
 typedef struct studentListNode 
 {
@@ -132,7 +132,7 @@ typedef struct studentListNode
 	char name[MAX_LEN];
 	studentListNode* next;
 } studentListNode;
-//º¯Êı£ºÔÚÄ³½ÚµãÖ®ºó²åÈëÔªËØ 
+//å‡½æ•°ï¼šåœ¨æŸèŠ‚ç‚¹ä¹‹åæ’å…¥å…ƒç´  
 static studentListNode* insertNext(studentListNode* toInsert, int id, char* name)
 {
 	studentListNode *newNode, *temp;
@@ -159,18 +159,18 @@ static studentListNode* insertNext(studentListNode* toInsert, int id, char* name
 
 static studentListNode* mergeById(studentListNode* headA, studentListNode* headB)
 {
-	//¼ì²éÁ´±í A µÄË³Ğò
+	//æ£€æŸ¥é“¾è¡¨ A çš„é¡ºåº
 	int checkId = headA->id;
 	studentListNode *pA = headA;
 	do{
 		if(pA->id < checkId)
 		{
-			printf("Á´±íaÃ»ÓĞ°´Ë³ĞòÅÅÁĞ£¬ÔİÊ±ÎŞ·¨ºÏ²¢\n");
+			printf("é“¾è¡¨aæ²¡æœ‰æŒ‰é¡ºåºæ’åˆ—ï¼Œæš‚æ—¶æ— æ³•åˆå¹¶\n");
 			return NULL;
 		}
 	}while((pA=pA->next)!=NULL);
 	
-	//ÔÚºÏÊÊµÄÎ»ÖÃ°ÑÁ´±í b ÖĞ½Úµã²åÈëÁ´±ía
+	//åœ¨åˆé€‚çš„ä½ç½®æŠŠé“¾è¡¨ b ä¸­èŠ‚ç‚¹æ’å…¥é“¾è¡¨a
 	studentListNode* pB = headB;
 	studentListNode* last = NULL;
 	studentListNode* newStart;
@@ -181,7 +181,7 @@ static studentListNode* mergeById(studentListNode* headA, studentListNode* headB
 			last = pA;
 			pA=pA->next; 
 		}
-		if(last == NULL)	//ÔÚÍ·²¿²åÈë 
+		if(last == NULL)	//åœ¨å¤´éƒ¨æ’å…¥ 
 		{
 			newStart = (studentListNode*) malloc(sizeof(studentListNode));
 			newStart->id = pB->id;
@@ -204,23 +204,23 @@ static void print(studentListNode* head)
 }
 static void taskThree()
 {
-	//´´½¨Á´±í a ºÍ b 
+	//åˆ›å»ºé“¾è¡¨ a å’Œ b 
 	studentListNode *headA, *headB, *pA, *pB;
 	headA = headB = NULL;
-	headA = pA = insertNext(headA, 1, "Ñ§Éú1");
-	pA = insertNext(pA, 2, "Ñ§Éú2");
-	pA = insertNext(pA, 3, "Ñ§Éú3");
-	headB = pB = insertNext(headB, 5, "Ñ§Éú5");
-	pB = insertNext(pB, 4, "Ñ§Éú4");
-	pB = insertNext(pB, 6, "Ñ§Éú6");
+	headA = pA = insertNext(headA, 1, "å­¦ç”Ÿ1");
+	pA = insertNext(pA, 2, "å­¦ç”Ÿ2");
+	pA = insertNext(pA, 3, "å­¦ç”Ÿ3");
+	headB = pB = insertNext(headB, 5, "å­¦ç”Ÿ5");
+	pB = insertNext(pB, 4, "å­¦ç”Ÿ4");
+	pB = insertNext(pB, 6, "å­¦ç”Ÿ6");
 	
-	//Êä³öÔ­±í
+	//è¾“å‡ºåŸè¡¨
 	print(headA);
 	print(headB); 
 	
-	//ºÏ²¢Á´±í a ºÍ b
+	//åˆå¹¶é“¾è¡¨ a å’Œ b
 	headA = mergeById(headA, headB);
 	
-	//Êä³öĞÂ±í 
+	//è¾“å‡ºæ–°è¡¨ 
 	print(headA);
 }

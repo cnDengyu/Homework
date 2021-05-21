@@ -1,14 +1,14 @@
 /*------------------------------------------
 
-5 ÔÂ 22 ÈÕ×÷Òµ 
-ÕÂµÇÓî 	
+5 æœˆ 22 æ—¥ä½œä¸š 
+ç« ç™»å®‡ 	
 
-µÚÎåÌâ³ÌĞòÈë¿Ú£º92ĞĞ taskOne()
-µÚÁùÌâ³ÌĞòÈë¿Ú£º148ĞĞ taskSix()
-µÚÆßÌâ³ÌĞòÈë¿Ú£º199ĞĞ taskSeven()
-µÚ°ËÌâ³ÌĞòÈë¿Ú£º264ĞĞ taskEight()
+ç¬¬äº”é¢˜ç¨‹åºå…¥å£ï¼š92è¡Œ taskOne()
+ç¬¬å…­é¢˜ç¨‹åºå…¥å£ï¼š148è¡Œ taskSix()
+ç¬¬ä¸ƒé¢˜ç¨‹åºå…¥å£ï¼š199è¡Œ taskSeven()
+ç¬¬å…«é¢˜ç¨‹åºå…¥å£ï¼š264è¡Œ taskEight()
 
-Àú´Î×÷ÒµÍêÕû´úÂë£º
+å†æ¬¡ä½œä¸šå®Œæ•´ä»£ç ï¼š
 https://gitee.com/littlesunny2001/Cproject.git 
 
 -------------------------------------------*/ 
@@ -22,33 +22,33 @@ static void taskSix();
 static void taskEleven();
 static void taskEight();
 
-//³ÌĞòÈë¿Ú 
+//ç¨‹åºå…¥å£ 
 int homeworkMay22nd(int argc, char** argv)
 {
-	puts("\n----------------------5ÔÂ22ÈÕ×÷Òµ---------------------\n");
+	puts("\n----------------------5æœˆ22æ—¥ä½œä¸š---------------------\n");
 	#ifdef DEBUG
-	printf("µ÷ÊÔÄ£Ê½ÒÑÆôÓÃ\n");
+	printf("è°ƒè¯•æ¨¡å¼å·²å¯ç”¨\n");
 	#endif
-	puts("\n-------------------------µÚÎåÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬äº”é¢˜-------------------------\n");
 	taskFive();
-	puts("\n-------------------------µÚÁùÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬å…­é¢˜-------------------------\n");
 	taskSix();
-	puts("\n-------------------------µÚÆßÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬ä¸ƒé¢˜-------------------------\n");
 	taskEleven();
-	puts("\n-------------------»Ø¹öÖÁµÚÆßÌâÖ´ĞĞÇ°-------------------\n");
+	puts("\n-------------------å›æ»šè‡³ç¬¬ä¸ƒé¢˜æ‰§è¡Œå‰-------------------\n");
 	taskSix(); 
-	puts("\n-------------------------µÚ°ËÌâ-------------------------\n");
+	puts("\n-------------------------ç¬¬å…«é¢˜-------------------------\n");
 	taskEight();
 	return 0;
 }
 
-/* µÚÎåÌâ
- ÓĞ 5 ¸öÑ§Éú£¬Ã¿¸öÑ§ÉúÓĞ 3 ÃÇ¿Î³ÌµÄ³É¼¨£¬´Ó¼üÅÌÊäÈëÑ§ÉúÊı¾İ
- £¨°üÀ¨Ñ§ºÅ£¬ĞÕÃû£¬3 ÃÅ¿Î³Ì³É¼¨£©£¬¼ÆËã³öÆ½¾ù³É¼¨£¬
- ½«Ô­ÓĞÊı¾İºÍ¼ÆËã³öµÄÆ½¾ù·ÖÊı´æ·ÅÔÚ´ÅÅÌÎÄ¼ş¡°stud¡±ÖĞ¡£ 
+/* ç¬¬äº”é¢˜
+ æœ‰ 5 ä¸ªå­¦ç”Ÿï¼Œæ¯ä¸ªå­¦ç”Ÿæœ‰ 3 ä»¬è¯¾ç¨‹çš„æˆç»©ï¼Œä»é”®ç›˜è¾“å…¥å­¦ç”Ÿæ•°æ®
+ ï¼ˆåŒ…æ‹¬å­¦å·ï¼Œå§“åï¼Œ3 é—¨è¯¾ç¨‹æˆç»©ï¼‰ï¼Œè®¡ç®—å‡ºå¹³å‡æˆç»©ï¼Œ
+ å°†åŸæœ‰æ•°æ®å’Œè®¡ç®—å‡ºçš„å¹³å‡åˆ†æ•°å­˜æ”¾åœ¨ç£ç›˜æ–‡ä»¶â€œstudâ€ä¸­ã€‚ 
 */
 
-// ¶¨ÒåÑ§ÉúÊı¾İ
+// å®šä¹‰å­¦ç”Ÿæ•°æ®
 #define MAX_LEN_NAME 15
 #define NUM_COURSE 3 
 typedef struct 
@@ -83,7 +83,7 @@ static void student_printToFile(Student *stu, FILE *fp)
 	fprintf(fp, "%d , %s , %d , %d , %d , %lf \n", stu->id, stu->name, \ 
 	stu->grades[0], stu->grades[1], stu->grades[2], stu->average);
 	#ifdef DEBUG
-	printf("Ğ´Èë£º");
+	printf("å†™å…¥ï¼š");
 	student_printToScreen(stu);
 	#endif
 }
@@ -93,15 +93,15 @@ static void taskFive()
 {
 	int i;
 	#ifdef DEBUG
-	//±àÒëÆÚÊäÈë
+	//ç¼–è¯‘æœŸè¾“å…¥
 	Student stus[NUM_STU]={{1001,"Zhang",{99,98,78},0},\
 	{1002,"Wang",{87,88,90},0},{1003,"Zhao",{89,82,77},0},\
 	{1004,"Li",{100,69,75},0},{1005,"Wei",{83,92,81},0}};
 	#else 
-	// ÆÁÄ»ÊäÈë 
+	// å±å¹•è¾“å…¥ 
 	Student stus[NUM_STU];
 	Student *p;
-	printf("ÇëÊäÈë 5 ÃûÑ§ÉúµÄÑ§ºÅ¡¢ĞÕÃû¡¢3ÃÅ¿Î³Ì³É¼¨£º\n");
+	printf("è¯·è¾“å…¥ 5 åå­¦ç”Ÿçš„å­¦å·ã€å§“åã€3é—¨è¯¾ç¨‹æˆç»©ï¼š\n");
 	for(i=0; i<NUM_STU; i++)
 	{
 		p = &stus[i];
@@ -110,17 +110,17 @@ static void taskFive()
 	}
 	#endif
 	
-	// Êı¾İ´¦Àí
+	// æ•°æ®å¤„ç†
 	for(i=0; i<NUM_STU; i++)
 	{
 		student_calcAverage(&stus[i]);
 	} 
 	
-	// Ğ´ÅÌ
+	// å†™ç›˜
 	FILE *fp;
 	if((fp=fopen("stud.csv","w+"))==NULL)
 	{
-		printf("ÎŞ·¨´ò¿ª»ò´´½¨ÎÄ¼ş\n");
+		printf("æ— æ³•æ‰“å¼€æˆ–åˆ›å»ºæ–‡ä»¶\n");
 		return;
 	}
 	for(i=0; i<NUM_STU; i++)
@@ -130,9 +130,9 @@ static void taskFive()
 	fclose(fp);
 }
 
-/* µÚÁùÌâ
- ½«µÚ 5 Ìâ¡°stud¡±ÎÄ¼şÖĞµÄÑ§ÉúÊé¾Ö£¬°´Æ½¾ù·Ö½øĞĞÅÅĞò´¦Àí£¬
- ½«ÒÑÅÅĞòµÄÑ§ÉúÊı¾İ´æÈëÒ»¸öĞÂÎÄ¼ş¡°stu_sort¡±ÖĞ¡£
+/* ç¬¬å…­é¢˜
+ å°†ç¬¬ 5 é¢˜â€œstudâ€æ–‡ä»¶ä¸­çš„å­¦ç”Ÿä¹¦å±€ï¼ŒæŒ‰å¹³å‡åˆ†è¿›è¡Œæ’åºå¤„ç†ï¼Œ
+ å°†å·²æ’åºçš„å­¦ç”Ÿæ•°æ®å­˜å…¥ä¸€ä¸ªæ–°æ–‡ä»¶â€œstu_sortâ€ä¸­ã€‚
  */ 
 
 static void student_readFromFile(Student* stu, FILE *fp)
@@ -140,7 +140,7 @@ static void student_readFromFile(Student* stu, FILE *fp)
 	fscanf(fp, "%d , %s , %d , %d , %d , %lf \n", &stu->id, stu->name, \
 	&stu->grades[0], &stu->grades[1], &stu->grades[2], &stu->average);
 	#ifdef DEBUG
-	printf("¶ÁÈë£º");
+	printf("è¯»å…¥ï¼š");
 	student_printToScreen(stu);
 	#endif
 }
@@ -148,12 +148,12 @@ static void student_readFromFile(Student* stu, FILE *fp)
 static void taskSix()
 {
 	int i;
-	// ¶ÁÎÄ¼ş 
+	// è¯»æ–‡ä»¶ 
 	Student stus[NUM_STU] = {};
 	FILE *fp;
 	if((fp=fopen("stud.csv","r+"))==NULL)
 	{
-		printf("¶ÁÈ¡ÎÄ¼şÊ§°Ü\n");
+		printf("è¯»å–æ–‡ä»¶å¤±è´¥\n");
 		return;
 	}
 	for(i=0; i<NUM_STU; i++)
@@ -162,7 +162,7 @@ static void taskSix()
 	}
 	fclose(fp);
 	
-	// ÅÅĞò
+	// æ’åº
 	int j;
 	int order[NUM_STU] = {0,1,2,3,4};
 	int temp;
@@ -179,10 +179,10 @@ static void taskSix()
 		}
 	} 
 	
-	// ÒÀĞòÊä³ö
+	// ä¾åºè¾“å‡º
 	if((fp=fopen("stu_sort.csv", "w+"))==NULL)
 	{
-		printf("ÎŞ·¨´ò¿ª»ò´´½¨ÎÄ¼ş\n");
+		printf("æ— æ³•æ‰“å¼€æˆ–åˆ›å»ºæ–‡ä»¶\n");
 		return;
 	}
 	for(i=0; i<NUM_STU; i++)
@@ -192,19 +192,19 @@ static void taskSix()
 	fclose(fp);
 }
 
-/* µÚÆßÌâ 
-½«µÚÁùÌâÒÑÅÅĞòµÄÑ§Éú³É¼¨ÎÄ¼ş½øĞĞ²åÈë´¦Àí¡£²åÈëÒ»¸öÑ§ÉúµÄÈıÃÅ¿Î³Ì³É¼¨£¬
-³ÌĞòÏÈ¼ÆËãĞÂ²åÈëÑ§ÉúµÄÆ½¾ù³É¼¨£¬È»ºó½«Ëü°´³É¼¨¸ßµÍË³Ğò²åÈë£¬²åÈëºó½¨Á¢Ò»¸öĞÂÎÄ¼ş¡£
+/* ç¬¬ä¸ƒé¢˜ 
+å°†ç¬¬å…­é¢˜å·²æ’åºçš„å­¦ç”Ÿæˆç»©æ–‡ä»¶è¿›è¡Œæ’å…¥å¤„ç†ã€‚æ’å…¥ä¸€ä¸ªå­¦ç”Ÿçš„ä¸‰é—¨è¯¾ç¨‹æˆç»©ï¼Œ
+ç¨‹åºå…ˆè®¡ç®—æ–°æ’å…¥å­¦ç”Ÿçš„å¹³å‡æˆç»©ï¼Œç„¶åå°†å®ƒæŒ‰æˆç»©é«˜ä½é¡ºåºæ’å…¥ï¼Œæ’å…¥åå»ºç«‹ä¸€ä¸ªæ–°æ–‡ä»¶ã€‚
 */ 
 static void taskEleven()
 {
 	int i;
-	// ¶ÁÎÄ¼ş
+	// è¯»æ–‡ä»¶
 	Student stus[NUM_STU];
 	FILE *fp;
 	if((fp=fopen("stu_sort.csv", "r"))==NULL)
 	{
-		printf("¶ÁÈ¡ÎÄ¼şÊ§°Ü\n");
+		printf("è¯»å–æ–‡ä»¶å¤±è´¥\n");
 		return;
 	}
 	for(i=0; i<NUM_STU; i++)
@@ -214,17 +214,17 @@ static void taskEleven()
 	fclose(fp);
 	 
 	#ifdef DEBUG
-	// ±àÒëÆÚÊäÈë
+	// ç¼–è¯‘æœŸè¾“å…¥
 	Student toInsert = {1021, "Cai", {85,86,87}, 0}; 
 	#else 
-	// ÆÁÄ»ÊäÈë
+	// å±å¹•è¾“å…¥
 	Student toInsert;
-	printf("ÇëÊäÈëÒª²åÈëµÄÑ§ÉúµÄÑ§ºÅ¡¢ĞÕÃû¡¢ÈıÃÅ³É¼¨£º\n");
+	printf("è¯·è¾“å…¥è¦æ’å…¥çš„å­¦ç”Ÿçš„å­¦å·ã€å§“åã€ä¸‰é—¨æˆç»©ï¼š\n");
 	scanf("%d %s %d %d %d", &toInsert->id, toInsert->name, \
 	&toInsert->grades[0], &toInsert->grades[1], &toInsert->grades[2]);
 	#endif 
 	
-	// ¼ÇÂ¼²åÈëÎ»ÖÃ 
+	// è®°å½•æ’å…¥ä½ç½® 
 	int insertIndex = NUM_STU;
 	bool isFound = false;
 	student_calcAverage(&toInsert);
@@ -238,10 +238,10 @@ static void taskEleven()
 		}
 	}
 	
-	// Ğ´ÎÄ¼ş
+	// å†™æ–‡ä»¶
 	if((fp=fopen("stu_sort_new.csv", "w+"))==NULL)
 	{
-		printf("´ò¿ª»ò´´½¨ÎÄ¼şÊ§°Ü\n");
+		printf("æ‰“å¼€æˆ–åˆ›å»ºæ–‡ä»¶å¤±è´¥\n");
 		return;
 	} 
 	for(i=0; i<NUM_STU; i++)
@@ -258,18 +258,18 @@ static void taskEleven()
 	}
 	fclose(fp);
 }
-/* µÚ°ËÌâ 
-½«µÚ 7 Ìâ½á¹ûÈÔ´æÈëÔ­ÓĞµÄ¡°stu_sort¡±ÎÄ¼ş¶ø²»ÁíĞÂ½¨ÎÄ¼ş¡£ 
+/* ç¬¬å…«é¢˜ 
+å°†ç¬¬ 7 é¢˜ç»“æœä»å­˜å…¥åŸæœ‰çš„â€œstu_sortâ€æ–‡ä»¶è€Œä¸å¦æ–°å»ºæ–‡ä»¶ã€‚ 
 */
 static void taskEight()
 {
 	int i;
-	// ¶ÁÎÄ¼ş
+	// è¯»æ–‡ä»¶
 	Student stus[NUM_STU];
 	FILE *fp;
 	if((fp=fopen("stu_sort.csv", "r"))==NULL)
 	{
-		printf("¶ÁÈ¡ÎÄ¼şÊ§°Ü\n");
+		printf("è¯»å–æ–‡ä»¶å¤±è´¥\n");
 		return;
 	}
 	for(i=0; i<NUM_STU; i++)
@@ -279,17 +279,17 @@ static void taskEight()
 	fclose(fp);
 	 
 	#ifdef DEBUG
-	// ±àÒëÆÚÊäÈë
+	// ç¼–è¯‘æœŸè¾“å…¥
 	Student toInsert = {1021, "Cai", {85,86,87}, 0}; 
 	#else 
-	// ÆÁÄ»ÊäÈë
+	// å±å¹•è¾“å…¥
 	Student toInsert;
-	printf("ÇëÊäÈëÒª²åÈëµÄÑ§ÉúµÄÑ§ºÅ¡¢ĞÕÃû¡¢ÈıÃÅ³É¼¨£º\n");
+	printf("è¯·è¾“å…¥è¦æ’å…¥çš„å­¦ç”Ÿçš„å­¦å·ã€å§“åã€ä¸‰é—¨æˆç»©ï¼š\n");
 	scanf("%d %s %d %d %d", &toInsert->id, toInsert->name, \
 	&toInsert->grades[0], &toInsert->grades[1], &toInsert->grades[2]);
 	#endif 
 	
-	// ¼ÇÂ¼²åÈëÎ»ÖÃ 
+	// è®°å½•æ’å…¥ä½ç½® 
 	int insertIndex = NUM_STU;
 	bool isFound = false;
 	student_calcAverage(&toInsert);
@@ -303,10 +303,10 @@ static void taskEight()
 		}
 	}
 	
-	// Ğ´ÎÄ¼ş
+	// å†™æ–‡ä»¶
 	if((fp=fopen("stu_sort.csv", "w+"))==NULL)
 	{
-		printf("´ò¿ª»ò´´½¨ÎÄ¼şÊ§°Ü\n");
+		printf("æ‰“å¼€æˆ–åˆ›å»ºæ–‡ä»¶å¤±è´¥\n");
 		return;
 	} 
 	for(i=0; i<NUM_STU; i++)

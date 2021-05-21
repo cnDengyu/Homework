@@ -1,6 +1,6 @@
 /*---------------------------------------
-³ÌĞò£ºÕÒ°°µã
-ĞĞÄÚ×î´óÇÒÁĞÄÚ×îĞ¡µÄµãÎª°°µã 
+ç¨‹åºï¼šæ‰¾éç‚¹
+è¡Œå†…æœ€å¤§ä¸”åˆ—å†…æœ€å°çš„ç‚¹ä¸ºéç‚¹ 
 ---------------------------------------*/
 #include <stdio.h>
 
@@ -9,18 +9,18 @@ const int num = 3;
 
 int findSaddlePoint()
 {
-	//¶¨Òå 
-	int i,j;						//¼ÆÊı 
-	int lineMax[num],rowMin[num];	//´æ·Å
-	int tempmax,tempmin;			//Ôİ´æ 
-	bool exists=false;				//ÊÇ·ñ´æÔÚ 
+	//å®šä¹‰ 
+	int i,j;						//è®¡æ•° 
+	int lineMax[num],rowMin[num];	//å­˜æ”¾
+	int tempmax,tempmin;			//æš‚å­˜ 
+	bool exists=false;				//æ˜¯å¦å­˜åœ¨ 
 	
-	//ÊäÈë 
+	//è¾“å…¥ 
 	#ifdef DEBUG
 	int array[num][num] = {{1,2,3},{4,5,6},{7,8,9}};
 	#else
 	int array[num][num];
-	printf("ÇëÊäÈë 3¡Á3 µÄÊı×é£º\n");
+	printf("è¯·è¾“å…¥ 3Ã—3 çš„æ•°ç»„ï¼š\n");
 	for(i=0; i<num; i++)
 	{
 		for(j=0; j<num; j++)
@@ -30,7 +30,7 @@ int findSaddlePoint()
 	}
 	#endif
 	
-	//¼ÆËãĞĞ×î´ó 
+	//è®¡ç®—è¡Œæœ€å¤§ 
 	for(i=0; i<num; i++)
 	{
 		tempmax = array[i][0];
@@ -44,7 +44,7 @@ int findSaddlePoint()
 			}
 		}
 	}
-	//¼ÆËãÁĞ×îĞ¡
+	//è®¡ç®—åˆ—æœ€å°
 	for(j=0; j<num; j++)
 	{
 		i=0;
@@ -60,21 +60,21 @@ int findSaddlePoint()
 		}
 	}
 	
-	//±È½ÏÊä³ö
+	//æ¯”è¾ƒè¾“å‡º
 	for(i=0; i<num; i++)
 	{
 		j = lineMax[i];
 		if(rowMin[j] == i)
 		{
 			exists = true;
-			printf("µÚ %d ĞĞ£¬µÚ %d ÁĞ´æÔÚ°°µã£º%d\n",\
+			printf("ç¬¬ %d è¡Œï¼Œç¬¬ %d åˆ—å­˜åœ¨éç‚¹ï¼š%d\n",\
 			 i+1, j+1, array[i][j]);
 		}
 	} 
 	
 	if(!exists)
 	{
-		printf("²»´æÔÚ°°µã");
+		printf("ä¸å­˜åœ¨éç‚¹");
 	}
 }
 
