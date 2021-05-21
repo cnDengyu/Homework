@@ -2,7 +2,7 @@ cmake_minimum_required( VERSION 3.0 )
 
 project( Clanguage_homework )   # name | 项目名称
 
-set(CMAKE_C_FLAGS "-std=c99")
+set(CMAKE_C_FLAGS "-std=c99 -fexec-charset=GBK")
 
 IF(NOT CMAKE_BUILD_TYPE)
     SET(CMAKE_BUILD_TYPE Release)   # build type | 构建方式

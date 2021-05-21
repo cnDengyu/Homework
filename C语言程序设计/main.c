@@ -6,7 +6,7 @@
 #include "strings.h"
 
 //设置默认执行的作业。取消定义以在执行中选择 。 
-#define TARGET 22
+// #define TARGET 22
 //设置是否需要循环
 //#define LOOP 
 
@@ -33,6 +33,8 @@ int main(int argc, char** argv) {
 	#endif
 	
 		system("cls");
+		printf("已进入第%d号作业\n",homework);
+		getchar();
 		switch(homework){
 			
 			case 0:break;
@@ -134,6 +136,7 @@ int main(int argc, char** argv) {
 	}while(homework);
 	#endif
 
-	//puts(str_main3);
+	puts(str_main3);
+	getchar();
 	return returnValue;
 }
