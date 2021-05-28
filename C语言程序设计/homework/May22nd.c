@@ -80,7 +80,7 @@ static void student_printToScreen(Student *stu)
 
 static void student_printToFile(Student *stu, FILE *fp)
 {
-	fprintf(fp, "%d , %s , %d , %d , %d , %lf \n", stu->id, stu->name, \ 
+	fprintf(fp, "%d , %s , %d , %d , %d , %lf \n", stu->id, stu->name, \
 	stu->grades[0], stu->grades[1], stu->grades[2], stu->average);
 	#ifdef DEBUG
 	printf("写入：");
