@@ -7,12 +7,12 @@ if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
 # using Clang
 elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
 # using GCC
-    set(CMAKE_C_FLAGS "-finput-charset=UTF-8 -fexec-charset=GBK")
+    set(CMAKE_C_FLAGS "-finput-charset=GBK -fexec-charset=GBK")
 elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
 # using Intel C++
 elseif (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
 # using Visual Studio C++
-    set(CMAKE_C_FLAGS "/source-charset:utf-8 /execution-charset:GBK")
+    set(CMAKE_C_FLAGS "/source-charset:GBK /execution-charset:GBK")
 endif()
 
 IF(NOT CMAKE_BUILD_TYPE)
