@@ -2,8 +2,7 @@
 // #include <stdbool.h>
 #include "core/timer.h"
 
-static TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-static TIM_OCInitTypeDef  TIM_OCInitStructure;
+
 static __IO uint16_t CCR1_Val = 40961;
 static __IO uint16_t CCR2_Val = 27309;
 static __IO uint16_t CCR3_Val = 13654;
@@ -41,6 +40,8 @@ static void TIM2CC4Handler()
 
 void TIMER_BASE_Configuration(void)
 {
+	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+	TIM_OCInitTypeDef  TIM_OCInitStructure;
 	/* ---------------------------------------------------------------
     TIM2 Configuration: Output Compare Timing Mode:
     TIM2 counter clock at 6 MHz

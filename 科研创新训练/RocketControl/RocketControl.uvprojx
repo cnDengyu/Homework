@@ -1539,19 +1539,9 @@
               <FilePath>.\src\core\core.h</FilePath>
             </File>
             <File>
-              <FileName>configuration.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\core\configuration.h</FilePath>
-            </File>
-            <File>
               <FileName>core.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\core\core.c</FilePath>
-            </File>
-            <File>
-              <FileName>configuration.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\configuration.c</FilePath>
             </File>
             <File>
               <FileName>timer.c</FileName>
@@ -1562,6 +1552,16 @@
               <FileName>timer.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\core\timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\core\usart.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\core\usart.c</FilePath>
             </File>
           </Files>
         </Group>
