@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\libs;.\libs\mavlink\common;.\src\</IncludePath>
+              <IncludePath>.\libs;.\src\;.\src\core;.\src\message</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1582,6 +1582,21 @@
               <FileName>core_type.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\core\core_type.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>message</GroupName>
+          <Files>
+            <File>
+              <FileName>message.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\message\message.h</FilePath>
+            </File>
+            <File>
+              <FileName>message.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\message\message.c</FilePath>
             </File>
           </Files>
         </Group>

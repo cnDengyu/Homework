@@ -1,6 +1,6 @@
 #include <stm32f10x.h>
 // #include <stdbool.h>
-#include "core/timer.h"
+#include "./timer.h"
 
 
 static __IO uint16_t CCR1_Val = 40961;
@@ -25,7 +25,7 @@ static void TIM2CC3Handler()
 }
 
 static unsigned int TIM2CC4_Count = 0;
-bool g_secondFlag = false;
+bool g_heartBeat = false;
 
 static void TIM2CC4Handler()
 {
@@ -33,7 +33,7 @@ static void TIM2CC4Handler()
 	TIM2CC4_Count++;
 	if(TIM2CC4_Count >= 1000)
 	{
-		g_secondFlag = true;
+		g_heartBeat = true;
 		TIM2CC4_Count = 0;
 	}
 }
@@ -108,10 +108,6 @@ void TIMER_BASE_Configuration(void)
 }
 
 static uint16_t capture = 0;
-extern __IO uint16_t CCR1_Val;
-extern __IO uint16_t CCR2_Val;
-extern __IO uint16_t CCR3_Val;
-extern __IO uint16_t CCR4_Val;
 
 /******************************************************************************/
 /*            STM32F10x Peripherals Interrupt Handlers                        */

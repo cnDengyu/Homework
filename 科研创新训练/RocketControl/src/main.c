@@ -1,12 +1,7 @@
 
 #include <stm32f10x.h>
 #include "core/core.h"
-#include "mavlink.h"
-
-mavlink_system_t mavlink_system = {
-    158, // System ID (1-255)
-    MAV_COMP_ID_AUTOPILOT1  // Component ID (a MAV_COMPONENT value)
-};
+#include "message/message.h"
 
 /**
   * @brief  Main program 主程序
@@ -15,10 +10,6 @@ mavlink_system_t mavlink_system = {
   */
 int main(void)
 {
-	mavlink_message_t msg;
-	mavlink_heartbeat_t heartbeat;
-	uint8_t buffer[USART_MAX_BUFFER];
-	uint16_t len;
 	
 	// Core Ability Initlize 核心程序初始化
 	CORE_Configuration();
@@ -47,35 +38,11 @@ int main(void)
 		*
 		*/
 		
-		//---------------------------------------------
-		// Fake Thread:Core 核心线程
-		if(1)
-		{
-			CORE_Loop();
-		}
+		// Fake Thread:Core 核心伪线程
+		CORE_Loop();
 		
-		//---------------------------------------------
-		// Fake Thread:Event Happens by Second 每秒线程
-		if(g_secondFlag == true)
-		{
-			
-			// Blink Test 闪灯测试
-			GPIO_WriteBit(GPIOC, GPIO_Pin_13, (BitAction)(1 - GPIO_ReadOutputDataBit(GPIOC, GPIO_Pin_13)));
-			
-			// mavlink test
-			USART_SendBreak(USARTc);
-			
-			heartbeat.type = MAV_TYPE_ROCKET;
-			heartbeat.autopilot = MAV_AUTOPILOT_GENERIC;
-			heartbeat.base_mode = MAV_MODE_FLAG_HIL_ENABLED;
-			heartbeat.custom_mode = 0;
-			heartbeat.system_status = MAV_STATE_BOOT;
-			mavlink_msg_heartbeat_encode(mavlink_system.sysid, mavlink_system.compid, &msg, &heartbeat);
-			len = mavlink_msg_to_send_buffer(buffer, &msg);
-			USARTc_SendBuffer(buffer, len);
-			
-			g_secondFlag = false;
-		}
+		// Fake Thread:Message 消息伪线程
+		MessageManager();
 		
 	}
 }

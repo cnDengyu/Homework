@@ -2,6 +2,7 @@
 #define __USART_H
 
 #include <stm32f10x.h>
+#include <stdbool.h>
 
 typedef enum { FAILED = 0, PASSED = !FAILED} TestStatus;
 
@@ -34,5 +35,7 @@ extern const uint8_t c_usart_max_buffer;
 void USARTc_IRQHandler(void);
 void USART_Configuration(void);
 void USARTc_SendBuffer(uint8_t* buffer, uint16_t length);
+bool USARTc_Available(void);
+uint8_t USARTc_ReadByte(void);
 
 #endif

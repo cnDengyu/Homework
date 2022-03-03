@@ -1,7 +1,8 @@
 #include <stm32f10x.h>
-#include "core/timer.h"
-#include "core/usart.h"
-#include "core/core.h"
+#include "./timer.h"
+#include "./usart.h"
+#include "./core.h"
+
 
 
 static void RCC_Configuration(void);

@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-extern bool g_secondFlag;
+extern bool g_heartBeat;
 
 void TIMER_BASE_Configuration(void);
 

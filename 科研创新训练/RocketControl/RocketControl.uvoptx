@@ -152,7 +152,7 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>89</LineNumber>
+          <LineNumber>49</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -161,14 +161,14 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\src\core\usart.c</Filename>
+          <Filename>.\src\core\core.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>74</LineNumber>
+          <LineNumber>151</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -177,76 +177,28 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\src\main.c</Filename>
+          <Filename>.\src\core\core.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>89</LineNumber>
+          <LineNumber>149</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134224712</Address>
+          <Address>0</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\OneDrive\涓北澶у\鐧荤粷瀹囧灎 - 鏂囨。\鍙叕寮€鍐呭\Homework\绉戠爺鍒涙柊璁粌\RocketControl\src\core\usart.c</Filename>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>.\src\core\core.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\RocketControl\src/core/usart.c\89</Expression>
+          <Expression></Expression>
         </Bp>
         <Bp>
           <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>74</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134225228</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\OneDrive\涓北澶у\鐧荤粷瀹囧灎 - 鏂囨。\鍙叕寮€鍐呭\Homework\绉戠爺鍒涙柊璁粌\RocketControl\src\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\RocketControl\src/main.c\74</Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>44</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\src\core\core.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>5</Number>
-          <Type>0</Type>
-          <LineNumber>125</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\src\core\core.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>6</Number>
           <Type>0</Type>
           <LineNumber>127</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -262,9 +214,9 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>7</Number>
+          <Number>4</Number>
           <Type>0</Type>
-          <LineNumber>128</LineNumber>
+          <LineNumber>125</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -278,9 +230,9 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>8</Number>
+          <Number>5</Number>
           <Type>0</Type>
-          <LineNumber>130</LineNumber>
+          <LineNumber>89</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -289,9 +241,41 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\src\core\core.c</Filename>
+          <Filename>.\src\core\usart.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>6</Number>
+          <Type>0</Type>
+          <LineNumber>89</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134224712</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\OneDrive\涓北澶у\鐧荤粷瀹囧灎 - 鏂囨。\鍙叕寮€鍐呭\Homework\绉戠爺鍒涙柊璁粌\RocketControl\src\core\usart.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\RocketControl\src/core/usart.c\89</Expression>
+        </Bp>
+        <Bp>
+          <Number>7</Number>
+          <Type>0</Type>
+          <LineNumber>74</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134225228</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\OneDrive\涓北澶у\鐧荤粷瀹囧灎 - 鏂囨。\鍙叕寮€鍐呭\Homework\绉戠爺鍒涙柊璁粌\RocketControl\src\main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\RocketControl\src/main.c\74</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -385,7 +369,7 @@
 
   <Group>
     <GroupName>mavlink</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -3238,6 +3222,38 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\core\core_type.h</PathWithFileName>
       <FilenameWithoutPath>core_type.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+  </Group>
+
+  <Group>
+    <GroupName>message</GroupName>
+    <tvExp>1</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <RteFlg>0</RteFlg>
+    <File>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>239</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\src\message\message.h</PathWithFileName>
+      <FilenameWithoutPath>message.h</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>4</GroupNumber>
+      <FileNumber>240</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\src\message\message.c</PathWithFileName>
+      <FilenameWithoutPath>message.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
