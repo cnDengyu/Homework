@@ -3,7 +3,7 @@
 #include "core/usart.h"
 #include "./message.h"
 
-mavlink_system_t mavlink_system = {
+const mavlink_system_t mavlink_system = {
     158, // System ID (1-255)
     MAV_COMP_ID_AUTOPILOT1  // Component ID (a MAV_COMPONENT value)
 };
@@ -29,6 +29,10 @@ void MessageManager(void)
 				
 				case MAV_CMD_REQUEST_PROTOCOL_VERSION:
 					SendCommandAck(msg.msgid, MAV_RESULT_ACCEPTED);
+					break;
+				
+				case MAVLINK_MSG_ID_PARAM_REQUEST_LIST:
+					
 					break;
 				
 				default:
@@ -76,4 +80,9 @@ static void SendCommandAck(uint16_t command_id, uint8_t result)
 	mavlink_msg_command_ack_encode(mavlink_system.sysid, mavlink_system.compid, &msg, &ack);
 	len = mavlink_msg_to_send_buffer(buffer, &msg);
 	USARTc_SendBuffer(buffer, len);
+}
+
+static void SendParamValue()
+{
+	
 }

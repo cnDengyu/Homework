@@ -105,7 +105,7 @@ Section Cross References
     message.o(.text.SendHeartBeat) refers to timer.o(.bss.g_heartBeat) for g_heartBeat
     message.o(.text.SendHeartBeat) refers to stm32f10x_gpio.o(.text.GPIO_ReadOutputDataBit) for GPIO_ReadOutputDataBit
     message.o(.text.SendHeartBeat) refers to stm32f10x_gpio.o(.text.GPIO_WriteBit) for GPIO_WriteBit
-    message.o(.text.SendHeartBeat) refers to message.o(.data.mavlink_system) for mavlink_system
+    message.o(.text.SendHeartBeat) refers to message.o(.rodata.mavlink_system) for mavlink_system
     message.o(.text.SendHeartBeat) refers to message.o(.text.mavlink_msg_heartbeat_encode) for mavlink_msg_heartbeat_encode
     message.o(.text.SendHeartBeat) refers to message.o(.text.mavlink_msg_to_send_buffer) for mavlink_msg_to_send_buffer
     message.o(.text.SendHeartBeat) refers to usart.o(.text.USARTc_SendBuffer) for USARTc_SendBuffer
@@ -116,7 +116,7 @@ Section Cross References
     message.o(.text.mavlink_parse_char) refers to message.o(.text._mav_parse_error) for _mav_parse_error
     message.o(.text.mavlink_parse_char) refers to message.o(.text.mavlink_start_checksum) for mavlink_start_checksum
     message.o(.ARM.exidx.text.mavlink_parse_char) refers to message.o(.text.mavlink_parse_char) for [Anonymous Symbol]
-    message.o(.text.SendCommandAck) refers to message.o(.data.mavlink_system) for mavlink_system
+    message.o(.text.SendCommandAck) refers to message.o(.rodata.mavlink_system) for mavlink_system
     message.o(.text.SendCommandAck) refers to message.o(.text.mavlink_msg_command_ack_encode) for mavlink_msg_command_ack_encode
     message.o(.text.SendCommandAck) refers to message.o(.text.mavlink_msg_to_send_buffer) for mavlink_msg_to_send_buffer
     message.o(.text.SendCommandAck) refers to usart.o(.text.USARTc_SendBuffer) for USARTc_SendBuffer
@@ -1070,133 +1070,133 @@ Image Symbol Table
     [Anonymous Symbol]                       0x0800072c   Section        0  stm32f10x_gpio.o(.text.GPIO_ReadOutputDataBit)
     [Anonymous Symbol]                       0x08000760   Section        0  stm32f10x_gpio.o(.text.GPIO_WriteBit)
     [Anonymous Symbol]                       0x0800078c   Section        0  message.o(.text.MessageManager)
-    NVIC_Configuration                       0x080007ed   Thumb Code    74  core.o(.text.NVIC_Configuration)
-    [Anonymous Symbol]                       0x080007ec   Section        0  core.o(.text.NVIC_Configuration)
-    [Anonymous Symbol]                       0x08000838   Section        0  misc.o(.text.NVIC_Init)
-    [Anonymous Symbol]                       0x080008e4   Section        0  misc.o(.text.NVIC_PriorityGroupConfig)
-    [Anonymous Symbol]                       0x08000900   Section        0  stm32f10x_rcc.o(.text.RCC_APB1PeriphClockCmd)
-    [Anonymous Symbol]                       0x08000938   Section        0  stm32f10x_rcc.o(.text.RCC_APB2PeriphClockCmd)
-    RCC_Configuration                        0x08000971   Thumb Code    44  core.o(.text.RCC_Configuration)
-    [Anonymous Symbol]                       0x08000970   Section        0  core.o(.text.RCC_Configuration)
-    [Anonymous Symbol]                       0x0800099c   Section        0  stm32f10x_rcc.o(.text.RCC_GetClocksFreq)
-    [Anonymous Symbol]                       0x08000b10   Section        0  stm32f10x_rcc.o(.text.RCC_PCLK1Config)
-    SendCommandAck                           0x08000b3d   Thumb Code    86  message.o(.text.SendCommandAck)
-    [Anonymous Symbol]                       0x08000b3c   Section        0  message.o(.text.SendCommandAck)
-    SendHeartBeat                            0x08000b95   Thumb Code   158  message.o(.text.SendHeartBeat)
-    [Anonymous Symbol]                       0x08000b94   Section        0  message.o(.text.SendHeartBeat)
-    SetSysClock                              0x08000c35   Thumb Code     8  system_stm32f10x.o(.text.SetSysClock)
-    [Anonymous Symbol]                       0x08000c34   Section        0  system_stm32f10x.o(.text.SetSysClock)
-    SetSysClockTo72                          0x08000c3d   Thumb Code   290  system_stm32f10x.o(.text.SetSysClockTo72)
-    [Anonymous Symbol]                       0x08000c3c   Section        0  system_stm32f10x.o(.text.SetSysClockTo72)
-    [Anonymous Symbol]                       0x08000d60   Section        0  system_stm32f10x.o(.text.SystemInit)
-    TIM2CC1Handler                           0x08000dc9   Thumb Code     2  timer.o(.text.TIM2CC1Handler)
-    [Anonymous Symbol]                       0x08000dc8   Section        0  timer.o(.text.TIM2CC1Handler)
-    TIM2CC2Handler                           0x08000dcd   Thumb Code     2  timer.o(.text.TIM2CC2Handler)
-    [Anonymous Symbol]                       0x08000dcc   Section        0  timer.o(.text.TIM2CC2Handler)
-    TIM2CC3Handler                           0x08000dd1   Thumb Code     2  timer.o(.text.TIM2CC3Handler)
-    [Anonymous Symbol]                       0x08000dd0   Section        0  timer.o(.text.TIM2CC3Handler)
-    TIM2CC4Handler                           0x08000dd5   Thumb Code    52  timer.o(.text.TIM2CC4Handler)
-    [Anonymous Symbol]                       0x08000dd4   Section        0  timer.o(.text.TIM2CC4Handler)
-    [Anonymous Symbol]                       0x08000e08   Section        0  timer.o(.text.TIM2_IRQHandler)
-    [Anonymous Symbol]                       0x08000f28   Section        0  timer.o(.text.TIMER_BASE_Configuration)
-    [Anonymous Symbol]                       0x0800103c   Section        0  stm32f10x_tim.o(.text.TIM_ClearITPendingBit)
-    [Anonymous Symbol]                       0x08001054   Section        0  stm32f10x_tim.o(.text.TIM_Cmd)
-    [Anonymous Symbol]                       0x08001080   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture1)
-    [Anonymous Symbol]                       0x0800108c   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture2)
-    [Anonymous Symbol]                       0x08001098   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture3)
-    [Anonymous Symbol]                       0x080010a4   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture4)
-    [Anonymous Symbol]                       0x080010b4   Section        0  stm32f10x_tim.o(.text.TIM_GetITStatus)
-    [Anonymous Symbol]                       0x08001110   Section        0  stm32f10x_tim.o(.text.TIM_ITConfig)
-    [Anonymous Symbol]                       0x08001144   Section        0  stm32f10x_tim.o(.text.TIM_OC1Init)
-    [Anonymous Symbol]                       0x080012a8   Section        0  stm32f10x_tim.o(.text.TIM_OC1PreloadConfig)
-    [Anonymous Symbol]                       0x080012e4   Section        0  stm32f10x_tim.o(.text.TIM_OC2Init)
-    [Anonymous Symbol]                       0x08001424   Section        0  stm32f10x_tim.o(.text.TIM_OC2PreloadConfig)
-    [Anonymous Symbol]                       0x08001464   Section        0  stm32f10x_tim.o(.text.TIM_OC3Init)
-    [Anonymous Symbol]                       0x080015a4   Section        0  stm32f10x_tim.o(.text.TIM_OC3PreloadConfig)
-    [Anonymous Symbol]                       0x080015e0   Section        0  stm32f10x_tim.o(.text.TIM_OC4Init)
-    [Anonymous Symbol]                       0x080016d0   Section        0  stm32f10x_tim.o(.text.TIM_OC4PreloadConfig)
-    [Anonymous Symbol]                       0x08001710   Section        0  stm32f10x_tim.o(.text.TIM_PrescalerConfig)
-    [Anonymous Symbol]                       0x08001730   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare1)
-    [Anonymous Symbol]                       0x08001744   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare2)
-    [Anonymous Symbol]                       0x08001758   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare3)
-    [Anonymous Symbol]                       0x0800176c   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare4)
-    [Anonymous Symbol]                       0x08001784   Section        0  stm32f10x_tim.o(.text.TIM_TimeBaseInit)
-    [Anonymous Symbol]                       0x080018c8   Section        0  usart.o(.text.USART1_IRQHandler)
-    [Anonymous Symbol]                       0x08001994   Section        0  stm32f10x_usart.o(.text.USART_Cmd)
-    [Anonymous Symbol]                       0x080019c0   Section        0  usart.o(.text.USART_Configuration)
-    [Anonymous Symbol]                       0x08001a18   Section        0  stm32f10x_usart.o(.text.USART_GetITStatus)
-    [Anonymous Symbol]                       0x08001ac8   Section        0  stm32f10x_usart.o(.text.USART_ITConfig)
-    [Anonymous Symbol]                       0x08001b5c   Section        0  stm32f10x_usart.o(.text.USART_Init)
-    [Anonymous Symbol]                       0x08001cb8   Section        0  stm32f10x_usart.o(.text.USART_ReceiveData)
-    [Anonymous Symbol]                       0x08001cc8   Section        0  stm32f10x_usart.o(.text.USART_SendData)
-    [Anonymous Symbol]                       0x08001ce0   Section        0  usart.o(.text.USARTc_Available)
-    [Anonymous Symbol]                       0x08001d14   Section        0  usart.o(.text.USARTc_ReadByte)
-    [Anonymous Symbol]                       0x08001d60   Section        0  usart.o(.text.USARTc_SendBuffer)
-    _mav_parse_error                         0x08001dd9   Thumb Code    16  message.o(.text._mav_parse_error)
-    [Anonymous Symbol]                       0x08001dd8   Section        0  message.o(.text._mav_parse_error)
-    _mav_trim_payload                        0x08001de9   Thumb Code    74  message.o(.text._mav_trim_payload)
-    [Anonymous Symbol]                       0x08001de8   Section        0  message.o(.text._mav_trim_payload)
-    crc_accumulate                           0x08001e35   Thumb Code    60  message.o(.text.crc_accumulate)
-    [Anonymous Symbol]                       0x08001e34   Section        0  message.o(.text.crc_accumulate)
-    crc_accumulate_buffer                    0x08001e71   Thumb Code    52  message.o(.text.crc_accumulate_buffer)
-    [Anonymous Symbol]                       0x08001e70   Section        0  message.o(.text.crc_accumulate_buffer)
-    crc_calculate                            0x08001ea5   Thumb Code    56  message.o(.text.crc_calculate)
-    [Anonymous Symbol]                       0x08001ea4   Section        0  message.o(.text.crc_calculate)
-    crc_init                                 0x08001edd   Thumb Code    16  message.o(.text.crc_init)
-    [Anonymous Symbol]                       0x08001edc   Section        0  message.o(.text.crc_init)
-    [Anonymous Symbol]                       0x08001eec   Section        0  main.o(.text.main)
-    mavlink_finalize_message                 0x08001f05   Thumb Code    82  message.o(.text.mavlink_finalize_message)
-    [Anonymous Symbol]                       0x08001f04   Section        0  message.o(.text.mavlink_finalize_message)
-    mavlink_finalize_message_buffer          0x08001f59   Thumb Code   558  message.o(.text.mavlink_finalize_message_buffer)
-    [Anonymous Symbol]                       0x08001f58   Section        0  message.o(.text.mavlink_finalize_message_buffer)
-    mavlink_finalize_message_chan            0x08002189   Thumb Code    98  message.o(.text.mavlink_finalize_message_chan)
-    [Anonymous Symbol]                       0x08002188   Section        0  message.o(.text.mavlink_finalize_message_chan)
-    mavlink_frame_char                       0x080021ed   Thumb Code    62  message.o(.text.mavlink_frame_char)
-    [Anonymous Symbol]                       0x080021ec   Section        0  message.o(.text.mavlink_frame_char)
-    mavlink_frame_char_buffer                0x0800222d   Thumb Code  1320  message.o(.text.mavlink_frame_char_buffer)
-    [Anonymous Symbol]                       0x0800222c   Section        0  message.o(.text.mavlink_frame_char_buffer)
-    mavlink_get_channel_buffer               0x08002755   Thumb Code    30  message.o(.text.mavlink_get_channel_buffer)
-    [Anonymous Symbol]                       0x08002754   Section        0  message.o(.text.mavlink_get_channel_buffer)
-    mavlink_get_channel_status               0x08002775   Thumb Code    30  message.o(.text.mavlink_get_channel_status)
-    [Anonymous Symbol]                       0x08002774   Section        0  message.o(.text.mavlink_get_channel_status)
-    mavlink_get_msg_entry                    0x08002795   Thumb Code   168  message.o(.text.mavlink_get_msg_entry)
-    [Anonymous Symbol]                       0x08002794   Section        0  message.o(.text.mavlink_get_msg_entry)
-    mavlink_msg_command_ack_encode           0x0800283d   Thumb Code    84  message.o(.text.mavlink_msg_command_ack_encode)
-    [Anonymous Symbol]                       0x0800283c   Section        0  message.o(.text.mavlink_msg_command_ack_encode)
-    mavlink_msg_command_ack_pack             0x08002891   Thumb Code   160  message.o(.text.mavlink_msg_command_ack_pack)
-    [Anonymous Symbol]                       0x08002890   Section        0  message.o(.text.mavlink_msg_command_ack_pack)
-    mavlink_msg_heartbeat_encode             0x08002931   Thumb Code    76  message.o(.text.mavlink_msg_heartbeat_encode)
-    [Anonymous Symbol]                       0x08002930   Section        0  message.o(.text.mavlink_msg_heartbeat_encode)
-    mavlink_msg_heartbeat_pack               0x0800297d   Thumb Code   146  message.o(.text.mavlink_msg_heartbeat_pack)
-    [Anonymous Symbol]                       0x0800297c   Section        0  message.o(.text.mavlink_msg_heartbeat_pack)
-    mavlink_msg_to_send_buffer               0x08002a11   Thumb Code   350  message.o(.text.mavlink_msg_to_send_buffer)
-    [Anonymous Symbol]                       0x08002a10   Section        0  message.o(.text.mavlink_msg_to_send_buffer)
-    mavlink_parse_char                       0x08002b71   Thumb Code   150  message.o(.text.mavlink_parse_char)
-    [Anonymous Symbol]                       0x08002b70   Section        0  message.o(.text.mavlink_parse_char)
-    mavlink_sha256_calc                      0x08002c09   Thumb Code   420  message.o(.text.mavlink_sha256_calc)
-    [Anonymous Symbol]                       0x08002c08   Section        0  message.o(.text.mavlink_sha256_calc)
-    mavlink_sha256_final_48                  0x08002dad   Thumb Code   202  message.o(.text.mavlink_sha256_final_48)
-    [Anonymous Symbol]                       0x08002dac   Section        0  message.o(.text.mavlink_sha256_final_48)
-    mavlink_sha256_init                      0x08002e79   Thumb Code   114  message.o(.text.mavlink_sha256_init)
-    [Anonymous Symbol]                       0x08002e78   Section        0  message.o(.text.mavlink_sha256_init)
-    mavlink_sha256_update                    0x08002eed   Thumb Code   246  message.o(.text.mavlink_sha256_update)
-    [Anonymous Symbol]                       0x08002eec   Section        0  message.o(.text.mavlink_sha256_update)
-    mavlink_sign_packet                      0x08002fe5   Thumb Code   194  message.o(.text.mavlink_sign_packet)
-    [Anonymous Symbol]                       0x08002fe4   Section        0  message.o(.text.mavlink_sign_packet)
-    mavlink_signature_check                  0x080030a9   Thumb Code   570  message.o(.text.mavlink_signature_check)
-    [Anonymous Symbol]                       0x080030a8   Section        0  message.o(.text.mavlink_signature_check)
-    mavlink_start_checksum                   0x080032e5   Thumb Code    32  message.o(.text.mavlink_start_checksum)
-    [Anonymous Symbol]                       0x080032e4   Section        0  message.o(.text.mavlink_start_checksum)
-    mavlink_update_checksum                  0x08003305   Thumb Code    40  message.o(.text.mavlink_update_checksum)
-    [Anonymous Symbol]                       0x08003304   Section        0  message.o(.text.mavlink_update_checksum)
-    ADCPrescTable                            0x0800332c   Data           4  stm32f10x_rcc.o(.rodata.ADCPrescTable)
-    [Anonymous Symbol]                       0x0800332c   Section        0  stm32f10x_rcc.o(.rodata.ADCPrescTable)
-    APBAHBPrescTable                         0x08003330   Data          16  stm32f10x_rcc.o(.rodata.APBAHBPrescTable)
-    [Anonymous Symbol]                       0x08003330   Section        0  stm32f10x_rcc.o(.rodata.APBAHBPrescTable)
-    mavlink_get_msg_entry.mavlink_message_crcs 0x08003340   Data        2616  message.o(.rodata.mavlink_get_msg_entry.mavlink_message_crcs)
-    [Anonymous Symbol]                       0x08003340   Section        0  message.o(.rodata.mavlink_get_msg_entry.mavlink_message_crcs)
-    mavlink_sha256_constant_256              0x08003d78   Data         256  message.o(.rodata.mavlink_sha256_constant_256)
-    [Anonymous Symbol]                       0x08003d78   Section        0  message.o(.rodata.mavlink_sha256_constant_256)
+    NVIC_Configuration                       0x080007f9   Thumb Code    74  core.o(.text.NVIC_Configuration)
+    [Anonymous Symbol]                       0x080007f8   Section        0  core.o(.text.NVIC_Configuration)
+    [Anonymous Symbol]                       0x08000844   Section        0  misc.o(.text.NVIC_Init)
+    [Anonymous Symbol]                       0x080008f0   Section        0  misc.o(.text.NVIC_PriorityGroupConfig)
+    [Anonymous Symbol]                       0x0800090c   Section        0  stm32f10x_rcc.o(.text.RCC_APB1PeriphClockCmd)
+    [Anonymous Symbol]                       0x08000944   Section        0  stm32f10x_rcc.o(.text.RCC_APB2PeriphClockCmd)
+    RCC_Configuration                        0x0800097d   Thumb Code    44  core.o(.text.RCC_Configuration)
+    [Anonymous Symbol]                       0x0800097c   Section        0  core.o(.text.RCC_Configuration)
+    [Anonymous Symbol]                       0x080009a8   Section        0  stm32f10x_rcc.o(.text.RCC_GetClocksFreq)
+    [Anonymous Symbol]                       0x08000b1c   Section        0  stm32f10x_rcc.o(.text.RCC_PCLK1Config)
+    SendCommandAck                           0x08000b49   Thumb Code    86  message.o(.text.SendCommandAck)
+    [Anonymous Symbol]                       0x08000b48   Section        0  message.o(.text.SendCommandAck)
+    SendHeartBeat                            0x08000ba1   Thumb Code   158  message.o(.text.SendHeartBeat)
+    [Anonymous Symbol]                       0x08000ba0   Section        0  message.o(.text.SendHeartBeat)
+    SetSysClock                              0x08000c41   Thumb Code     8  system_stm32f10x.o(.text.SetSysClock)
+    [Anonymous Symbol]                       0x08000c40   Section        0  system_stm32f10x.o(.text.SetSysClock)
+    SetSysClockTo72                          0x08000c49   Thumb Code   290  system_stm32f10x.o(.text.SetSysClockTo72)
+    [Anonymous Symbol]                       0x08000c48   Section        0  system_stm32f10x.o(.text.SetSysClockTo72)
+    [Anonymous Symbol]                       0x08000d6c   Section        0  system_stm32f10x.o(.text.SystemInit)
+    TIM2CC1Handler                           0x08000dd5   Thumb Code     2  timer.o(.text.TIM2CC1Handler)
+    [Anonymous Symbol]                       0x08000dd4   Section        0  timer.o(.text.TIM2CC1Handler)
+    TIM2CC2Handler                           0x08000dd9   Thumb Code     2  timer.o(.text.TIM2CC2Handler)
+    [Anonymous Symbol]                       0x08000dd8   Section        0  timer.o(.text.TIM2CC2Handler)
+    TIM2CC3Handler                           0x08000ddd   Thumb Code     2  timer.o(.text.TIM2CC3Handler)
+    [Anonymous Symbol]                       0x08000ddc   Section        0  timer.o(.text.TIM2CC3Handler)
+    TIM2CC4Handler                           0x08000de1   Thumb Code    52  timer.o(.text.TIM2CC4Handler)
+    [Anonymous Symbol]                       0x08000de0   Section        0  timer.o(.text.TIM2CC4Handler)
+    [Anonymous Symbol]                       0x08000e14   Section        0  timer.o(.text.TIM2_IRQHandler)
+    [Anonymous Symbol]                       0x08000f34   Section        0  timer.o(.text.TIMER_BASE_Configuration)
+    [Anonymous Symbol]                       0x08001048   Section        0  stm32f10x_tim.o(.text.TIM_ClearITPendingBit)
+    [Anonymous Symbol]                       0x08001060   Section        0  stm32f10x_tim.o(.text.TIM_Cmd)
+    [Anonymous Symbol]                       0x0800108c   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture1)
+    [Anonymous Symbol]                       0x08001098   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture2)
+    [Anonymous Symbol]                       0x080010a4   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture3)
+    [Anonymous Symbol]                       0x080010b0   Section        0  stm32f10x_tim.o(.text.TIM_GetCapture4)
+    [Anonymous Symbol]                       0x080010c0   Section        0  stm32f10x_tim.o(.text.TIM_GetITStatus)
+    [Anonymous Symbol]                       0x0800111c   Section        0  stm32f10x_tim.o(.text.TIM_ITConfig)
+    [Anonymous Symbol]                       0x08001150   Section        0  stm32f10x_tim.o(.text.TIM_OC1Init)
+    [Anonymous Symbol]                       0x080012b4   Section        0  stm32f10x_tim.o(.text.TIM_OC1PreloadConfig)
+    [Anonymous Symbol]                       0x080012f0   Section        0  stm32f10x_tim.o(.text.TIM_OC2Init)
+    [Anonymous Symbol]                       0x08001430   Section        0  stm32f10x_tim.o(.text.TIM_OC2PreloadConfig)
+    [Anonymous Symbol]                       0x08001470   Section        0  stm32f10x_tim.o(.text.TIM_OC3Init)
+    [Anonymous Symbol]                       0x080015b0   Section        0  stm32f10x_tim.o(.text.TIM_OC3PreloadConfig)
+    [Anonymous Symbol]                       0x080015ec   Section        0  stm32f10x_tim.o(.text.TIM_OC4Init)
+    [Anonymous Symbol]                       0x080016dc   Section        0  stm32f10x_tim.o(.text.TIM_OC4PreloadConfig)
+    [Anonymous Symbol]                       0x0800171c   Section        0  stm32f10x_tim.o(.text.TIM_PrescalerConfig)
+    [Anonymous Symbol]                       0x0800173c   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare1)
+    [Anonymous Symbol]                       0x08001750   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare2)
+    [Anonymous Symbol]                       0x08001764   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare3)
+    [Anonymous Symbol]                       0x08001778   Section        0  stm32f10x_tim.o(.text.TIM_SetCompare4)
+    [Anonymous Symbol]                       0x08001790   Section        0  stm32f10x_tim.o(.text.TIM_TimeBaseInit)
+    [Anonymous Symbol]                       0x080018d4   Section        0  usart.o(.text.USART1_IRQHandler)
+    [Anonymous Symbol]                       0x080019a0   Section        0  stm32f10x_usart.o(.text.USART_Cmd)
+    [Anonymous Symbol]                       0x080019cc   Section        0  usart.o(.text.USART_Configuration)
+    [Anonymous Symbol]                       0x08001a24   Section        0  stm32f10x_usart.o(.text.USART_GetITStatus)
+    [Anonymous Symbol]                       0x08001ad4   Section        0  stm32f10x_usart.o(.text.USART_ITConfig)
+    [Anonymous Symbol]                       0x08001b68   Section        0  stm32f10x_usart.o(.text.USART_Init)
+    [Anonymous Symbol]                       0x08001cc4   Section        0  stm32f10x_usart.o(.text.USART_ReceiveData)
+    [Anonymous Symbol]                       0x08001cd4   Section        0  stm32f10x_usart.o(.text.USART_SendData)
+    [Anonymous Symbol]                       0x08001cec   Section        0  usart.o(.text.USARTc_Available)
+    [Anonymous Symbol]                       0x08001d20   Section        0  usart.o(.text.USARTc_ReadByte)
+    [Anonymous Symbol]                       0x08001d6c   Section        0  usart.o(.text.USARTc_SendBuffer)
+    _mav_parse_error                         0x08001de5   Thumb Code    16  message.o(.text._mav_parse_error)
+    [Anonymous Symbol]                       0x08001de4   Section        0  message.o(.text._mav_parse_error)
+    _mav_trim_payload                        0x08001df5   Thumb Code    74  message.o(.text._mav_trim_payload)
+    [Anonymous Symbol]                       0x08001df4   Section        0  message.o(.text._mav_trim_payload)
+    crc_accumulate                           0x08001e41   Thumb Code    60  message.o(.text.crc_accumulate)
+    [Anonymous Symbol]                       0x08001e40   Section        0  message.o(.text.crc_accumulate)
+    crc_accumulate_buffer                    0x08001e7d   Thumb Code    52  message.o(.text.crc_accumulate_buffer)
+    [Anonymous Symbol]                       0x08001e7c   Section        0  message.o(.text.crc_accumulate_buffer)
+    crc_calculate                            0x08001eb1   Thumb Code    56  message.o(.text.crc_calculate)
+    [Anonymous Symbol]                       0x08001eb0   Section        0  message.o(.text.crc_calculate)
+    crc_init                                 0x08001ee9   Thumb Code    16  message.o(.text.crc_init)
+    [Anonymous Symbol]                       0x08001ee8   Section        0  message.o(.text.crc_init)
+    [Anonymous Symbol]                       0x08001ef8   Section        0  main.o(.text.main)
+    mavlink_finalize_message                 0x08001f11   Thumb Code    82  message.o(.text.mavlink_finalize_message)
+    [Anonymous Symbol]                       0x08001f10   Section        0  message.o(.text.mavlink_finalize_message)
+    mavlink_finalize_message_buffer          0x08001f65   Thumb Code   558  message.o(.text.mavlink_finalize_message_buffer)
+    [Anonymous Symbol]                       0x08001f64   Section        0  message.o(.text.mavlink_finalize_message_buffer)
+    mavlink_finalize_message_chan            0x08002195   Thumb Code    98  message.o(.text.mavlink_finalize_message_chan)
+    [Anonymous Symbol]                       0x08002194   Section        0  message.o(.text.mavlink_finalize_message_chan)
+    mavlink_frame_char                       0x080021f9   Thumb Code    62  message.o(.text.mavlink_frame_char)
+    [Anonymous Symbol]                       0x080021f8   Section        0  message.o(.text.mavlink_frame_char)
+    mavlink_frame_char_buffer                0x08002239   Thumb Code  1320  message.o(.text.mavlink_frame_char_buffer)
+    [Anonymous Symbol]                       0x08002238   Section        0  message.o(.text.mavlink_frame_char_buffer)
+    mavlink_get_channel_buffer               0x08002761   Thumb Code    30  message.o(.text.mavlink_get_channel_buffer)
+    [Anonymous Symbol]                       0x08002760   Section        0  message.o(.text.mavlink_get_channel_buffer)
+    mavlink_get_channel_status               0x08002781   Thumb Code    30  message.o(.text.mavlink_get_channel_status)
+    [Anonymous Symbol]                       0x08002780   Section        0  message.o(.text.mavlink_get_channel_status)
+    mavlink_get_msg_entry                    0x080027a1   Thumb Code   168  message.o(.text.mavlink_get_msg_entry)
+    [Anonymous Symbol]                       0x080027a0   Section        0  message.o(.text.mavlink_get_msg_entry)
+    mavlink_msg_command_ack_encode           0x08002849   Thumb Code    84  message.o(.text.mavlink_msg_command_ack_encode)
+    [Anonymous Symbol]                       0x08002848   Section        0  message.o(.text.mavlink_msg_command_ack_encode)
+    mavlink_msg_command_ack_pack             0x0800289d   Thumb Code   160  message.o(.text.mavlink_msg_command_ack_pack)
+    [Anonymous Symbol]                       0x0800289c   Section        0  message.o(.text.mavlink_msg_command_ack_pack)
+    mavlink_msg_heartbeat_encode             0x0800293d   Thumb Code    76  message.o(.text.mavlink_msg_heartbeat_encode)
+    [Anonymous Symbol]                       0x0800293c   Section        0  message.o(.text.mavlink_msg_heartbeat_encode)
+    mavlink_msg_heartbeat_pack               0x08002989   Thumb Code   146  message.o(.text.mavlink_msg_heartbeat_pack)
+    [Anonymous Symbol]                       0x08002988   Section        0  message.o(.text.mavlink_msg_heartbeat_pack)
+    mavlink_msg_to_send_buffer               0x08002a1d   Thumb Code   350  message.o(.text.mavlink_msg_to_send_buffer)
+    [Anonymous Symbol]                       0x08002a1c   Section        0  message.o(.text.mavlink_msg_to_send_buffer)
+    mavlink_parse_char                       0x08002b7d   Thumb Code   150  message.o(.text.mavlink_parse_char)
+    [Anonymous Symbol]                       0x08002b7c   Section        0  message.o(.text.mavlink_parse_char)
+    mavlink_sha256_calc                      0x08002c15   Thumb Code   420  message.o(.text.mavlink_sha256_calc)
+    [Anonymous Symbol]                       0x08002c14   Section        0  message.o(.text.mavlink_sha256_calc)
+    mavlink_sha256_final_48                  0x08002db9   Thumb Code   202  message.o(.text.mavlink_sha256_final_48)
+    [Anonymous Symbol]                       0x08002db8   Section        0  message.o(.text.mavlink_sha256_final_48)
+    mavlink_sha256_init                      0x08002e85   Thumb Code   114  message.o(.text.mavlink_sha256_init)
+    [Anonymous Symbol]                       0x08002e84   Section        0  message.o(.text.mavlink_sha256_init)
+    mavlink_sha256_update                    0x08002ef9   Thumb Code   246  message.o(.text.mavlink_sha256_update)
+    [Anonymous Symbol]                       0x08002ef8   Section        0  message.o(.text.mavlink_sha256_update)
+    mavlink_sign_packet                      0x08002ff1   Thumb Code   194  message.o(.text.mavlink_sign_packet)
+    [Anonymous Symbol]                       0x08002ff0   Section        0  message.o(.text.mavlink_sign_packet)
+    mavlink_signature_check                  0x080030b5   Thumb Code   570  message.o(.text.mavlink_signature_check)
+    [Anonymous Symbol]                       0x080030b4   Section        0  message.o(.text.mavlink_signature_check)
+    mavlink_start_checksum                   0x080032f1   Thumb Code    32  message.o(.text.mavlink_start_checksum)
+    [Anonymous Symbol]                       0x080032f0   Section        0  message.o(.text.mavlink_start_checksum)
+    mavlink_update_checksum                  0x08003311   Thumb Code    40  message.o(.text.mavlink_update_checksum)
+    [Anonymous Symbol]                       0x08003310   Section        0  message.o(.text.mavlink_update_checksum)
+    ADCPrescTable                            0x08003338   Data           4  stm32f10x_rcc.o(.rodata.ADCPrescTable)
+    [Anonymous Symbol]                       0x08003338   Section        0  stm32f10x_rcc.o(.rodata.ADCPrescTable)
+    APBAHBPrescTable                         0x0800333c   Data          16  stm32f10x_rcc.o(.rodata.APBAHBPrescTable)
+    [Anonymous Symbol]                       0x0800333c   Section        0  stm32f10x_rcc.o(.rodata.APBAHBPrescTable)
+    mavlink_get_msg_entry.mavlink_message_crcs 0x0800334c   Data        2616  message.o(.rodata.mavlink_get_msg_entry.mavlink_message_crcs)
+    [Anonymous Symbol]                       0x0800334c   Section        0  message.o(.rodata.mavlink_get_msg_entry.mavlink_message_crcs)
+    mavlink_sha256_constant_256              0x08003d84   Data         256  message.o(.rodata.mavlink_sha256_constant_256)
+    [Anonymous Symbol]                       0x08003d84   Section        0  message.o(.rodata.mavlink_sha256_constant_256)
     CCR1_Val                                 0x20000000   Data           2  timer.o(.data.CCR1_Val)
     [Anonymous Symbol]                       0x20000000   Section        0  timer.o(.data.CCR1_Val)
     CCR2_Val                                 0x20000002   Data           2  timer.o(.data.CCR2_Val)
@@ -1211,28 +1211,28 @@ Image Symbol Table
     [Anonymous Symbol]                       0x20000009   Section        0  usart.o(.data.NbrOfDataToTransfer1)
     TxBuffer1                                0x20000010   Data         255  usart.o(.data.TxBuffer1)
     [Anonymous Symbol]                       0x20000010   Section        0  usart.o(.data.TxBuffer1)
-    .bss                                     0x20000118   Section       96  libspace.o(.bss)
-    PrescalerValue                           0x20000178   Data           2  timer.o(.bss.PrescalerValue)
-    [Anonymous Symbol]                       0x20000178   Section        0  timer.o(.bss.PrescalerValue)
-    RxBuffer1                                0x2000017a   Data         254  usart.o(.bss.RxBuffer1)
-    [Anonymous Symbol]                       0x2000017a   Section        0  usart.o(.bss.RxBuffer1)
-    RxCounter1                               0x20000278   Data           1  usart.o(.bss.RxCounter1)
-    [Anonymous Symbol]                       0x20000278   Section        0  usart.o(.bss.RxCounter1)
-    TIM2CC4_Count                            0x2000027c   Data           4  timer.o(.bss.TIM2CC4_Count)
-    [Anonymous Symbol]                       0x2000027c   Section        0  timer.o(.bss.TIM2CC4_Count)
-    TxCounter1                               0x20000280   Data           1  usart.o(.bss.TxCounter1)
-    [Anonymous Symbol]                       0x20000280   Section        0  usart.o(.bss.TxCounter1)
-    capture                                  0x20000282   Data           2  timer.o(.bss.capture)
-    [Anonymous Symbol]                       0x20000282   Section        0  timer.o(.bss.capture)
-    mavlink_get_channel_buffer.m_mavlink_buffer 0x20000285   Data        1164  message.o(.bss.mavlink_get_channel_buffer.m_mavlink_buffer)
-    [Anonymous Symbol]                       0x20000285   Section        0  message.o(.bss.mavlink_get_channel_buffer.m_mavlink_buffer)
-    mavlink_get_channel_status.m_mavlink_status 0x20000714   Data          96  message.o(.bss.mavlink_get_channel_status.m_mavlink_status)
-    [Anonymous Symbol]                       0x20000714   Section        0  message.o(.bss.mavlink_get_channel_status.m_mavlink_status)
-    Heap_Mem                                 0x20000778   Data         512  startup_stm32f10x_ld.o(HEAP)
-    HEAP                                     0x20000778   Section      512  startup_stm32f10x_ld.o(HEAP)
-    Stack_Mem                                0x20000978   Data        1024  startup_stm32f10x_ld.o(STACK)
-    STACK                                    0x20000978   Section     1024  startup_stm32f10x_ld.o(STACK)
-    __initial_sp                             0x20000d78   Data           0  startup_stm32f10x_ld.o(STACK)
+    .bss                                     0x20000110   Section       96  libspace.o(.bss)
+    PrescalerValue                           0x20000170   Data           2  timer.o(.bss.PrescalerValue)
+    [Anonymous Symbol]                       0x20000170   Section        0  timer.o(.bss.PrescalerValue)
+    RxBuffer1                                0x20000172   Data         254  usart.o(.bss.RxBuffer1)
+    [Anonymous Symbol]                       0x20000172   Section        0  usart.o(.bss.RxBuffer1)
+    RxCounter1                               0x20000270   Data           1  usart.o(.bss.RxCounter1)
+    [Anonymous Symbol]                       0x20000270   Section        0  usart.o(.bss.RxCounter1)
+    TIM2CC4_Count                            0x20000274   Data           4  timer.o(.bss.TIM2CC4_Count)
+    [Anonymous Symbol]                       0x20000274   Section        0  timer.o(.bss.TIM2CC4_Count)
+    TxCounter1                               0x20000278   Data           1  usart.o(.bss.TxCounter1)
+    [Anonymous Symbol]                       0x20000278   Section        0  usart.o(.bss.TxCounter1)
+    capture                                  0x2000027a   Data           2  timer.o(.bss.capture)
+    [Anonymous Symbol]                       0x2000027a   Section        0  timer.o(.bss.capture)
+    mavlink_get_channel_buffer.m_mavlink_buffer 0x2000027d   Data        1164  message.o(.bss.mavlink_get_channel_buffer.m_mavlink_buffer)
+    [Anonymous Symbol]                       0x2000027d   Section        0  message.o(.bss.mavlink_get_channel_buffer.m_mavlink_buffer)
+    mavlink_get_channel_status.m_mavlink_status 0x2000070c   Data          96  message.o(.bss.mavlink_get_channel_status.m_mavlink_status)
+    [Anonymous Symbol]                       0x2000070c   Section        0  message.o(.bss.mavlink_get_channel_status.m_mavlink_status)
+    Heap_Mem                                 0x20000770   Data         512  startup_stm32f10x_ld.o(HEAP)
+    HEAP                                     0x20000770   Section      512  startup_stm32f10x_ld.o(HEAP)
+    Stack_Mem                                0x20000970   Data        1024  startup_stm32f10x_ld.o(STACK)
+    STACK                                    0x20000970   Section     1024  startup_stm32f10x_ld.o(STACK)
+    __initial_sp                             0x20000d70   Data           0  startup_stm32f10x_ld.o(STACK)
 
     Global Symbols
 
@@ -1399,57 +1399,57 @@ Image Symbol Table
     GPIO_PinRemapConfig                      0x08000631   Thumb Code   250  stm32f10x_gpio.o(.text.GPIO_PinRemapConfig)
     GPIO_ReadOutputDataBit                   0x0800072d   Thumb Code    52  stm32f10x_gpio.o(.text.GPIO_ReadOutputDataBit)
     GPIO_WriteBit                            0x08000761   Thumb Code    44  stm32f10x_gpio.o(.text.GPIO_WriteBit)
-    MessageManager                           0x0800078d   Thumb Code    94  message.o(.text.MessageManager)
-    NVIC_Init                                0x08000839   Thumb Code   170  misc.o(.text.NVIC_Init)
-    NVIC_PriorityGroupConfig                 0x080008e5   Thumb Code    28  misc.o(.text.NVIC_PriorityGroupConfig)
-    RCC_APB1PeriphClockCmd                   0x08000901   Thumb Code    56  stm32f10x_rcc.o(.text.RCC_APB1PeriphClockCmd)
-    RCC_APB2PeriphClockCmd                   0x08000939   Thumb Code    56  stm32f10x_rcc.o(.text.RCC_APB2PeriphClockCmd)
-    RCC_GetClocksFreq                        0x0800099d   Thumb Code   370  stm32f10x_rcc.o(.text.RCC_GetClocksFreq)
-    RCC_PCLK1Config                          0x08000b11   Thumb Code    44  stm32f10x_rcc.o(.text.RCC_PCLK1Config)
-    SystemInit                               0x08000d61   Thumb Code   102  system_stm32f10x.o(.text.SystemInit)
-    TIM2_IRQHandler                          0x08000e09   Thumb Code   286  timer.o(.text.TIM2_IRQHandler)
-    TIMER_BASE_Configuration                 0x08000f29   Thumb Code   274  timer.o(.text.TIMER_BASE_Configuration)
-    TIM_ClearITPendingBit                    0x0800103d   Thumb Code    22  stm32f10x_tim.o(.text.TIM_ClearITPendingBit)
-    TIM_Cmd                                  0x08001055   Thumb Code    44  stm32f10x_tim.o(.text.TIM_Cmd)
-    TIM_GetCapture1                          0x08001081   Thumb Code    12  stm32f10x_tim.o(.text.TIM_GetCapture1)
-    TIM_GetCapture2                          0x0800108d   Thumb Code    12  stm32f10x_tim.o(.text.TIM_GetCapture2)
-    TIM_GetCapture3                          0x08001099   Thumb Code    12  stm32f10x_tim.o(.text.TIM_GetCapture3)
-    TIM_GetCapture4                          0x080010a5   Thumb Code    14  stm32f10x_tim.o(.text.TIM_GetCapture4)
-    TIM_GetITStatus                          0x080010b5   Thumb Code    90  stm32f10x_tim.o(.text.TIM_GetITStatus)
-    TIM_ITConfig                             0x08001111   Thumb Code    52  stm32f10x_tim.o(.text.TIM_ITConfig)
-    TIM_OC1Init                              0x08001145   Thumb Code   354  stm32f10x_tim.o(.text.TIM_OC1Init)
-    TIM_OC1PreloadConfig                     0x080012a9   Thumb Code    60  stm32f10x_tim.o(.text.TIM_OC1PreloadConfig)
-    TIM_OC2Init                              0x080012e5   Thumb Code   320  stm32f10x_tim.o(.text.TIM_OC2Init)
-    TIM_OC2PreloadConfig                     0x08001425   Thumb Code    62  stm32f10x_tim.o(.text.TIM_OC2PreloadConfig)
-    TIM_OC3Init                              0x08001465   Thumb Code   318  stm32f10x_tim.o(.text.TIM_OC3Init)
-    TIM_OC3PreloadConfig                     0x080015a5   Thumb Code    60  stm32f10x_tim.o(.text.TIM_OC3PreloadConfig)
-    TIM_OC4Init                              0x080015e1   Thumb Code   238  stm32f10x_tim.o(.text.TIM_OC4Init)
-    TIM_OC4PreloadConfig                     0x080016d1   Thumb Code    62  stm32f10x_tim.o(.text.TIM_OC4PreloadConfig)
-    TIM_PrescalerConfig                      0x08001711   Thumb Code    32  stm32f10x_tim.o(.text.TIM_PrescalerConfig)
-    TIM_SetCompare1                          0x08001731   Thumb Code    20  stm32f10x_tim.o(.text.TIM_SetCompare1)
-    TIM_SetCompare2                          0x08001745   Thumb Code    20  stm32f10x_tim.o(.text.TIM_SetCompare2)
-    TIM_SetCompare3                          0x08001759   Thumb Code    20  stm32f10x_tim.o(.text.TIM_SetCompare3)
-    TIM_SetCompare4                          0x0800176d   Thumb Code    22  stm32f10x_tim.o(.text.TIM_SetCompare4)
-    TIM_TimeBaseInit                         0x08001785   Thumb Code   322  stm32f10x_tim.o(.text.TIM_TimeBaseInit)
-    USART1_IRQHandler                        0x080018c9   Thumb Code   204  usart.o(.text.USART1_IRQHandler)
-    USART_Cmd                                0x08001995   Thumb Code    44  stm32f10x_usart.o(.text.USART_Cmd)
-    USART_Configuration                      0x080019c1   Thumb Code    88  usart.o(.text.USART_Configuration)
-    USART_GetITStatus                        0x08001a19   Thumb Code   176  stm32f10x_usart.o(.text.USART_GetITStatus)
-    USART_ITConfig                           0x08001ac9   Thumb Code   146  stm32f10x_usart.o(.text.USART_ITConfig)
-    USART_Init                               0x08001b5d   Thumb Code   348  stm32f10x_usart.o(.text.USART_Init)
-    USART_ReceiveData                        0x08001cb9   Thumb Code    16  stm32f10x_usart.o(.text.USART_ReceiveData)
-    USART_SendData                           0x08001cc9   Thumb Code    24  stm32f10x_usart.o(.text.USART_SendData)
-    USARTc_Available                         0x08001ce1   Thumb Code    52  usart.o(.text.USARTc_Available)
-    USARTc_ReadByte                          0x08001d15   Thumb Code    76  usart.o(.text.USARTc_ReadByte)
-    USARTc_SendBuffer                        0x08001d61   Thumb Code   118  usart.o(.text.USARTc_SendBuffer)
-    main                                     0x08001eed   Thumb Code    24  main.o(.text.main)
-    Region$$Table$$Base                      0x08003e78   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003e98   Number         0  anon$$obj.o(Region$$Table)
+    MessageManager                           0x0800078d   Thumb Code   108  message.o(.text.MessageManager)
+    NVIC_Init                                0x08000845   Thumb Code   170  misc.o(.text.NVIC_Init)
+    NVIC_PriorityGroupConfig                 0x080008f1   Thumb Code    28  misc.o(.text.NVIC_PriorityGroupConfig)
+    RCC_APB1PeriphClockCmd                   0x0800090d   Thumb Code    56  stm32f10x_rcc.o(.text.RCC_APB1PeriphClockCmd)
+    RCC_APB2PeriphClockCmd                   0x08000945   Thumb Code    56  stm32f10x_rcc.o(.text.RCC_APB2PeriphClockCmd)
+    RCC_GetClocksFreq                        0x080009a9   Thumb Code   370  stm32f10x_rcc.o(.text.RCC_GetClocksFreq)
+    RCC_PCLK1Config                          0x08000b1d   Thumb Code    44  stm32f10x_rcc.o(.text.RCC_PCLK1Config)
+    SystemInit                               0x08000d6d   Thumb Code   102  system_stm32f10x.o(.text.SystemInit)
+    TIM2_IRQHandler                          0x08000e15   Thumb Code   286  timer.o(.text.TIM2_IRQHandler)
+    TIMER_BASE_Configuration                 0x08000f35   Thumb Code   274  timer.o(.text.TIMER_BASE_Configuration)
+    TIM_ClearITPendingBit                    0x08001049   Thumb Code    22  stm32f10x_tim.o(.text.TIM_ClearITPendingBit)
+    TIM_Cmd                                  0x08001061   Thumb Code    44  stm32f10x_tim.o(.text.TIM_Cmd)
+    TIM_GetCapture1                          0x0800108d   Thumb Code    12  stm32f10x_tim.o(.text.TIM_GetCapture1)
+    TIM_GetCapture2                          0x08001099   Thumb Code    12  stm32f10x_tim.o(.text.TIM_GetCapture2)
+    TIM_GetCapture3                          0x080010a5   Thumb Code    12  stm32f10x_tim.o(.text.TIM_GetCapture3)
+    TIM_GetCapture4                          0x080010b1   Thumb Code    14  stm32f10x_tim.o(.text.TIM_GetCapture4)
+    TIM_GetITStatus                          0x080010c1   Thumb Code    90  stm32f10x_tim.o(.text.TIM_GetITStatus)
+    TIM_ITConfig                             0x0800111d   Thumb Code    52  stm32f10x_tim.o(.text.TIM_ITConfig)
+    TIM_OC1Init                              0x08001151   Thumb Code   354  stm32f10x_tim.o(.text.TIM_OC1Init)
+    TIM_OC1PreloadConfig                     0x080012b5   Thumb Code    60  stm32f10x_tim.o(.text.TIM_OC1PreloadConfig)
+    TIM_OC2Init                              0x080012f1   Thumb Code   320  stm32f10x_tim.o(.text.TIM_OC2Init)
+    TIM_OC2PreloadConfig                     0x08001431   Thumb Code    62  stm32f10x_tim.o(.text.TIM_OC2PreloadConfig)
+    TIM_OC3Init                              0x08001471   Thumb Code   318  stm32f10x_tim.o(.text.TIM_OC3Init)
+    TIM_OC3PreloadConfig                     0x080015b1   Thumb Code    60  stm32f10x_tim.o(.text.TIM_OC3PreloadConfig)
+    TIM_OC4Init                              0x080015ed   Thumb Code   238  stm32f10x_tim.o(.text.TIM_OC4Init)
+    TIM_OC4PreloadConfig                     0x080016dd   Thumb Code    62  stm32f10x_tim.o(.text.TIM_OC4PreloadConfig)
+    TIM_PrescalerConfig                      0x0800171d   Thumb Code    32  stm32f10x_tim.o(.text.TIM_PrescalerConfig)
+    TIM_SetCompare1                          0x0800173d   Thumb Code    20  stm32f10x_tim.o(.text.TIM_SetCompare1)
+    TIM_SetCompare2                          0x08001751   Thumb Code    20  stm32f10x_tim.o(.text.TIM_SetCompare2)
+    TIM_SetCompare3                          0x08001765   Thumb Code    20  stm32f10x_tim.o(.text.TIM_SetCompare3)
+    TIM_SetCompare4                          0x08001779   Thumb Code    22  stm32f10x_tim.o(.text.TIM_SetCompare4)
+    TIM_TimeBaseInit                         0x08001791   Thumb Code   322  stm32f10x_tim.o(.text.TIM_TimeBaseInit)
+    USART1_IRQHandler                        0x080018d5   Thumb Code   204  usart.o(.text.USART1_IRQHandler)
+    USART_Cmd                                0x080019a1   Thumb Code    44  stm32f10x_usart.o(.text.USART_Cmd)
+    USART_Configuration                      0x080019cd   Thumb Code    88  usart.o(.text.USART_Configuration)
+    USART_GetITStatus                        0x08001a25   Thumb Code   176  stm32f10x_usart.o(.text.USART_GetITStatus)
+    USART_ITConfig                           0x08001ad5   Thumb Code   146  stm32f10x_usart.o(.text.USART_ITConfig)
+    USART_Init                               0x08001b69   Thumb Code   348  stm32f10x_usart.o(.text.USART_Init)
+    USART_ReceiveData                        0x08001cc5   Thumb Code    16  stm32f10x_usart.o(.text.USART_ReceiveData)
+    USART_SendData                           0x08001cd5   Thumb Code    24  stm32f10x_usart.o(.text.USART_SendData)
+    USARTc_Available                         0x08001ced   Thumb Code    52  usart.o(.text.USARTc_Available)
+    USARTc_ReadByte                          0x08001d21   Thumb Code    76  usart.o(.text.USARTc_ReadByte)
+    USARTc_SendBuffer                        0x08001d6d   Thumb Code   118  usart.o(.text.USARTc_SendBuffer)
+    main                                     0x08001ef9   Thumb Code    24  main.o(.text.main)
+    mavlink_system                           0x08003e84   Data           2  message.o(.rodata.mavlink_system)
+    Region$$Table$$Base                      0x08003e88   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003ea8   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x2000000c   Data           4  system_stm32f10x.o(.data.SystemCoreClock)
-    mavlink_system                           0x2000010f   Data           2  message.o(.data.mavlink_system)
-    __libspace_start                         0x20000118   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x20000178   Data           0  libspace.o(.bss)
-    g_heartBeat                              0x20000284   Data           1  timer.o(.bss.g_heartBeat)
+    __libspace_start                         0x20000110   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000170   Data           0  libspace.o(.bss)
+    g_heartBeat                              0x2000027c   Data           1  timer.o(.bss.g_heartBeat)
 
 
 
@@ -1459,9 +1459,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00003fac, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00003fb8, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003e98, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003ea8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1539,171 +1539,171 @@ Memory Map of the image
     0x0800072a   0x0800072a   0x00000002   PAD
     0x0800072c   0x0800072c   0x00000034   Code   RO          181    .text.GPIO_ReadOutputDataBit  stm32f10x_gpio.o
     0x08000760   0x08000760   0x0000002c   Code   RO          189    .text.GPIO_WriteBit  stm32f10x_gpio.o
-    0x0800078c   0x0800078c   0x0000005e   Code   RO           78    .text.MessageManager  message.o
-    0x080007ea   0x080007ea   0x00000002   PAD
-    0x080007ec   0x080007ec   0x0000004a   Code   RO           15    .text.NVIC_Configuration  core.o
-    0x08000836   0x08000836   0x00000002   PAD
-    0x08000838   0x08000838   0x000000aa   Code   RO          154    .text.NVIC_Init     misc.o
-    0x080008e2   0x080008e2   0x00000002   PAD
-    0x080008e4   0x080008e4   0x0000001c   Code   RO          152    .text.NVIC_PriorityGroupConfig  misc.o
-    0x08000900   0x08000900   0x00000038   Code   RO          258    .text.RCC_APB1PeriphClockCmd  stm32f10x_rcc.o
-    0x08000938   0x08000938   0x00000038   Code   RO          256    .text.RCC_APB2PeriphClockCmd  stm32f10x_rcc.o
-    0x08000970   0x08000970   0x0000002c   Code   RO           13    .text.RCC_Configuration  core.o
-    0x0800099c   0x0800099c   0x00000172   Code   RO          252    .text.RCC_GetClocksFreq  stm32f10x_rcc.o
-    0x08000b0e   0x08000b0e   0x00000002   PAD
-    0x08000b10   0x08000b10   0x0000002c   Code   RO          234    .text.RCC_PCLK1Config  stm32f10x_rcc.o
-    0x08000b3c   0x08000b3c   0x00000056   Code   RO           84    .text.SendCommandAck  message.o
-    0x08000b92   0x08000b92   0x00000002   PAD
-    0x08000b94   0x08000b94   0x0000009e   Code   RO           80    .text.SendHeartBeat  message.o
-    0x08000c32   0x08000c32   0x00000002   PAD
-    0x08000c34   0x08000c34   0x00000008   Code   RO          565    .text.SetSysClock   system_stm32f10x.o
-    0x08000c3c   0x08000c3c   0x00000122   Code   RO          569    .text.SetSysClockTo72  system_stm32f10x.o
-    0x08000d5e   0x08000d5e   0x00000002   PAD
-    0x08000d60   0x08000d60   0x00000066   Code   RO          563    .text.SystemInit    system_stm32f10x.o
-    0x08000dc6   0x08000dc6   0x00000002   PAD
-    0x08000dc8   0x08000dc8   0x00000002   Code   RO           32    .text.TIM2CC1Handler  timer.o
-    0x08000dca   0x08000dca   0x00000002   PAD
-    0x08000dcc   0x08000dcc   0x00000002   Code   RO           34    .text.TIM2CC2Handler  timer.o
-    0x08000dce   0x08000dce   0x00000002   PAD
-    0x08000dd0   0x08000dd0   0x00000002   Code   RO           36    .text.TIM2CC3Handler  timer.o
+    0x0800078c   0x0800078c   0x0000006c   Code   RO           78    .text.MessageManager  message.o
+    0x080007f8   0x080007f8   0x0000004a   Code   RO           15    .text.NVIC_Configuration  core.o
+    0x08000842   0x08000842   0x00000002   PAD
+    0x08000844   0x08000844   0x000000aa   Code   RO          154    .text.NVIC_Init     misc.o
+    0x080008ee   0x080008ee   0x00000002   PAD
+    0x080008f0   0x080008f0   0x0000001c   Code   RO          152    .text.NVIC_PriorityGroupConfig  misc.o
+    0x0800090c   0x0800090c   0x00000038   Code   RO          258    .text.RCC_APB1PeriphClockCmd  stm32f10x_rcc.o
+    0x08000944   0x08000944   0x00000038   Code   RO          256    .text.RCC_APB2PeriphClockCmd  stm32f10x_rcc.o
+    0x0800097c   0x0800097c   0x0000002c   Code   RO           13    .text.RCC_Configuration  core.o
+    0x080009a8   0x080009a8   0x00000172   Code   RO          252    .text.RCC_GetClocksFreq  stm32f10x_rcc.o
+    0x08000b1a   0x08000b1a   0x00000002   PAD
+    0x08000b1c   0x08000b1c   0x0000002c   Code   RO          234    .text.RCC_PCLK1Config  stm32f10x_rcc.o
+    0x08000b48   0x08000b48   0x00000056   Code   RO           84    .text.SendCommandAck  message.o
+    0x08000b9e   0x08000b9e   0x00000002   PAD
+    0x08000ba0   0x08000ba0   0x0000009e   Code   RO           80    .text.SendHeartBeat  message.o
+    0x08000c3e   0x08000c3e   0x00000002   PAD
+    0x08000c40   0x08000c40   0x00000008   Code   RO          565    .text.SetSysClock   system_stm32f10x.o
+    0x08000c48   0x08000c48   0x00000122   Code   RO          569    .text.SetSysClockTo72  system_stm32f10x.o
+    0x08000d6a   0x08000d6a   0x00000002   PAD
+    0x08000d6c   0x08000d6c   0x00000066   Code   RO          563    .text.SystemInit    system_stm32f10x.o
     0x08000dd2   0x08000dd2   0x00000002   PAD
-    0x08000dd4   0x08000dd4   0x00000034   Code   RO           38    .text.TIM2CC4Handler  timer.o
-    0x08000e08   0x08000e08   0x0000011e   Code   RO           30    .text.TIM2_IRQHandler  timer.o
-    0x08000f26   0x08000f26   0x00000002   PAD
-    0x08000f28   0x08000f28   0x00000112   Code   RO           28    .text.TIMER_BASE_Configuration  timer.o
-    0x0800103a   0x0800103a   0x00000002   PAD
-    0x0800103c   0x0800103c   0x00000016   Code   RO          465    .text.TIM_ClearITPendingBit  stm32f10x_tim.o
-    0x08001052   0x08001052   0x00000002   PAD
-    0x08001054   0x08001054   0x0000002c   Code   RO          327    .text.TIM_Cmd       stm32f10x_tim.o
-    0x08001080   0x08001080   0x0000000c   Code   RO          447    .text.TIM_GetCapture1  stm32f10x_tim.o
-    0x0800108c   0x0800108c   0x0000000c   Code   RO          449    .text.TIM_GetCapture2  stm32f10x_tim.o
-    0x08001098   0x08001098   0x0000000c   Code   RO          451    .text.TIM_GetCapture3  stm32f10x_tim.o
-    0x080010a4   0x080010a4   0x0000000e   Code   RO          453    .text.TIM_GetCapture4  stm32f10x_tim.o
-    0x080010b2   0x080010b2   0x00000002   PAD
-    0x080010b4   0x080010b4   0x0000005a   Code   RO          463    .text.TIM_GetITStatus  stm32f10x_tim.o
-    0x0800110e   0x0800110e   0x00000002   PAD
-    0x08001110   0x08001110   0x00000034   Code   RO          331    .text.TIM_ITConfig  stm32f10x_tim.o
-    0x08001144   0x08001144   0x00000162   Code   RO          289    .text.TIM_OC1Init   stm32f10x_tim.o
-    0x080012a6   0x080012a6   0x00000002   PAD
-    0x080012a8   0x080012a8   0x0000003c   Code   RO          375    .text.TIM_OC1PreloadConfig  stm32f10x_tim.o
-    0x080012e4   0x080012e4   0x00000140   Code   RO          291    .text.TIM_OC2Init   stm32f10x_tim.o
-    0x08001424   0x08001424   0x0000003e   Code   RO          377    .text.TIM_OC2PreloadConfig  stm32f10x_tim.o
-    0x08001462   0x08001462   0x00000002   PAD
-    0x08001464   0x08001464   0x0000013e   Code   RO          293    .text.TIM_OC3Init   stm32f10x_tim.o
-    0x080015a2   0x080015a2   0x00000002   PAD
-    0x080015a4   0x080015a4   0x0000003c   Code   RO          379    .text.TIM_OC3PreloadConfig  stm32f10x_tim.o
-    0x080015e0   0x080015e0   0x000000ee   Code   RO          295    .text.TIM_OC4Init   stm32f10x_tim.o
-    0x080016ce   0x080016ce   0x00000002   PAD
-    0x080016d0   0x080016d0   0x0000003e   Code   RO          381    .text.TIM_OC4PreloadConfig  stm32f10x_tim.o
-    0x0800170e   0x0800170e   0x00000002   PAD
-    0x08001710   0x08001710   0x00000020   Code   RO          353    .text.TIM_PrescalerConfig  stm32f10x_tim.o
-    0x08001730   0x08001730   0x00000014   Code   RO          437    .text.TIM_SetCompare1  stm32f10x_tim.o
-    0x08001744   0x08001744   0x00000014   Code   RO          439    .text.TIM_SetCompare2  stm32f10x_tim.o
-    0x08001758   0x08001758   0x00000014   Code   RO          441    .text.TIM_SetCompare3  stm32f10x_tim.o
-    0x0800176c   0x0800176c   0x00000016   Code   RO          443    .text.TIM_SetCompare4  stm32f10x_tim.o
-    0x08001782   0x08001782   0x00000002   PAD
-    0x08001784   0x08001784   0x00000142   Code   RO          287    .text.TIM_TimeBaseInit  stm32f10x_tim.o
-    0x080018c6   0x080018c6   0x00000002   PAD
-    0x080018c8   0x080018c8   0x000000cc   Code   RO           55    .text.USART1_IRQHandler  usart.o
-    0x08001994   0x08001994   0x0000002c   Code   RO          484    .text.USART_Cmd     stm32f10x_usart.o
-    0x080019c0   0x080019c0   0x00000058   Code   RO           57    .text.USART_Configuration  usart.o
-    0x08001a18   0x08001a18   0x000000b0   Code   RO          528    .text.USART_GetITStatus  stm32f10x_usart.o
-    0x08001ac8   0x08001ac8   0x00000092   Code   RO          486    .text.USART_ITConfig  stm32f10x_usart.o
-    0x08001b5a   0x08001b5a   0x00000002   PAD
-    0x08001b5c   0x08001b5c   0x0000015c   Code   RO          476    .text.USART_Init    stm32f10x_usart.o
-    0x08001cb8   0x08001cb8   0x00000010   Code   RO          502    .text.USART_ReceiveData  stm32f10x_usart.o
-    0x08001cc8   0x08001cc8   0x00000018   Code   RO          500    .text.USART_SendData  stm32f10x_usart.o
-    0x08001ce0   0x08001ce0   0x00000034   Code   RO           61    .text.USARTc_Available  usart.o
-    0x08001d14   0x08001d14   0x0000004c   Code   RO           63    .text.USARTc_ReadByte  usart.o
-    0x08001d60   0x08001d60   0x00000076   Code   RO           59    .text.USARTc_SendBuffer  usart.o
-    0x08001dd6   0x08001dd6   0x00000002   PAD
-    0x08001dd8   0x08001dd8   0x00000010   Code   RO           92    .text._mav_parse_error  message.o
-    0x08001de8   0x08001de8   0x0000004a   Code   RO          128    .text._mav_trim_payload  message.o
-    0x08001e32   0x08001e32   0x00000002   PAD
-    0x08001e34   0x08001e34   0x0000003c   Code   RO          104    .text.crc_accumulate  message.o
-    0x08001e70   0x08001e70   0x00000034   Code   RO          132    .text.crc_accumulate_buffer  message.o
-    0x08001ea4   0x08001ea4   0x00000038   Code   RO          130    .text.crc_calculate  message.o
-    0x08001edc   0x08001edc   0x00000010   Code   RO          114    .text.crc_init      message.o
-    0x08001eec   0x08001eec   0x00000018   Code   RO            2    .text.main          main.o
-    0x08001f04   0x08001f04   0x00000052   Code   RO          122    .text.mavlink_finalize_message  message.o
-    0x08001f56   0x08001f56   0x00000002   PAD
-    0x08001f58   0x08001f58   0x0000022e   Code   RO          126    .text.mavlink_finalize_message_buffer  message.o
-    0x08002186   0x08002186   0x00000002   PAD
-    0x08002188   0x08002188   0x00000062   Code   RO          124    .text.mavlink_finalize_message_chan  message.o
-    0x080021ea   0x080021ea   0x00000002   PAD
-    0x080021ec   0x080021ec   0x0000003e   Code   RO           86    .text.mavlink_frame_char  message.o
-    0x0800222a   0x0800222a   0x00000002   PAD
-    0x0800222c   0x0800222c   0x00000528   Code   RO           96    .text.mavlink_frame_char_buffer  message.o
-    0x08002754   0x08002754   0x0000001e   Code   RO           88    .text.mavlink_get_channel_buffer  message.o
-    0x08002772   0x08002772   0x00000002   PAD
-    0x08002774   0x08002774   0x0000001e   Code   RO           90    .text.mavlink_get_channel_status  message.o
-    0x08002792   0x08002792   0x00000002   PAD
-    0x08002794   0x08002794   0x000000a8   Code   RO          100    .text.mavlink_get_msg_entry  message.o
-    0x0800283c   0x0800283c   0x00000054   Code   RO          136    .text.mavlink_msg_command_ack_encode  message.o
-    0x08002890   0x08002890   0x000000a0   Code   RO          138    .text.mavlink_msg_command_ack_pack  message.o
-    0x08002930   0x08002930   0x0000004c   Code   RO          116    .text.mavlink_msg_heartbeat_encode  message.o
-    0x0800297c   0x0800297c   0x00000092   Code   RO          120    .text.mavlink_msg_heartbeat_pack  message.o
-    0x08002a0e   0x08002a0e   0x00000002   PAD
-    0x08002a10   0x08002a10   0x0000015e   Code   RO          118    .text.mavlink_msg_to_send_buffer  message.o
-    0x08002b6e   0x08002b6e   0x00000002   PAD
-    0x08002b70   0x08002b70   0x00000096   Code   RO           82    .text.mavlink_parse_char  message.o
-    0x08002c06   0x08002c06   0x00000002   PAD
-    0x08002c08   0x08002c08   0x000001a4   Code   RO          112    .text.mavlink_sha256_calc  message.o
-    0x08002dac   0x08002dac   0x000000ca   Code   RO          110    .text.mavlink_sha256_final_48  message.o
-    0x08002e76   0x08002e76   0x00000002   PAD
-    0x08002e78   0x08002e78   0x00000072   Code   RO          106    .text.mavlink_sha256_init  message.o
-    0x08002eea   0x08002eea   0x00000002   PAD
-    0x08002eec   0x08002eec   0x000000f6   Code   RO          108    .text.mavlink_sha256_update  message.o
-    0x08002fe2   0x08002fe2   0x00000002   PAD
-    0x08002fe4   0x08002fe4   0x000000c2   Code   RO          134    .text.mavlink_sign_packet  message.o
-    0x080030a6   0x080030a6   0x00000002   PAD
-    0x080030a8   0x080030a8   0x0000023a   Code   RO          102    .text.mavlink_signature_check  message.o
-    0x080032e2   0x080032e2   0x00000002   PAD
-    0x080032e4   0x080032e4   0x00000020   Code   RO           94    .text.mavlink_start_checksum  message.o
-    0x08003304   0x08003304   0x00000028   Code   RO           98    .text.mavlink_update_checksum  message.o
-    0x0800332c   0x0800332c   0x00000004   Data   RO          277    .rodata.ADCPrescTable  stm32f10x_rcc.o
-    0x08003330   0x08003330   0x00000010   Data   RO          276    .rodata.APBAHBPrescTable  stm32f10x_rcc.o
-    0x08003340   0x08003340   0x00000a38   Data   RO          141    .rodata.mavlink_get_msg_entry.mavlink_message_crcs  message.o
-    0x08003d78   0x08003d78   0x00000100   Data   RO          142    .rodata.mavlink_sha256_constant_256  message.o
-    0x08003e78   0x08003e78   0x00000020   Data   RO          755    Region$$Table       anon$$obj.o
+    0x08000dd4   0x08000dd4   0x00000002   Code   RO           32    .text.TIM2CC1Handler  timer.o
+    0x08000dd6   0x08000dd6   0x00000002   PAD
+    0x08000dd8   0x08000dd8   0x00000002   Code   RO           34    .text.TIM2CC2Handler  timer.o
+    0x08000dda   0x08000dda   0x00000002   PAD
+    0x08000ddc   0x08000ddc   0x00000002   Code   RO           36    .text.TIM2CC3Handler  timer.o
+    0x08000dde   0x08000dde   0x00000002   PAD
+    0x08000de0   0x08000de0   0x00000034   Code   RO           38    .text.TIM2CC4Handler  timer.o
+    0x08000e14   0x08000e14   0x0000011e   Code   RO           30    .text.TIM2_IRQHandler  timer.o
+    0x08000f32   0x08000f32   0x00000002   PAD
+    0x08000f34   0x08000f34   0x00000112   Code   RO           28    .text.TIMER_BASE_Configuration  timer.o
+    0x08001046   0x08001046   0x00000002   PAD
+    0x08001048   0x08001048   0x00000016   Code   RO          465    .text.TIM_ClearITPendingBit  stm32f10x_tim.o
+    0x0800105e   0x0800105e   0x00000002   PAD
+    0x08001060   0x08001060   0x0000002c   Code   RO          327    .text.TIM_Cmd       stm32f10x_tim.o
+    0x0800108c   0x0800108c   0x0000000c   Code   RO          447    .text.TIM_GetCapture1  stm32f10x_tim.o
+    0x08001098   0x08001098   0x0000000c   Code   RO          449    .text.TIM_GetCapture2  stm32f10x_tim.o
+    0x080010a4   0x080010a4   0x0000000c   Code   RO          451    .text.TIM_GetCapture3  stm32f10x_tim.o
+    0x080010b0   0x080010b0   0x0000000e   Code   RO          453    .text.TIM_GetCapture4  stm32f10x_tim.o
+    0x080010be   0x080010be   0x00000002   PAD
+    0x080010c0   0x080010c0   0x0000005a   Code   RO          463    .text.TIM_GetITStatus  stm32f10x_tim.o
+    0x0800111a   0x0800111a   0x00000002   PAD
+    0x0800111c   0x0800111c   0x00000034   Code   RO          331    .text.TIM_ITConfig  stm32f10x_tim.o
+    0x08001150   0x08001150   0x00000162   Code   RO          289    .text.TIM_OC1Init   stm32f10x_tim.o
+    0x080012b2   0x080012b2   0x00000002   PAD
+    0x080012b4   0x080012b4   0x0000003c   Code   RO          375    .text.TIM_OC1PreloadConfig  stm32f10x_tim.o
+    0x080012f0   0x080012f0   0x00000140   Code   RO          291    .text.TIM_OC2Init   stm32f10x_tim.o
+    0x08001430   0x08001430   0x0000003e   Code   RO          377    .text.TIM_OC2PreloadConfig  stm32f10x_tim.o
+    0x0800146e   0x0800146e   0x00000002   PAD
+    0x08001470   0x08001470   0x0000013e   Code   RO          293    .text.TIM_OC3Init   stm32f10x_tim.o
+    0x080015ae   0x080015ae   0x00000002   PAD
+    0x080015b0   0x080015b0   0x0000003c   Code   RO          379    .text.TIM_OC3PreloadConfig  stm32f10x_tim.o
+    0x080015ec   0x080015ec   0x000000ee   Code   RO          295    .text.TIM_OC4Init   stm32f10x_tim.o
+    0x080016da   0x080016da   0x00000002   PAD
+    0x080016dc   0x080016dc   0x0000003e   Code   RO          381    .text.TIM_OC4PreloadConfig  stm32f10x_tim.o
+    0x0800171a   0x0800171a   0x00000002   PAD
+    0x0800171c   0x0800171c   0x00000020   Code   RO          353    .text.TIM_PrescalerConfig  stm32f10x_tim.o
+    0x0800173c   0x0800173c   0x00000014   Code   RO          437    .text.TIM_SetCompare1  stm32f10x_tim.o
+    0x08001750   0x08001750   0x00000014   Code   RO          439    .text.TIM_SetCompare2  stm32f10x_tim.o
+    0x08001764   0x08001764   0x00000014   Code   RO          441    .text.TIM_SetCompare3  stm32f10x_tim.o
+    0x08001778   0x08001778   0x00000016   Code   RO          443    .text.TIM_SetCompare4  stm32f10x_tim.o
+    0x0800178e   0x0800178e   0x00000002   PAD
+    0x08001790   0x08001790   0x00000142   Code   RO          287    .text.TIM_TimeBaseInit  stm32f10x_tim.o
+    0x080018d2   0x080018d2   0x00000002   PAD
+    0x080018d4   0x080018d4   0x000000cc   Code   RO           55    .text.USART1_IRQHandler  usart.o
+    0x080019a0   0x080019a0   0x0000002c   Code   RO          484    .text.USART_Cmd     stm32f10x_usart.o
+    0x080019cc   0x080019cc   0x00000058   Code   RO           57    .text.USART_Configuration  usart.o
+    0x08001a24   0x08001a24   0x000000b0   Code   RO          528    .text.USART_GetITStatus  stm32f10x_usart.o
+    0x08001ad4   0x08001ad4   0x00000092   Code   RO          486    .text.USART_ITConfig  stm32f10x_usart.o
+    0x08001b66   0x08001b66   0x00000002   PAD
+    0x08001b68   0x08001b68   0x0000015c   Code   RO          476    .text.USART_Init    stm32f10x_usart.o
+    0x08001cc4   0x08001cc4   0x00000010   Code   RO          502    .text.USART_ReceiveData  stm32f10x_usart.o
+    0x08001cd4   0x08001cd4   0x00000018   Code   RO          500    .text.USART_SendData  stm32f10x_usart.o
+    0x08001cec   0x08001cec   0x00000034   Code   RO           61    .text.USARTc_Available  usart.o
+    0x08001d20   0x08001d20   0x0000004c   Code   RO           63    .text.USARTc_ReadByte  usart.o
+    0x08001d6c   0x08001d6c   0x00000076   Code   RO           59    .text.USARTc_SendBuffer  usart.o
+    0x08001de2   0x08001de2   0x00000002   PAD
+    0x08001de4   0x08001de4   0x00000010   Code   RO           92    .text._mav_parse_error  message.o
+    0x08001df4   0x08001df4   0x0000004a   Code   RO          128    .text._mav_trim_payload  message.o
+    0x08001e3e   0x08001e3e   0x00000002   PAD
+    0x08001e40   0x08001e40   0x0000003c   Code   RO          104    .text.crc_accumulate  message.o
+    0x08001e7c   0x08001e7c   0x00000034   Code   RO          132    .text.crc_accumulate_buffer  message.o
+    0x08001eb0   0x08001eb0   0x00000038   Code   RO          130    .text.crc_calculate  message.o
+    0x08001ee8   0x08001ee8   0x00000010   Code   RO          114    .text.crc_init      message.o
+    0x08001ef8   0x08001ef8   0x00000018   Code   RO            2    .text.main          main.o
+    0x08001f10   0x08001f10   0x00000052   Code   RO          122    .text.mavlink_finalize_message  message.o
+    0x08001f62   0x08001f62   0x00000002   PAD
+    0x08001f64   0x08001f64   0x0000022e   Code   RO          126    .text.mavlink_finalize_message_buffer  message.o
+    0x08002192   0x08002192   0x00000002   PAD
+    0x08002194   0x08002194   0x00000062   Code   RO          124    .text.mavlink_finalize_message_chan  message.o
+    0x080021f6   0x080021f6   0x00000002   PAD
+    0x080021f8   0x080021f8   0x0000003e   Code   RO           86    .text.mavlink_frame_char  message.o
+    0x08002236   0x08002236   0x00000002   PAD
+    0x08002238   0x08002238   0x00000528   Code   RO           96    .text.mavlink_frame_char_buffer  message.o
+    0x08002760   0x08002760   0x0000001e   Code   RO           88    .text.mavlink_get_channel_buffer  message.o
+    0x0800277e   0x0800277e   0x00000002   PAD
+    0x08002780   0x08002780   0x0000001e   Code   RO           90    .text.mavlink_get_channel_status  message.o
+    0x0800279e   0x0800279e   0x00000002   PAD
+    0x080027a0   0x080027a0   0x000000a8   Code   RO          100    .text.mavlink_get_msg_entry  message.o
+    0x08002848   0x08002848   0x00000054   Code   RO          136    .text.mavlink_msg_command_ack_encode  message.o
+    0x0800289c   0x0800289c   0x000000a0   Code   RO          138    .text.mavlink_msg_command_ack_pack  message.o
+    0x0800293c   0x0800293c   0x0000004c   Code   RO          116    .text.mavlink_msg_heartbeat_encode  message.o
+    0x08002988   0x08002988   0x00000092   Code   RO          120    .text.mavlink_msg_heartbeat_pack  message.o
+    0x08002a1a   0x08002a1a   0x00000002   PAD
+    0x08002a1c   0x08002a1c   0x0000015e   Code   RO          118    .text.mavlink_msg_to_send_buffer  message.o
+    0x08002b7a   0x08002b7a   0x00000002   PAD
+    0x08002b7c   0x08002b7c   0x00000096   Code   RO           82    .text.mavlink_parse_char  message.o
+    0x08002c12   0x08002c12   0x00000002   PAD
+    0x08002c14   0x08002c14   0x000001a4   Code   RO          112    .text.mavlink_sha256_calc  message.o
+    0x08002db8   0x08002db8   0x000000ca   Code   RO          110    .text.mavlink_sha256_final_48  message.o
+    0x08002e82   0x08002e82   0x00000002   PAD
+    0x08002e84   0x08002e84   0x00000072   Code   RO          106    .text.mavlink_sha256_init  message.o
+    0x08002ef6   0x08002ef6   0x00000002   PAD
+    0x08002ef8   0x08002ef8   0x000000f6   Code   RO          108    .text.mavlink_sha256_update  message.o
+    0x08002fee   0x08002fee   0x00000002   PAD
+    0x08002ff0   0x08002ff0   0x000000c2   Code   RO          134    .text.mavlink_sign_packet  message.o
+    0x080030b2   0x080030b2   0x00000002   PAD
+    0x080030b4   0x080030b4   0x0000023a   Code   RO          102    .text.mavlink_signature_check  message.o
+    0x080032ee   0x080032ee   0x00000002   PAD
+    0x080032f0   0x080032f0   0x00000020   Code   RO           94    .text.mavlink_start_checksum  message.o
+    0x08003310   0x08003310   0x00000028   Code   RO           98    .text.mavlink_update_checksum  message.o
+    0x08003338   0x08003338   0x00000004   Data   RO          277    .rodata.ADCPrescTable  stm32f10x_rcc.o
+    0x0800333c   0x0800333c   0x00000010   Data   RO          276    .rodata.APBAHBPrescTable  stm32f10x_rcc.o
+    0x0800334c   0x0800334c   0x00000a38   Data   RO          141    .rodata.mavlink_get_msg_entry.mavlink_message_crcs  message.o
+    0x08003d84   0x08003d84   0x00000100   Data   RO          142    .rodata.mavlink_sha256_constant_256  message.o
+    0x08003e84   0x08003e84   0x00000002   Data   RO          140    .rodata.mavlink_system  message.o
+    0x08003e86   0x08003e86   0x00000002   PAD
+    0x08003e88   0x08003e88   0x00000020   Data   RO          755    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08003e98, Size: 0x00000114, Max: 0xffffffff, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x20000000   0x08003e98   0x00000002   Data   RW           42    .data.CCR1_Val      timer.o
-    0x20000002   0x08003e9a   0x00000002   Data   RW           43    .data.CCR2_Val      timer.o
-    0x20000004   0x08003e9c   0x00000002   Data   RW           44    .data.CCR3_Val      timer.o
-    0x20000006   0x08003e9e   0x00000002   Data   RW           45    .data.CCR4_Val      timer.o
-    0x20000008   0x08003ea0   0x00000001   Data   RW           66    .data.NbrOfDataToRead1  usart.o
-    0x20000009   0x08003ea1   0x00000001   Data   RW           70    .data.NbrOfDataToTransfer1  usart.o
-    0x2000000a   0x08003ea2   0x00000002   PAD
-    0x2000000c   0x08003ea4   0x00000004   Data   RW          571    .data.SystemCoreClock  system_stm32f10x.o
-    0x20000010   0x08003ea8   0x000000ff   Data   RW           68    .data.TxBuffer1     usart.o
-    0x2000010f   0x08003fa7   0x00000002   Data   RW          140    .data.mavlink_system  message.o
-
-
-    Execution Region ER_ZI (Exec base: 0x20000118, Load base: 0x08003fac, Size: 0x00000c60, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08003ea8, Size: 0x00000110, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000118        -       0x00000060   Zero   RW          622    .bss                c_w.l(libspace.o)
-    0x20000178        -       0x00000002   Zero   RW           41    .bss.PrescalerValue  timer.o
-    0x2000017a        -       0x000000fe   Zero   RW           65    .bss.RxBuffer1      usart.o
-    0x20000278        -       0x00000001   Zero   RW           67    .bss.RxCounter1     usart.o
-    0x20000279   0x08003fac   0x00000003   PAD
-    0x2000027c        -       0x00000004   Zero   RW           47    .bss.TIM2CC4_Count  timer.o
-    0x20000280        -       0x00000001   Zero   RW           69    .bss.TxCounter1     usart.o
-    0x20000281   0x08003fac   0x00000001   PAD
-    0x20000282        -       0x00000002   Zero   RW           46    .bss.capture        timer.o
-    0x20000284        -       0x00000001   Zero   RW           40    .bss.g_heartBeat    timer.o
-    0x20000285        -       0x0000048c   Zero   RW          143    .bss.mavlink_get_channel_buffer.m_mavlink_buffer  message.o
-    0x20000711   0x08003fac   0x00000003   PAD
-    0x20000714        -       0x00000060   Zero   RW          144    .bss.mavlink_get_channel_status.m_mavlink_status  message.o
-    0x20000774   0x08003fac   0x00000004   PAD
-    0x20000778        -       0x00000200   Zero   RW          554    HEAP                startup_stm32f10x_ld.o
-    0x20000978        -       0x00000400   Zero   RW          553    STACK               startup_stm32f10x_ld.o
+    0x20000000   0x08003ea8   0x00000002   Data   RW           42    .data.CCR1_Val      timer.o
+    0x20000002   0x08003eaa   0x00000002   Data   RW           43    .data.CCR2_Val      timer.o
+    0x20000004   0x08003eac   0x00000002   Data   RW           44    .data.CCR3_Val      timer.o
+    0x20000006   0x08003eae   0x00000002   Data   RW           45    .data.CCR4_Val      timer.o
+    0x20000008   0x08003eb0   0x00000001   Data   RW           66    .data.NbrOfDataToRead1  usart.o
+    0x20000009   0x08003eb1   0x00000001   Data   RW           70    .data.NbrOfDataToTransfer1  usart.o
+    0x2000000a   0x08003eb2   0x00000002   PAD
+    0x2000000c   0x08003eb4   0x00000004   Data   RW          571    .data.SystemCoreClock  system_stm32f10x.o
+    0x20000010   0x08003eb8   0x000000ff   Data   RW           68    .data.TxBuffer1     usart.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000110, Load base: 0x08003fb8, Size: 0x00000c60, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000110        -       0x00000060   Zero   RW          622    .bss                c_w.l(libspace.o)
+    0x20000170        -       0x00000002   Zero   RW           41    .bss.PrescalerValue  timer.o
+    0x20000172        -       0x000000fe   Zero   RW           65    .bss.RxBuffer1      usart.o
+    0x20000270        -       0x00000001   Zero   RW           67    .bss.RxCounter1     usart.o
+    0x20000271   0x08003fb8   0x00000003   PAD
+    0x20000274        -       0x00000004   Zero   RW           47    .bss.TIM2CC4_Count  timer.o
+    0x20000278        -       0x00000001   Zero   RW           69    .bss.TxCounter1     usart.o
+    0x20000279   0x08003fb8   0x00000001   PAD
+    0x2000027a        -       0x00000002   Zero   RW           46    .bss.capture        timer.o
+    0x2000027c        -       0x00000001   Zero   RW           40    .bss.g_heartBeat    timer.o
+    0x2000027d        -       0x0000048c   Zero   RW          143    .bss.mavlink_get_channel_buffer.m_mavlink_buffer  message.o
+    0x20000709   0x08003fb8   0x00000003   PAD
+    0x2000070c        -       0x00000060   Zero   RW          144    .bss.mavlink_get_channel_status.m_mavlink_status  message.o
+    0x2000076c   0x08003fb8   0x00000004   PAD
+    0x20000770        -       0x00000200   Zero   RW          554    HEAP                startup_stm32f10x_ld.o
+    0x20000970        -       0x00000400   Zero   RW          553    STACK               startup_stm32f10x_ld.o
 
 
 ==============================================================================
@@ -1715,7 +1715,7 @@ Image component sizes
 
        254          0          0          0          0       3313   core.o
         24          0          0          0          0        424   main.o
-      5744         32       2872          2       1260      19218   message.o
+      5758         32       2874          0       1260      19230   message.o
        198          0          0          0          0       3287   misc.o
         64         26        236          0       1536        864   startup_stm32f10x_ld.o
        736          0          0          0          0       5703   stm32f10x_gpio.o
@@ -1727,9 +1727,9 @@ Image component sizes
        538          0          0        257        256       2650   usart.o
 
     ----------------------------------------------------------------------
-     12112         58       3160        276       3072      76589   Object Totals
+     12124         58       3164        272       3072      76601   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        88          0          0          5         11          0   (incl. Padding)
+        86          0          2          3         11          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1781,15 +1781,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12864         74       3160        276       3168      76977   Grand Totals
-     12864         74       3160        276       3168      76977   ELF Image Totals
-     12864         74       3160        276          0          0   ROM Totals
+     12876         74       3164        272       3168      76989   Grand Totals
+     12876         74       3164        272       3168      76989   ELF Image Totals
+     12876         74       3164        272          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                16024 (  15.65kB)
-    Total RW  Size (RW Data + ZI Data)              3444 (   3.36kB)
-    Total ROM Size (Code + RO Data + RW Data)      16300 (  15.92kB)
+    Total RO  Size (Code + RO Data)                16040 (  15.66kB)
+    Total RW  Size (RW Data + ZI Data)              3440 (   3.36kB)
+    Total ROM Size (Code + RO Data + RW Data)      16312 (  15.93kB)
 
 ==============================================================================
 
