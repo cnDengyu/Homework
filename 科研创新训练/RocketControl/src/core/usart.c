@@ -1,9 +1,10 @@
 #include <stm32f10x.h>
 #include "core/usart.h"
+#include "core/core_type.h"
 
 
-static uint8_t TxBuffer1[] = "USART Interrupt Example: USARTy -> USARTz using Interrupt";
-static uint8_t TxBuffer2[] = "USART Interrupt Example: USARTz -> USARTy using Interrupt";
+static uint8_t TxBuffer1[USART_MAX_BUFFER] = "USART Interrupt Example: USARTy -> USARTz using Interrupt";
+static uint8_t TxBuffer2[USART_MAX_BUFFER] = "USART Interrupt Example: USARTz -> USARTy using Interrupt";
 static uint8_t RxBuffer1[RxBufferSize1];
 static uint8_t RxBuffer2[RxBufferSize2];
 static __IO uint8_t TxCounter1 = 0x00;
@@ -31,7 +32,7 @@ void USARTc_IRQHandler(void)
 
     if(RxCounter1 == NbrOfDataToRead1)
     {
-      /* Disable the USARTy Receive interrupt */
+      /* Disable the USARTc Receive interrupt */
       USART_ITConfig(USARTc, USART_IT_RXNE, DISABLE);
     }
   }
@@ -43,7 +44,7 @@ void USARTc_IRQHandler(void)
 
     if(TxCounter1 == NbrOfDataToTransfer1)
     {
-      /* Disable the USARTy Transmit interrupt */
+      /* Disable the USARTc Transmit interrupt */
       USART_ITConfig(USARTc, USART_IT_TXE, DISABLE);
     }    
   }
@@ -79,4 +80,16 @@ void USART_Configuration(void)
   /* Enable the USARTy */
   USART_Cmd(USARTc, ENABLE);
 
+}
+
+void USARTc_SendBuffer(uint8_t* buffer, uint16_t length)
+{
+	uint8_t* p = buffer;
+	uint16_t n = length;
+	while(n > 0x00)
+	{		
+		TxBuffer1[NbrOfDataToTransfer1++] = *p++;
+		n--;
+	}
+	USART_ITConfig(USARTc, USART_IT_TXE, ENABLE);
 }

@@ -1,6 +1,12 @@
 
 #include <stm32f10x.h>
 #include "core/core.h"
+#include "mavlink.h"
+
+mavlink_system_t mavlink_system = {
+    158, // System ID (1-255)
+    MAV_COMP_ID_AUTOPILOT1  // Component ID (a MAV_COMPONENT value)
+};
 
 /**
   * @brief  Main program 主程序
@@ -9,6 +15,10 @@
   */
 int main(void)
 {
+	mavlink_message_t msg;
+	mavlink_heartbeat_t heartbeat;
+	uint8_t buffer[USART_MAX_BUFFER];
+	uint16_t len;
 	
 	// Core Ability Initlize 核心程序初始化
 	CORE_Configuration();
@@ -52,7 +62,17 @@ int main(void)
 			// Blink Test 闪灯测试
 			GPIO_WriteBit(GPIOC, GPIO_Pin_13, (BitAction)(1 - GPIO_ReadOutputDataBit(GPIOC, GPIO_Pin_13)));
 			
-			USART_SendData(USARTc, 't');
+			// mavlink test
+			USART_SendBreak(USARTc);
+			
+			heartbeat.type = MAV_TYPE_ROCKET;
+			heartbeat.autopilot = MAV_AUTOPILOT_GENERIC;
+			heartbeat.base_mode = MAV_MODE_FLAG_HIL_ENABLED;
+			heartbeat.custom_mode = 0;
+			heartbeat.system_status = MAV_STATE_BOOT;
+			mavlink_msg_heartbeat_encode(mavlink_system.sysid, mavlink_system.compid, &msg, &heartbeat);
+			len = mavlink_msg_to_send_buffer(buffer, &msg);
+			USARTc_SendBuffer(buffer, len);
 			
 			g_secondFlag = false;
 		}

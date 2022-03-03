@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -1528,6 +1528,21 @@
               <FileType>5</FileType>
               <FilePath>.\libs\mavlink\common\version.h</FilePath>
             </File>
+            <File>
+              <FileName>mavlink_msg_heartbeat.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\libs\mavlink\minimal\mavlink_msg_heartbeat.h</FilePath>
+            </File>
+            <File>
+              <FileName>mavlink_msg_protocol_version.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\libs\mavlink\minimal\mavlink_msg_protocol_version.h</FilePath>
+            </File>
+            <File>
+              <FileName>minimal.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\libs\mavlink\minimal\minimal.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1562,6 +1577,11 @@
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\core\usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>core_type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\core\core_type.h</FilePath>
             </File>
           </Files>
         </Group>

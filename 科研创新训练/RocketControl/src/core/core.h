@@ -3,6 +3,8 @@
 #define __CORE_H
 
 #include <stdbool.h>
+#include <stm32f10x.h>
+#include "core/core_type.h"
 
 #define USARTc                   USART1
 
