@@ -4,6 +4,8 @@
 #include <stm32f10x.h>
 #include <stdbool.h>
 
+#define USART_MAX_BUFFER 0xff
+
 typedef enum { FAILED = 0, PASSED = !FAILED} TestStatus;
 
 #define TxBufferSize1   (countof(TxBuffer1) - 1)
@@ -30,12 +32,27 @@ typedef enum { FAILED = 0, PASSED = !FAILED} TestStatus;
 #define USARTc_IRQn              USART1_IRQn
 #define USARTc_IRQHandler        USART1_IRQHandler
 
-extern const uint8_t c_usart_max_buffer;
+// USARTs Definition, where 's' means sensor
+// USARTs 引脚定义，其中s代表“传感器”
+#define USARTs                   USART2
+#define USARTs_GPIO              GPIOA
+#define USARTs_CLK               RCC_APB1Periph_USART2
+#define USARTs_GPIO_CLK          RCC_APB2Periph_GPIOA
+#define USARTs_RxPin             GPIO_Pin_3
+#define USARTs_TxPin             GPIO_Pin_2
+#define USARTs_IRQn              USART2_IRQn
+#define USARTs_IRQHandler        USART2_IRQHandler
 
 void USARTc_IRQHandler(void);
-void USART_Configuration(void);
 void USARTc_SendBuffer(uint8_t* buffer, uint16_t length);
 bool USARTc_Available(void);
 uint8_t USARTc_ReadByte(void);
+
+void USARTs_IRQHandler(void);
+void USARTs_SendBuffer(uint8_t* buffer, uint16_t length);
+bool USARTs_Available(void);
+uint8_t USARTs_ReadByte(void);
+
+void USART_Configuration(void);
 
 #endif

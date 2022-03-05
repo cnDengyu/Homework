@@ -2,11 +2,11 @@
 #define __TIMER_H
 
 #include <stdbool.h>
-
-extern bool g_heartBeat;
+#include <stm32f10x.h>
 
 void TIMER_BASE_Configuration(void);
-
-void TIM2_IRQHandler(void);
+uint32_t GetBootTimeMs(void);
+bool isHeartBeatRequired(void);
+void HeartBeatSended(void);
 
 #endif

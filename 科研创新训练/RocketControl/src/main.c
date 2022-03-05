@@ -2,6 +2,7 @@
 #include <stm32f10x.h>
 #include "core/core.h"
 #include "message/message.h"
+#include "sensor/sensor.h"
 
 /**
   * @brief  Main program 主程序
@@ -38,11 +39,14 @@ int main(void)
 		*
 		*/
 		
-		// Fake Thread:Core 核心伪线程
+		// Fake Thread: Core 核心伪线程
 		CORE_Loop();
 		
-		// Fake Thread:Message 消息伪线程
+		// Fake Thread: Message 消息伪线程
 		MessageManager();
+		
+		// Fake Thread: Sensor 传感器伪线程
+		SensorManager();
 		
 	}
 }

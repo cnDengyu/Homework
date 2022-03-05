@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\libs;.\src\;.\src\core;.\src\message</IncludePath>
+              <IncludePath>.\libs;.\src\;.\src\core;.\src\message;.\src\sensor</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1578,11 +1578,6 @@
               <FileType>1</FileType>
               <FilePath>.\src\core\usart.c</FilePath>
             </File>
-            <File>
-              <FileName>core_type.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\core\core_type.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -1597,6 +1592,51 @@
               <FileName>message.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\message\message.c</FilePath>
+            </File>
+            <File>
+              <FileName>message_sensor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\message\message_sensor.h</FilePath>
+            </File>
+            <File>
+              <FileName>message_sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\sensor\message_sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>message_system.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\message\message_system.h</FilePath>
+            </File>
+            <File>
+              <FileName>message_system.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\message\message_system.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>sensor</GroupName>
+          <Files>
+            <File>
+              <FileName>sensor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\sensor\sensor.h</FilePath>
+            </File>
+            <File>
+              <FileName>sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\sensor\sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>sensor_status.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\sensor\sensor_status.h</FilePath>
+            </File>
+            <File>
+              <FileName>sensor_status.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\sensor\sensor_status.c</FilePath>
             </File>
           </Files>
         </Group>

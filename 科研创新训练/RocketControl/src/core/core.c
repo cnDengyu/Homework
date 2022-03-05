@@ -54,10 +54,13 @@ static void RCC_Configuration(void)
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 
   /* GPIOC clock enable */
-	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOC | USARTc_GPIO_CLK | RCC_APB2Periph_AFIO , ENABLE); 	
+	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOC | USARTc_GPIO_CLK | USARTs_GPIO_CLK | RCC_APB2Periph_AFIO , ENABLE); 	
 
 	/* Enable USARTc Clock */
   RCC_APB2PeriphClockCmd(USARTc_CLK, ENABLE);
+	
+	/* Enable USARTs Clock */
+  RCC_APB1PeriphClockCmd(USARTs_CLK, ENABLE);
 }
 
 /**
@@ -78,16 +81,24 @@ static void GPIO_Configuration(void)
   GPIO_Init(GPIOC, &GPIO_InitStructure);
 	
 	GPIO_PinRemapConfig(GPIO_Remap_USART1,ENABLE);
-	/* Configure USARTy Rx as input floating */
+	/* Configure USARTc Rx as input floating */
   GPIO_InitStructure.GPIO_Pin = USARTc_RxPin;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(USARTc_GPIO, &GPIO_InitStructure);
+	
+	/* Configure USARTs Rx as input floating */
+  GPIO_InitStructure.GPIO_Pin = USARTs_RxPin;
+  GPIO_Init(USARTs_GPIO, &GPIO_InitStructure);
   
-  /* Configure USARTy Tx as alternate function push-pull */
+  /* Configure USARTc Tx as alternate function push-pull */
   GPIO_InitStructure.GPIO_Pin = USARTc_TxPin;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_Init(USARTc_GPIO, &GPIO_InitStructure);
+	
+	/* Configure USARTs Tx as alternate function push-pull */
+  GPIO_InitStructure.GPIO_Pin = USARTs_TxPin;
+  GPIO_Init(USARTs_GPIO, &GPIO_InitStructure);
 
 }
 
@@ -108,11 +119,17 @@ static void NVIC_Configuration(void)
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
+	
+	/* Enable the USARTz Interrupt */
+  NVIC_InitStructure.NVIC_IRQChannel = USARTs_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStructure);
 
   /* Enable the TIM2 global Interrupt */
   NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  // NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 	

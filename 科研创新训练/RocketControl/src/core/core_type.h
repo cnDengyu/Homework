@@ -3,6 +3,5 @@
 #include <stdbool.h>
 
 #define USART_MAX_BUFFER 255
-extern bool g_heartBeat;
 
 #endif

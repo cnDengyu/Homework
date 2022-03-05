@@ -2,12 +2,32 @@
 // #include <stdbool.h>
 #include "./timer.h"
 
+static bool heartBeat = false;
 
 static __IO uint16_t CCR1_Val = 40961;
 static __IO uint16_t CCR2_Val = 27309;
 static __IO uint16_t CCR3_Val = 13654;
 static __IO uint16_t CCR4_Val = 6000;
 static uint16_t PrescalerValue = 0;
+static unsigned int TIM2CC4_Count = 0;
+static uint32_t boot_time = 0;
+
+void TIM2_IRQHandler(void);
+
+bool isHeartBeatRequired(void)
+{
+	return heartBeat;
+}
+
+void HeartBeatSended(void)
+{
+	heartBeat = false;
+}
+
+uint32_t GetBootTimeMs(void)
+{
+	return boot_time;
+}
 
 static void TIM2CC1Handler()
 {
@@ -24,8 +44,6 @@ static void TIM2CC3Handler()
 	// do nothing
 }
 
-static unsigned int TIM2CC4_Count = 0;
-bool g_heartBeat = false;
 
 static void TIM2CC4Handler()
 {
@@ -33,9 +51,10 @@ static void TIM2CC4Handler()
 	TIM2CC4_Count++;
 	if(TIM2CC4_Count >= 1000)
 	{
-		g_heartBeat = true;
+		heartBeat = true;
 		TIM2CC4_Count = 0;
 	}
+	boot_time++;
 }
 
 void TIMER_BASE_Configuration(void)
