@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\libs;.\src\;.\src\core;.\src\message;.\src\sensor</IncludePath>
+              <IncludePath>.\libs;.\src;.\src\core;.\src\message;.\src\sensor;.\src\matrix;.\src\estimator</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1613,6 +1613,16 @@
               <FileType>1</FileType>
               <FilePath>.\src\message\message_system.c</FilePath>
             </File>
+            <File>
+              <FileName>message_estimator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\message\message_estimator.h</FilePath>
+            </File>
+            <File>
+              <FileName>message_estimator.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\message\message_estimator.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1637,6 +1647,46 @@
               <FileName>sensor_status.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\sensor\sensor_status.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>matrix</GroupName>
+          <Files>
+            <File>
+              <FileName>matrix.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\matrix\matrix.h</FilePath>
+            </File>
+            <File>
+              <FileName>matrix_err.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\matrix\matrix_err.h</FilePath>
+            </File>
+            <File>
+              <FileName>matrix.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\matrix\matrix.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrix_err.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\matrix\matrix_err.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>estimator</GroupName>
+          <Files>
+            <File>
+              <FileName>estimator.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\estimator\estimator.c</FilePath>
+            </File>
+            <File>
+              <FileName>estimator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\estimator\estimator.h</FilePath>
             </File>
           </Files>
         </Group>

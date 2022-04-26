@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __MESSAGE_SYSTEM
 #define __MESSAGE_SYSTEM
 

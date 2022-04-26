@@ -1,6 +1,7 @@
+#pragma once
 #ifndef __MESSAGE_H
 #define __MESSAGE_H
 
-void MessageManager(void);
+void MessageManager_Run(void);
 
 #endif

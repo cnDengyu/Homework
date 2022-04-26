@@ -1,6 +1,6 @@
-#include "core/timer.h"
 #include "mavlink/common/mavlink.h"
 #include "core/usart.h"
+#include "core/core.h"
 #include "sensor/sensor_status.h"
 #include "./message_system.h"
 #include "./message_sensor.h"
@@ -10,7 +10,7 @@ static void HeartBeatSender(void);
 static void CommandAckSender(uint16_t command_id, uint8_t result);
 static void MessageReceiver(void);
 
-void MessageManager(void)
+void MessageManager_Run(void)
 {
 	
 	HeartBeatSender();
@@ -18,6 +18,8 @@ void MessageManager(void)
 	MessageReceiver();
 	
 	MessageSensorSender();
+	
+	MessageEstimatorSender();
 	
 }
 
@@ -57,7 +59,7 @@ static void HeartBeatSender(void)
 	uint8_t buffer[USART_MAX_BUFFER];
 	uint16_t len;
 	
-	if(isHeartBeatRequired())
+	if(updateHeartbeatSend())
 	{
 					
 		GPIO_WriteBit(GPIOC, GPIO_Pin_13, 0);
@@ -70,10 +72,9 @@ static void HeartBeatSender(void)
 		mavlink_msg_heartbeat_encode(mavlink_system.sysid, mavlink_system.compid, &msg, &heartbeat);
 		len = mavlink_msg_to_send_buffer(buffer, &msg);
 		USARTc_SendBuffer(buffer, len);
-			
-		HeartBeatSended();
 		
 		GPIO_WriteBit(GPIOC, GPIO_Pin_13, 1);
+		
 	}
 }
 

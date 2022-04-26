@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __SENSOR_STATUS
 #define __SENSOR_STATUS
 
@@ -203,6 +204,7 @@ struct ScaledPress
 };
 struct ScaledSensorStatus
 {
+	uint32_t timestamp;
 	unsigned char ucYear;
 	unsigned char ucMonth;
 	unsigned char ucDay;
@@ -219,7 +221,7 @@ struct ScaledSensorStatus
 	short dStatus[4];
 	float pressure;		// pressure in hPa
 	float press_diff; // Differential pressure in hPa
-	int32_t height;		// pressure height in cm
+	int32_t height;		// pressure height in mm
 	int32_t lon;			// Longitude in degE7
 	int32_t lat;			// Latitude in degE7
 	int32_t alt;			// Altitude in mm
@@ -231,13 +233,16 @@ struct ScaledSensorStatus
 	float q[4];
 };
 
+
+
 void SensorGet(void* stcInfo, uint8_t infoType);
 void SensorScaledGet(struct ScaledSensorStatus* dst);
 void SensorSetFromBuffer(char ucRxBuffer[]);
 
-uint8_t SensorRefreshed(void);
-void SensorReaded(void);
+uint8_t updateSensor(void);
+void updateSensorClear(void);
 
 bool isSensorInitlized(uint8_t type);
+bool isSensorAllInitlized(void);
 
 #endif

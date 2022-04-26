@@ -9,12 +9,12 @@ static char ACCCALSW[5] = {0XFF,0XAA,0X01,0X01,0X00};//进入加速度校准模式
 static char SAVACALSW[5]= {0XFF,0XAA,0X00,0X00,0X00};//保存当前配置
  
 
-void SensorManager(void)
+void SensorManager_Run(void)
 {
 	static unsigned char ucRxBuffer[16];
 	static unsigned char ucRxCnt = 0;	
 	
-	SensorReaded();
+	updateSensorClear();
 	
 	while(USARTs_Available())
 	{

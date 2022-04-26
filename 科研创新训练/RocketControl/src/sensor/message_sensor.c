@@ -14,7 +14,8 @@ static void MessageGPSIntSender(void);
 
 void MessageSensorSender(void)
 {
-	uint8_t flag = SensorRefreshed();
+	uint8_t flag = 0;
+	flag = updateSensor();
 	
 	if(flag != 0)
 	{
@@ -48,8 +49,8 @@ void MessageSensorSender(void)
 				MessagePressureSender();
 				break;
 		
-			case TYPE_LONLAT:
-			// case TYPE_GPSV:
+			// case TYPE_LONLAT:
+			case TYPE_GPSV:
 				MessageGPSIntSender();
 				break;
 		
@@ -58,7 +59,7 @@ void MessageSensorSender(void)
 				break;
 		}
 		GPIO_WriteBit(GPIOC, GPIO_Pin_13, 1);
-		// SensorReaded();
+		// updateSensorClear();
 	}
 	
 }
@@ -78,7 +79,7 @@ static void MessageIMUSender(void)
 		
 		SensorScaledGet(&status);
 		
-		imu.time_boot_ms = GetBootTimeMs();
+		imu.time_boot_ms = status.timestamp;
 		imu.xacc = status.a[0];
 		imu.yacc = status.a[1];
 		imu.zacc = status.a[2];
@@ -112,7 +113,7 @@ static void MessagePressureSender(void)
 		
 		SensorScaledGet(&status);
 		
-		pressure.time_boot_ms = GetBootTimeMs();
+		pressure.time_boot_ms = status.timestamp;
 		pressure.press_abs = status.pressure;
 		pressure.press_diff = status.press_diff;
 		pressure.temperature = status.T;
@@ -140,7 +141,7 @@ static void MessageAttitudeSender(void)
 		
 		SensorScaledGet(&status);
 		
-		att.time_boot_ms = GetBootTimeMs();
+		att.time_boot_ms = status.timestamp;
 		att.roll = status.angle[0];
 		att.pitch = status.angle[1];
 		att.yaw = status.angle[2];
@@ -169,7 +170,7 @@ static void MessageQuaternionSender(void)
 		
 		SensorScaledGet(&status);
 		
-		qua.time_boot_ms = GetBootTimeMs();
+		qua.time_boot_ms = status.timestamp;
 		qua.q1 = status.q[0];
 		qua.q2 = status.q[1];
 		qua.q3 = status.q[2];
@@ -199,7 +200,7 @@ static void MessageGPSIntSender(void)
 		
 		SensorScaledGet(&status);
 		
-		gps.time_usec = GetBootTimeMs();
+		gps.time_usec = status.timestamp;
 		gps.fix_type = GPS_FIX_TYPE_3D_FIX;
 		gps.lat = status.lat;
 		gps.lon = status.lon;

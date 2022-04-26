@@ -3,7 +3,7 @@
 #include "./usart.h"
 #include "./core.h"
 
-
+static bool isHeartbeatRequired = false;
 
 static void RCC_Configuration(void);
 static void GPIO_Configuration(void);
@@ -14,7 +14,7 @@ static void NVIC_Configuration(void);
   * @param  None
   * @retval None
   */
-void CORE_Configuration(void)
+void Core_Init(void)
 {
 	/*!< At this stage the microcontroller clock setting is already configured, 
        this is done through SystemInit() function which is called from startup
@@ -140,9 +140,20 @@ static void NVIC_Configuration(void)
   * @param  None
   * @retval None
   */
-void CORE_Loop(void)
+void Core_Run(void)
 {
 	
+	isHeartbeatRequired = false;
+	if(updateSecond())
+	{
+		isHeartbeatRequired = true;
+		updateSecondClear();
+	}
+
 }
 
+bool updateHeartbeatSend(void)
+{
+	return isHeartbeatRequired;
+}
 

@@ -3,6 +3,7 @@
 #include "core/core.h"
 #include "message/message.h"
 #include "sensor/sensor.h"
+#include "estimator/estimator.h"
 
 /**
   * @brief  Main program 主程序
@@ -12,8 +13,8 @@
 int main(void)
 {
 	
-	// Core Ability Initlize 核心程序初始化
-	CORE_Configuration();
+	// Core Module Initlize 核心程序初始化
+	Core_Init();
 	
 	while(1)
 	{
@@ -21,8 +22,8 @@ int main(void)
 		/*
 		* Fake Thread Structure 伪线程架构
 		*
-		* scan specific variables, and decide which Fake Thread to run.
-		* 扫描特定的全局变量，决定应该执行哪些伪线程。
+		* scan specific update variables, and decide which Fake Thread to run.
+		* 扫描特定的更新变量，决定应该执行哪些伪线程。
 		*
 		* For example, when there is new information from Serial Port, run relative function.
 		* For another example, when it's time to send a "Heart Beat" message, run relative function.
@@ -37,16 +38,22 @@ int main(void)
 		*	Exceptionally, it's better not to use Fake Thread when time precision acquared.
 		* 例外地，如果对时间精度有要求，不要使用伪线程。
 		*
+		* Attention: All Fake Thread must be safe otherwise the whole program will crash.
+		* 注意：所有的伪线程必须安全。单个伪线程卡死时，整个程序都会卡死。
+		*
 		*/
 		
 		// Fake Thread: Core 核心伪线程
-		CORE_Loop();
-		
-		// Fake Thread: Message 消息伪线程
-		MessageManager();
+		Core_Run();
 		
 		// Fake Thread: Sensor 传感器伪线程
-		SensorManager();
+		SensorManager_Run();
+		
+		// Fake Thread: Estimator 状态估计伪线程
+		Estimator_Run();
+		
+		// Fake Thread: Message 消息伪线程
+		MessageManager_Run();
 		
 	}
 }

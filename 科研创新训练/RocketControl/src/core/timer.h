@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __TIMER_H
 #define __TIMER_H
 
@@ -6,7 +7,7 @@
 
 void TIMER_BASE_Configuration(void);
 uint32_t GetBootTimeMs(void);
-bool isHeartBeatRequired(void);
-void HeartBeatSended(void);
+bool updateSecond(void);
+void updateSecondClear(void);
 
 #endif

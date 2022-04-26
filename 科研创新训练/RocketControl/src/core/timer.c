@@ -14,12 +14,12 @@ static uint32_t boot_time = 0;
 
 void TIM2_IRQHandler(void);
 
-bool isHeartBeatRequired(void)
+bool updateSecond(void)
 {
 	return heartBeat;
 }
 
-void HeartBeatSended(void)
+void updateSecondClear(void)
 {
 	heartBeat = false;
 }
