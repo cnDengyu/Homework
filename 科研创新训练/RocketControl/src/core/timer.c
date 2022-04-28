@@ -14,6 +14,13 @@ static uint32_t boot_time = 0;
 
 void TIM2_IRQHandler(void);
 
+/*
+
+Timer2:Universal timer
+定时器2：通用定时器
+
+*/
+
 bool updateSecond(void)
 {
 	return heartBeat;
@@ -57,7 +64,7 @@ static void TIM2CC4Handler()
 	boot_time++;
 }
 
-void TIMER_BASE_Configuration(void)
+void TIMER2_BASE_Configuration(void)
 {
 	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 	TIM_OCInitTypeDef  TIM_OCInitStructure;
@@ -126,7 +133,72 @@ void TIMER_BASE_Configuration(void)
 	
 }
 
+
+
+static uint16_t CCR31_Val = 333;
+static uint16_t CCR32_Val = 249;
+static uint16_t CCR33_Val = 166;
+static uint16_t CCR34_Val = 83;
+static uint16_t PrescalerValue3 = 0;
+
+void TIMER3_BASE_Configuration(void)
+{
+	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+	TIM_OCInitTypeDef  TIM_OCInitStructure;
+	
+	/* Compute the prescaler value */
+  PrescalerValue3 = (uint16_t) (SystemCoreClock / 24000000) - 1;
+  /* Time base configuration */
+  TIM_TimeBaseStructure.TIM_Period = 665;
+  TIM_TimeBaseStructure.TIM_Prescaler = PrescalerValue3;
+  TIM_TimeBaseStructure.TIM_ClockDivision = 0;
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+
+  TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
+
+  /* PWM1 Mode configuration: Channel1 */
+  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  TIM_OCInitStructure.TIM_Pulse = CCR31_Val;
+  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+
+  TIM_OC1Init(TIM3, &TIM_OCInitStructure);
+
+  TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Enable);
+
+  /* PWM1 Mode configuration: Channel2 */
+  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  TIM_OCInitStructure.TIM_Pulse = CCR32_Val;
+
+  TIM_OC2Init(TIM3, &TIM_OCInitStructure);
+
+  TIM_OC2PreloadConfig(TIM3, TIM_OCPreload_Enable);
+
+  /* PWM1 Mode configuration: Channel3 */
+  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  TIM_OCInitStructure.TIM_Pulse = CCR33_Val;
+
+  TIM_OC3Init(TIM3, &TIM_OCInitStructure);
+
+  TIM_OC3PreloadConfig(TIM3, TIM_OCPreload_Enable);
+
+  /* PWM1 Mode configuration: Channel4 */
+  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  TIM_OCInitStructure.TIM_Pulse = CCR34_Val;
+
+  TIM_OC4Init(TIM3, &TIM_OCInitStructure);
+
+  TIM_OC4PreloadConfig(TIM3, TIM_OCPreload_Enable);
+
+  TIM_ARRPreloadConfig(TIM3, ENABLE);
+
+  /* TIM3 enable counter */
+  TIM_Cmd(TIM3, ENABLE);
+	
+}
+
 static uint16_t capture = 0;
+
 
 /******************************************************************************/
 /*            STM32F10x Peripherals Interrupt Handlers                        */
@@ -180,3 +252,4 @@ void TIM2_IRQHandler(void)
     TIM_SetCompare4(TIM2, capture + CCR4_Val);
   }
 }
+

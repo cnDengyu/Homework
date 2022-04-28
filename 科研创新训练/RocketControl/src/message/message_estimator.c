@@ -5,6 +5,8 @@
 #include "estimator/estimator.h"
 #include "message_estimator.h"
 
+static unsigned short count = 0;
+
 void MessageEstimatorSender(void)
 {
 	mavlink_local_position_ned_t posm;
@@ -13,7 +15,7 @@ void MessageEstimatorSender(void)
 	uint16_t len;
 	struct LocalPosition pos;
 	
-	if(isEstimatorInitlized)
+	if(isEstimatorInitlized() && updateEstimator())
 	{
 		
 		EstimatorGet(&pos);
@@ -30,5 +32,11 @@ void MessageEstimatorSender(void)
 		len = mavlink_msg_to_send_buffer(buffer, &msg);
 		USARTc_SendBuffer(buffer, len);
 		
+		if(count < 100)
+		{
+			count++;
+		}else{
+			SetSystemStatus(MAV_STATE_STANDBY);
+		}
 	}
 }

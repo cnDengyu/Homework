@@ -138,7 +138,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>2</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\libs;.\src;.\src\core;.\src\message;.\src\sensor;.\src\matrix;.\src\estimator</IncludePath>
+              <IncludePath>.\libs;.\src\;.\src\core;.\src\message;.\src\sensor;.\src\estimator;.\src\matrix;.\src\actuator</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1599,11 +1599,6 @@
               <FilePath>.\src\message\message_sensor.h</FilePath>
             </File>
             <File>
-              <FileName>message_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\sensor\message_sensor.c</FilePath>
-            </File>
-            <File>
               <FileName>message_system.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\message\message_system.h</FilePath>
@@ -1612,6 +1607,11 @@
               <FileName>message_system.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\message\message_system.c</FilePath>
+            </File>
+            <File>
+              <FileName>message_sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\message\message_sensor.c</FilePath>
             </File>
             <File>
               <FileName>message_estimator.h</FileName>
@@ -1651,31 +1651,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>matrix</GroupName>
-          <Files>
-            <File>
-              <FileName>matrix.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\matrix\matrix.h</FilePath>
-            </File>
-            <File>
-              <FileName>matrix_err.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\matrix\matrix_err.h</FilePath>
-            </File>
-            <File>
-              <FileName>matrix.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\matrix\matrix.c</FilePath>
-            </File>
-            <File>
-              <FileName>matrix_err.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\matrix\matrix_err.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>estimator</GroupName>
           <Files>
             <File>
@@ -1687,6 +1662,46 @@
               <FileName>estimator.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\estimator\estimator.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>matrix</GroupName>
+          <Files>
+            <File>
+              <FileName>matrix.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\matrix\matrix.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrix.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\matrix\matrix.h</FilePath>
+            </File>
+            <File>
+              <FileName>matrix_err.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\matrix\matrix_err.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrix_err.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\matrix\matrix_err.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>actuator</GroupName>
+          <Files>
+            <File>
+              <FileName>actuator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\actuator\actuator.h</FilePath>
+            </File>
+            <File>
+              <FileName>actuator.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\actuator\actuator.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1796,6 +1811,30 @@
         <targetInfos>
           <targetInfo name="Controller"/>
         </targetInfos>
+      </file>
+      <file attr="config" category="header" name="RTE_Driver\Config\RTE_Device.h" version="1.1.2">
+        <instance index="0" removed="1">RTE\Device\STM32F103C8\RTE_Device.h</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" condition="STM32F1xx MD ARMCC" name="Device\Source\ARM\startup_stm32f10x_md.s" version="1.0.0">
+        <instance index="0" removed="1">RTE\Device\STM32F103C8\startup_stm32f10x_md.s</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" name="Device\StdPeriph_Driver\templates\stm32f10x_conf.h" version="3.5.0">
+        <instance index="0" removed="1">RTE\Device\STM32F103C8\stm32f10x_conf.h</instance>
+        <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.5.1" condition="STM32F1xx STDPERIPH"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" name="Device\Source\system_stm32f10x.c" version="1.0.0">
+        <instance index="0" removed="1">RTE\Device\STM32F103C8\system_stm32f10x.c</instance>
+        <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.3.0"/>
+        <targetInfos/>
       </file>
     </files>
   </RTE>

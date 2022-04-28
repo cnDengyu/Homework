@@ -87,10 +87,10 @@ void Estimator_Run(void)
 					break;
 				
 			}
+			isUpdate = true;
 		}else{
 			EstimatorInitlize(sensorFlag);
 		}
-		isUpdate = true;
 	}
 }
 
@@ -246,6 +246,7 @@ static int Acc2Local(Matrix* dst_6_1, int16_t a[], float q[], int16_t gyro[3], d
 	{
 		MatrixGetValue(a_nav, i+1, 1, &a_body_temp[i]);
 		MatrixSetValue(dst_6_1, i+1, i, a_body_temp[i]);
+		MatrixSetValue(dst_6_1, i+4, i, a_body_temp[i]);
 	}
 	
 	MatrixDelete(&temp);
@@ -320,12 +321,19 @@ static void EstimatorPredict(void)
 	
 	// Set u
 	Acc2Local(u, status.a, status.q, status.gyro, v);
+	
+	// minus g
+	MatrixGetValue(u, 3, 1, &tempvalue);
+	tempvalue = tempvalue - 1000;
+	MatrixSetValue(u, 3, 1, tempvalue);
+	MatrixSetValue(u, 6, 1, tempvalue);
+	
 	for(i=1; i<=3; i++)
 	{
 		MatrixGetValue(u, i, 1, &tempvalue);
-		MatrixSetValue(u, i, 1, tempvalue*dt*dt/2);
+		MatrixSetValue(u, i, 1, tempvalue*dt*dt/2/1000);
 		MatrixGetValue(u, i+3, 1, &tempvalue);
-		MatrixSetValue(u, i+3, 1, tempvalue*dt);
+		MatrixSetValue(u, i+3, 1, tempvalue*dt/1000);
 	}
 	
 	MatrixMultiply(F, x, &tempMatrix);

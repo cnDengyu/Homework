@@ -33,10 +33,13 @@ void Core_Init(void)
   GPIO_Configuration();
 	
 	/* Timer Basic Configuration */
-	TIMER_BASE_Configuration();
+	TIMER2_BASE_Configuration();
 	
 	/* USART Configuration*/
 	USART_Configuration();
+	
+	// PWM Timer Configuration
+	TIMER3_BASE_Configuration();
 	
 }
 
@@ -52,6 +55,13 @@ static void RCC_Configuration(void)
 
   /* TIM2 clock enable */
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	
+	/* TIM3 clock enable */
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+	
+	/* GPIOA and GPIOB clock enable */
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB |
+                         RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO, ENABLE);
 
   /* GPIOC clock enable */
 	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOC | USARTc_GPIO_CLK | USARTs_GPIO_CLK | RCC_APB2Periph_AFIO , ENABLE); 	
@@ -99,6 +109,16 @@ static void GPIO_Configuration(void)
 	/* Configure USARTs Tx as alternate function push-pull */
   GPIO_InitStructure.GPIO_Pin = USARTs_TxPin;
   GPIO_Init(USARTs_GPIO, &GPIO_InitStructure);
+
+	/* GPIOA Configuration:TIM3 Channel1, 2, 3 and 4 as alternate function push-pull */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+
+  GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
 
 }
 

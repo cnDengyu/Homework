@@ -68,7 +68,7 @@ static void HeartBeatSender(void)
 		heartbeat.autopilot = MAV_AUTOPILOT_GENERIC;
 		heartbeat.base_mode = MAV_MODE_FLAG_HIL_ENABLED;
 		heartbeat.custom_mode = 0;
-		heartbeat.system_status = MAV_STATE_BOOT;
+		heartbeat.system_status = GetSystemStatus();
 		mavlink_msg_heartbeat_encode(mavlink_system.sysid, mavlink_system.compid, &msg, &heartbeat);
 		len = mavlink_msg_to_send_buffer(buffer, &msg);
 		USARTc_SendBuffer(buffer, len);
