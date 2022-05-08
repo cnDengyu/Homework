@@ -1,0 +1,15 @@
+﻿  matrix.c
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix.h(31,1): warning C4005: “NULL”: 宏重定义
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vcruntime.h(235): message : 参见“NULL”的前一个定义
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  matrix_err.c
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.c(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.c(28,46): error C2001: 常量中有换行符
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.c(29,1): error C2143: 语法错误: 缺少“;”(在“const”的前面)
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.c(29,31): error C2001: 常量中有换行符
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.c(32,31): error C2001: 常量中有换行符
+D:\OneDrive\中山大学\登绝宇垠 - 文档\可公开内容\Homework\科研创新训练\RocketControl\src\matrix\matrix_err.c(33,1): error C2143: 语法错误: 缺少“;”(在“const”的前面)
+  正在生成代码...

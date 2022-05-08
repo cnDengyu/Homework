@@ -1,3 +1,4 @@
+#pragma once
 #ifndef __MESSAGE_SENSOR
 #define __MESSAGE_SENSOR
 

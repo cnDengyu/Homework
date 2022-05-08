@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>2</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\libs;.\src\;.\src\core;.\src\message;.\src\sensor</IncludePath>
+              <IncludePath>.\libs;.\src\;.\src\core;.\src\message;.\src\sensor;.\src\estimator;.\src\matrix;.\src\actuator</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1599,11 +1599,6 @@
               <FilePath>.\src\message\message_sensor.h</FilePath>
             </File>
             <File>
-              <FileName>message_sensor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\sensor\message_sensor.c</FilePath>
-            </File>
-            <File>
               <FileName>message_system.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\message\message_system.h</FilePath>
@@ -1612,6 +1607,21 @@
               <FileName>message_system.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\message\message_system.c</FilePath>
+            </File>
+            <File>
+              <FileName>message_sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\message\message_sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>message_estimator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\message\message_estimator.h</FilePath>
+            </File>
+            <File>
+              <FileName>message_estimator.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\message\message_estimator.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1637,6 +1647,61 @@
               <FileName>sensor_status.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\sensor\sensor_status.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>estimator</GroupName>
+          <Files>
+            <File>
+              <FileName>estimator.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\estimator\estimator.c</FilePath>
+            </File>
+            <File>
+              <FileName>estimator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\estimator\estimator.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>matrix</GroupName>
+          <Files>
+            <File>
+              <FileName>matrix.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\matrix\matrix.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrix.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\matrix\matrix.h</FilePath>
+            </File>
+            <File>
+              <FileName>matrix_err.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\matrix\matrix_err.c</FilePath>
+            </File>
+            <File>
+              <FileName>matrix_err.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\matrix\matrix_err.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>actuator</GroupName>
+          <Files>
+            <File>
+              <FileName>actuator.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\actuator\actuator.h</FilePath>
+            </File>
+            <File>
+              <FileName>actuator.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\actuator\actuator.c</FilePath>
             </File>
           </Files>
         </Group>

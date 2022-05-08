@@ -1,11 +1,14 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stm32f10x.h>
+#include "core/timer.h"
 #include "./sensor_status.h"
+
+#define TYPESNUM 11
 
 static struct RawSensorStatus rawSensorStatus;
 static struct ScaledSensorStatus scaledSensorStatus;
-static bool initlized[11] = {false, false, false, false, false, false, false, false, false, false, false};
+static bool initlized[TYPESNUM] = {false, false, false, false, false, false, false, false, false, false, false};
 
 static float oriPressure = 0;
 
@@ -122,14 +125,16 @@ void SensorSetFromBuffer(char ucRxBuffer[])
 			memcpy(&rawSensorStatus.stcPress,  &ucRxBuffer[2],8);
 			// Scale Pa into hPa
 			scaledSensorStatus.pressure = (float)rawSensorStatus.stcPress.lPressure/100;
-			scaledSensorStatus.height = rawSensorStatus.stcPress.lAltitude;
+			scaledSensorStatus.height = rawSensorStatus.stcPress.lAltitude * 10;
 			if(initlized[TYPE_PRESS - TYPE_TIME] == false)
 			{
 				scaledSensorStatus.press_diff = 0;
+				oriPressure = scaledSensorStatus.pressure;
+				return;
 			}else{
 				scaledSensorStatus.press_diff = scaledSensorStatus.pressure - oriPressure;
 			}
-			oriPressure = scaledSensorStatus.pressure;
+			
 			break;
 		
 		case TYPE_LONLAT:
@@ -144,11 +149,16 @@ void SensorSetFromBuffer(char ucRxBuffer[])
 		
 		case TYPE_GPSV:
 			memcpy(&rawSensorStatus.stcGPSV,  &ucRxBuffer[2],8);
-			// Scale dm into mm
+			// no signal check
 			if(rawSensorStatus.stcPre.SN == 0 || initlized[TYPE_PRE-TYPE_TIME]==false)
 			{
 				return;
 			}
+			if(!(rawSensorStatus.stcLonLat.lLat | rawSensorStatus.stcLonLat.lLon))
+			{
+				return;
+			}
+			// Scale dm into mm
 			scaledSensorStatus.alt = rawSensorStatus.stcGPSV.sGPSHeight * 100;
 			scaledSensorStatus.vel = (uint16_t)rawSensorStatus.stcGPSV.lGPSVelocity/36;
 			scaledSensorStatus.yaw = (uint16_t)rawSensorStatus.stcGPSV.sGPSYaw;
@@ -174,14 +184,15 @@ void SensorSetFromBuffer(char ucRxBuffer[])
 	}
 	initlized[ucRxBuffer[1] - TYPE_TIME] = true;
 	sensorRefreshed = ucRxBuffer[1];
+	scaledSensorStatus.timestamp = GetBootTimeMs();
 }
 
-uint8_t SensorRefreshed(void)
+uint8_t updateSensor(void)
 {
 	return sensorRefreshed;
 }
 
-void SensorReaded(void)
+void updateSensorClear(void)
 {
 	sensorRefreshed = 0x00;
 }
@@ -196,4 +207,15 @@ bool isSensorInitlized(uint8_t type)
 	{
 		return false;
 	}
+}
+
+bool isSensorAllInitlized(void)
+{
+	unsigned int i=0;
+	bool result=false;
+	for(i=0; i<TYPESNUM; i++)
+	{
+		result = result & initlized[i];
+	}
+	return result;
 }
