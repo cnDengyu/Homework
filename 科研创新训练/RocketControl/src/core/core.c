@@ -111,7 +111,7 @@ static void GPIO_Configuration(void)
   GPIO_Init(USARTs_GPIO, &GPIO_InitStructure);
 
 	/* GPIOA Configuration:TIM3 Channel1, 2, 3 and 4 as alternate function push-pull */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_9;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 

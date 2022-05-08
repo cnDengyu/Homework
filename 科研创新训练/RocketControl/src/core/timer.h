@@ -11,4 +11,6 @@ uint32_t GetBootTimeMs(void);
 bool updateSecond(void);
 void updateSecondClear(void);
 
+void TIM3Set(unsigned int id, double pulserate);
+
 #endif

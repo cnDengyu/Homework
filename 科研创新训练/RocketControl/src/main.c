@@ -52,6 +52,9 @@ int main(void)
 		// Fake Thread: Estimator 状态估计伪线程
 		Estimator_Run();
 		
+		// Fake Thread: Controller 控制器伪线程
+		
+		
 		// Fake Thread: Message 消息伪线程
 		MessageManager_Run();
 		

@@ -133,13 +133,16 @@ void TIMER2_BASE_Configuration(void)
 	
 }
 
-
+/*
+ 定时器3：PWM定时器
+*/
 
 static uint16_t CCR31_Val = 333;
 static uint16_t CCR32_Val = 249;
 static uint16_t CCR33_Val = 166;
 static uint16_t CCR34_Val = 83;
 static uint16_t PrescalerValue3 = 0;
+#define PWM_PERIOD 60000
 
 void TIMER3_BASE_Configuration(void)
 {
@@ -147,9 +150,9 @@ void TIMER3_BASE_Configuration(void)
 	TIM_OCInitTypeDef  TIM_OCInitStructure;
 	
 	/* Compute the prescaler value */
-  PrescalerValue3 = (uint16_t) (SystemCoreClock / 24000000) - 1;
+  PrescalerValue3 = (uint16_t) (SystemCoreClock / 3000000) - 1;		// Set Counter Frequency at 3MHz
   /* Time base configuration */
-  TIM_TimeBaseStructure.TIM_Period = 665;
+  TIM_TimeBaseStructure.TIM_Period = PWM_PERIOD;												// Set Period at 60000/3M = 0.02 s
   TIM_TimeBaseStructure.TIM_Prescaler = PrescalerValue3;
   TIM_TimeBaseStructure.TIM_ClockDivision = 0;
   TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -195,6 +198,29 @@ void TIMER3_BASE_Configuration(void)
   /* TIM3 enable counter */
   TIM_Cmd(TIM3, ENABLE);
 	
+}
+
+void TIM3Set(unsigned int id, double pulserate)
+{
+	uint16_t pulse = 0;
+	
+	pulse = (uint16_t) (pulserate * PWM_PERIOD);
+	
+	switch(id)
+	{
+		case 1:
+			TIM_SetCompare1(TIM3, pulse);
+		break;
+		case 2:
+			TIM_SetCompare2(TIM3, pulse);
+		break;
+		case 3:
+			TIM_SetCompare3(TIM3, pulse);
+		break;
+		case 4:
+			TIM_SetCompare4(TIM3, pulse);
+		break;
+	}
 }
 
 static uint16_t capture = 0;
