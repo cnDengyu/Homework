@@ -5,10 +5,3 @@
 *.jpg
 *.layout
 *.dev
-
-科研创新训练/RocketControl/Objects
-科研创新训练/RocketControl/DebugConfig
-科研创新训练/RocketControl/Listings
-科研创新训练/RocketControl/*.12450
-科研创新训练/RocketControl/*.uvoptx
-科研创新训练/RocketControl/*.scvd
